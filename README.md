@@ -93,146 +93,162 @@ Rankings are saved to [RANKINGS.md](RANKINGS.md) and `skills-manifest.json`.
 ./uninstall.sh    # Remove installed skills, optionally restore backup
 ```
 
-## Skill Categories (15)
+## Skills by Startup Journey
 
-### Engineering (10 skills)
-| Skill | Description |
-|-------|-------------|
-| `brainstorming` | Explore intent and requirements before building |
-| `executing-plans` | Execute implementation plans with review checkpoints |
-| `frontend-design` | Production-grade frontend interfaces |
-| `investigate` | 4-phase debugging: investigate, analyze, hypothesize, implement |
-| `receiving-code-review` | Handle code review feedback with rigor |
-| `subagent-driven-development` | Implementation via independent sub-agents |
-| `test-driven-development` | TDD workflow — tests before implementation |
-| `using-git-worktrees` | Isolated git worktrees for feature work |
-| `writing-plans` | Multi-step task planning before coding |
-| `writing-skills` | Create and verify new skills |
+Every startup asks the same questions in roughly the same order. Skills are organized by **when you need them**, not what technology they use.
 
-### Shipping (6 skills)
-| Skill | Description |
-|-------|-------------|
-| `document-release` | Post-ship documentation updates |
-| `land-and-deploy` | Merge PR, wait for CI, verify production health |
-| `retro` | Weekly engineering retrospective |
-| `review` | Pre-landing PR review for structural issues |
-| `setup-deploy` | Configure deployment settings |
-| `ship` | Full ship workflow: tests, review, version bump, PR |
+---
 
-### QA & Testing (6 skills)
-| Skill | Description |
-|-------|-------------|
-| `benchmark` | Performance regression detection |
-| `browse` | Headless browser for testing and verification |
-| `canary` | Post-deploy canary monitoring |
-| `qa` | Systematic QA testing with iterative bug fixes |
-| `qa-only` | Report-only QA testing (no fixes) |
-| `setup-browser-cookies` | Import browser cookies for authenticated testing |
+### Phase 1: "Is this idea any good?" — Validate (5 skills)
 
-### Safety (4 skills)
-| Skill | Description |
-|-------|-------------|
-| `careful` | Safety guardrails for destructive commands |
-| `freeze` | Restrict edits to a specific directory |
-| `guard` | Maximum safety mode (careful + freeze) |
-| `unfreeze` | Remove freeze restrictions |
+> Before you write a line of code. Figure out if anyone cares.
 
-### Design (6 skills)
-| Skill | Description |
-|-------|-------------|
-| `design-consultation` | Design system creation (DESIGN.md) |
-| `design-review` | Visual QA: spacing, hierarchy, consistency fixes |
-| `office-hours` | YC-style brainstorming and idea validation |
-| `plan-ceo-review` | CEO/founder-mode plan review |
-| `plan-design-review` | Design plan review before implementation |
-| `plan-eng-review` | Engineering manager plan review |
+| Skill | What it does for you |
+|-------|---------------------|
+| `office-hours` | YC-style forcing questions — exposes whether there's real demand |
+| `brainstorming` | Explores requirements and design before you commit to building |
+| `product-marketing-context` | Forces you to define your ICP, positioning, and value prop |
+| `plan-ceo-review` | Challenges your scope — are you thinking too small or too big? |
+| `competitor-alternatives` | Maps the competitive landscape so you know where you fit |
 
-### Marketing (10 skills)
-| Skill | Description |
-|-------|-------------|
-| `ad-creative` | Ad copy at scale for any platform |
-| `content-strategy` | Plan what content to create |
-| `copy-editing` | Edit and improve existing copy |
-| `copywriting` | Marketing copy for any page type |
-| `launch-strategy` | Product launch planning |
-| `marketing-ideas` | Marketing inspiration and strategies |
-| `marketing-psychology` | Behavioral science for marketing |
-| `paid-ads` | PPC campaign strategy and optimization |
-| `product-marketing-context` | Foundational product/audience context |
-| `social-content` | Social media content creation |
+---
 
-### Email & Outreach (2 skills)
-| Skill | Description |
-|-------|-------------|
-| `cold-email` | B2B cold outreach that gets replies |
-| `email-sequence` | Email sequences, drip campaigns, lifecycle flows |
+### Phase 2: "How do I build this?" — Build (14 skills)
 
-### SEO (5 skills)
-| Skill | Description |
-|-------|-------------|
-| `ai-seo` | Optimize for AI search engines (ChatGPT, Perplexity) |
-| `programmatic-seo` | Template-based pages at scale |
-| `schema-markup` | Structured data and JSON-LD |
-| `seo-audit` | Technical and on-page SEO audits |
-| `site-architecture` | Site structure and navigation planning |
+> You've validated. Now build the thing — fast, with quality.
 
-### CRO & Conversion (8 skills)
-| Skill | Description |
-|-------|-------------|
-| `ab-test-setup` | A/B test planning and implementation |
-| `analytics-tracking` | GA4, GTM, event tracking setup |
-| `form-cro` | Form optimization (non-signup) |
-| `onboarding-cro` | Post-signup activation and onboarding |
-| `page-cro` | Landing page conversion optimization |
-| `paywall-upgrade-cro` | In-app upgrade screens and paywalls |
-| `popup-cro` | Popup and modal conversion optimization |
-| `signup-flow-cro` | Signup/registration flow optimization |
-
-### Growth (5 skills)
-| Skill | Description |
-|-------|-------------|
-| `churn-prevention` | Cancellation flows and retention |
-| `free-tool-strategy` | Engineering-as-marketing tool planning |
-| `lead-magnets` | Content offers for lead generation |
-| `pricing-strategy` | Pricing decisions and packaging |
-| `referral-program` | Referral and affiliate programs |
-
-### Sales (3 skills)
-| Skill | Description |
-|-------|-------------|
-| `competitor-alternatives` | Competitor comparison pages |
-| `revops` | Revenue operations and lead lifecycle |
-| `sales-enablement` | Pitch decks, one-pagers, objection handling |
-
-### Documents (4 skills)
-| Skill | Description |
-|-------|-------------|
-| `docx` | Create and edit Word documents |
-| `pdf` | Read, create, merge, split, OCR PDF files |
-| `pptx` | Create and edit PowerPoint presentations |
-| `xlsx` | Create and edit spreadsheets |
-
-### Factories (5 skills)
-| Skill | Description |
-|-------|-------------|
-| `agent-factory` | Create custom Claude Code agents |
-| `hook-factory` | Generate Claude Code hooks |
-| `manage-skills` | Install/update/list/remove skills from this collection |
-| `prompt-factory` | Generate production-ready mega-prompts (69 presets) |
-| `slash-command-factory` | Generate custom slash commands |
-
-### Security (1 skill)
-| Skill | Description |
-|-------|-------------|
-| `shannon` | Autonomous AI pentester for web apps |
-
-### Integrations (4 skills)
-| Skill | Description |
-|-------|-------------|
-| `codex` | OpenAI Codex CLI for second opinions |
+| Skill | What it does for you |
+|-------|---------------------|
+| `writing-plans` | Plan before coding — spec out multi-step tasks |
+| `executing-plans` | Follow the plan with review checkpoints |
+| `frontend-design` | Production-grade UI that doesn't look like AI slop |
+| `design-consultation` | Create a design system (typography, colors, spacing) |
+| `plan-eng-review` | Architecture review before you start coding |
+| `plan-design-review` | Design review before implementation |
+| `investigate` | 4-phase debugging when things break |
+| `test-driven-development` | Tests first, then implementation |
+| `subagent-driven-development` | Parallelize independent build tasks |
+| `using-git-worktrees` | Isolate feature work without breaking main |
+| `receiving-code-review` | Handle feedback with rigor, not blind agreement |
+| `writing-skills` | Create custom skills for your own workflow |
 | `gstack` | Full development workflow toolkit |
-| `notebooklm` | Query Google NotebookLM from Claude Code |
-| `valyu-best-practices` | Valyu API for real-time search |
+| `codex` | Second opinion from a different AI system |
+
+---
+
+### Phase 3: "How do I ship this?" — Ship (16 skills)
+
+> Code is done. Now get it live — safely, reliably, fast.
+
+| Skill | What it does for you |
+|-------|---------------------|
+| `ship` | Full workflow: tests, review, version bump, changelog, PR |
+| `review` | Pre-landing PR review — catches security and structural issues |
+| `land-and-deploy` | Merge, wait for CI, verify production health |
+| `setup-deploy` | Configure your deploy platform (Vercel, Fly, Render, etc.) |
+| `qa` | Systematic QA testing — finds and fixes bugs |
+| `qa-only` | QA report without touching code (for stakeholder review) |
+| `browse` | Headless browser — test flows, take screenshots, verify state |
+| `setup-browser-cookies` | Import real cookies for testing authenticated pages |
+| `design-review` | Visual QA — catches spacing, hierarchy, consistency issues |
+| `benchmark` | Performance regression detection before/after |
+| `canary` | Post-deploy monitoring — watches for errors in production |
+| `document-release` | Update docs after shipping |
+| `retro` | Weekly retrospective — what shipped, what broke, what's next |
+| `careful` | Safety guardrails for destructive commands |
+| `guard` | Maximum safety mode for production work |
+| `shannon` | Security audit — finds real vulnerabilities before attackers do |
+
+---
+
+### Phase 4: "How do people find me?" — Get Found (15 skills)
+
+> Your product is live. Now the hardest part: getting noticed.
+
+| Skill | What it does for you |
+|-------|---------------------|
+| `seo-audit` | Find out why you're not ranking and fix it |
+| `ai-seo` | Get cited by ChatGPT, Perplexity, and AI search engines |
+| `schema-markup` | Rich results in Google (stars, FAQs, breadcrumbs) |
+| `programmatic-seo` | Build hundreds of SEO pages from templates + data |
+| `site-architecture` | Plan your site structure, URLs, and internal linking |
+| `content-strategy` | Decide what content to create and in what order |
+| `copywriting` | Write compelling page copy that converts |
+| `copy-editing` | Polish existing copy — tighten, sharpen, clarify |
+| `social-content` | Create content for LinkedIn, Twitter/X, Instagram, TikTok |
+| `marketing-ideas` | Unstuck yourself — get fresh marketing inspiration |
+| `marketing-psychology` | Apply cognitive biases and persuasion principles |
+| `launch-strategy` | Plan your Product Hunt launch, beta release, or announcement |
+| `free-tool-strategy` | Build a free tool that generates leads and backlinks |
+| `lead-magnets` | Create ebooks, checklists, templates for email capture |
+| `popup-cro` | Optimize popups and modals for email collection |
+
+---
+
+### Phase 5: "How do I get customers?" — Acquire (8 skills)
+
+> Traffic is flowing. Now turn strangers into leads, leads into customers.
+
+| Skill | What it does for you |
+|-------|---------------------|
+| `paid-ads` | Google/Meta/LinkedIn ad campaigns — strategy and optimization |
+| `ad-creative` | Generate ad copy variations at scale |
+| `cold-email` | B2B outbound that actually gets replies |
+| `email-sequence` | Nurture sequences, onboarding drips, re-engagement flows |
+| `referral-program` | Get existing customers to bring you new ones |
+| `sales-enablement` | Pitch decks, one-pagers, objection handling docs |
+| `revops` | Lead scoring, routing, and marketing-to-sales handoff |
+| `competitor-alternatives` | "Us vs Them" pages that win comparison shoppers |
+
+---
+
+### Phase 6: "Why aren't people converting?" — Convert (8 skills)
+
+> You have visitors. They're not signing up or paying. Fix the funnel.
+
+| Skill | What it does for you |
+|-------|---------------------|
+| `page-cro` | Diagnose and fix underperforming landing pages |
+| `signup-flow-cro` | Reduce friction in your registration flow |
+| `form-cro` | Optimize lead capture and contact forms |
+| `paywall-upgrade-cro` | Design upgrade screens that convert free to paid |
+| `pricing-strategy` | Figure out what to charge and how to package it |
+| `ab-test-setup` | Test two versions and know which one wins |
+| `analytics-tracking` | Set up GA4, GTM, events — know what's actually happening |
+| `onboarding-cro` | Get new signups to their "aha moment" faster |
+
+---
+
+### Phase 7: "How do I keep customers?" — Retain & Grow (3 skills)
+
+> Acquisition without retention is a leaky bucket. Plug the holes.
+
+| Skill | What it does for you |
+|-------|---------------------|
+| `churn-prevention` | Cancel flows, save offers, dunning, win-back strategies |
+| `email-sequence` | Re-engagement and lifecycle emails to keep users active |
+| `pricing-strategy` | Adjust tiers and packaging as you learn what customers value |
+
+---
+
+### Phase 8: "How do I work faster?" — Power Tools (10 skills)
+
+> Multiply your output. These skills make everything above faster.
+
+| Skill | What it does for you |
+|-------|---------------------|
+| `prompt-factory` | Generate production-ready prompts for any role (69 presets) |
+| `agent-factory` | Create custom AI agents for your specific workflows |
+| `slash-command-factory` | Build custom Claude Code commands |
+| `hook-factory` | Automate Claude Code behaviors with hooks |
+| `manage-skills` | Install, update, list, remove skills from this collection |
+| `pdf` | Read, create, merge, split, OCR any PDF |
+| `docx` | Create and edit Word documents |
+| `pptx` | Create and edit presentations |
+| `xlsx` | Create and edit spreadsheets |
+| `notebooklm` | Query Google NotebookLM for source-grounded research |
+| `valyu-best-practices` | Real-time search across web, academic, financial sources |
+| `freeze` / `unfreeze` | Scope edits to one directory to avoid accidental changes |
 
 ## How Skills Work
 
