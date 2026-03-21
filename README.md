@@ -4,6 +4,24 @@ A curated collection of **85+ production-ready Claude Code skills** — install 
 
 Skills are organized across engineering, marketing, design, DevOps, security, and more. This repo is **AI-native**: it includes a `CLAUDE.md` for Claude Code context, a `skills-manifest.json` for smart update detection, and a built-in `/manage-skills` skill so you can install and update everything without leaving your Claude Code session.
 
+## Sources & Attribution
+
+This collection aggregates skills from multiple sources in the Claude Code ecosystem:
+
+| Source | Skills | Description |
+|--------|--------|-------------|
+| **[gstack](https://github.com/anthropics/claude-code)** | ~26 skills | AI engineering workflow toolkit — shipping, QA, design review, deploy, browse, benchmarking, code review, and more. The backbone of the DevOps and shipping categories. |
+| **Claude Code Skills Factory** | ~4 skills | Meta-skills that generate other skills — `prompt-factory` (69 role presets across 15 domains), `agent-factory`, `slash-command-factory`, `hook-factory`. |
+| **Claude Code Community** | ~40 skills | Engineering workflow skills contributed by the Claude Code community — `systematic-debugging`, `test-driven-development`, `writing-plans`, `dispatching-parallel-agents`, `verification-before-completion`, and other development best-practice skills. |
+| **gstack Marketing Suite** | ~15 skills | Marketing, SEO, CRO, and growth skills — `copywriting`, `seo-audit`, `page-cro`, `email-sequence`, `paid-ads`, `content-strategy`, `pricing-strategy`, and more. |
+| **This repo** | 1 skill | `manage-skills` — built specifically for this collection to install/update/list/remove skills from within Claude Code. |
+
+> **Note:** Skills in this repo are collected, curated, and redistributed under MIT license. If you are the original author of a skill and want attribution updated or a skill removed, please open an issue.
+
+### What are Claude Code Skills?
+
+[Claude Code](https://docs.anthropic.com/en/docs/claude-code) is Anthropic's official CLI for Claude. **Skills** are markdown files (`.md`) with YAML frontmatter that extend Claude Code with reusable prompts, workflows, and agent behaviors. They live in `~/.claude/skills/` and are invoked as `/skill-name` slash commands. Skills are the primary mechanism for scaling Claude Code's capabilities across teams and machines.
+
 ## Quick Install
 
 ```bash
