@@ -1,0 +1,601 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-03-21T23:20:27.315433+00:00",
+  "skills": {
+    "ab-test-setup": {
+      "checksum": "e663f0ebe256a9864366f42752c127db",
+      "last_updated": "2026-03-21T23:20:12.854150+00:00",
+      "file_count": 4,
+      "size_bytes": 29298,
+      "description": "When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions \"A/B test,\" \"split test,\" \"experiment,\" \"test this change,\" \"variant copy,\" \"multivariate test,\" \"hypothesis,\" \"should I test this,\" \"which version is better,\" \"test two versions,\" \"statistical significance,\" or \"how long should I run this test.\" Use this whenever someone is comparing two approaches and wants to measure which performs better. For tracking implementation, see analytics-tracking. For page-level conversion optimization, see page-cro."
+    },
+    "ad-creative": {
+      "checksum": "9a7094558a04c6f549bd71f78565cd18",
+      "last_updated": "2026-03-21T23:20:12.856013+00:00",
+      "file_count": 4,
+      "size_bytes": 51069,
+      "description": "When the user wants to generate, iterate, or scale ad creative \u2014 headlines, descriptions, primary text, or full ad variations \u2014 for any paid advertising platform. Also use when the user mentions 'ad copy variations,' 'ad creative,' 'generate headlines,' 'RSA headlines,' 'bulk ad copy,' 'ad iterations,' 'creative testing,' 'ad performance optimization,' 'write me some ads,' 'Facebook ad copy,' 'Google ad headlines,' 'LinkedIn ad text,' or 'I need more ad variations.' Use this whenever someone needs to produce ad copy at scale or iterate on existing ads. For campaign strategy and targeting, see paid-ads. For landing page copy, see copywriting."
+    },
+    "agent-factory": {
+      "checksum": "7a275bfdf83b5ebd1ca246cbe4517c07",
+      "last_updated": "2026-03-21T23:20:12.858408+00:00",
+      "file_count": 6,
+      "size_bytes": 35846,
+      "description": "Claude Code agent generation system that creates custom agents and sub-agents with enhanced YAML frontmatter, tool access patterns, and MCP integration support following proven production patterns"
+    },
+    "ai-seo": {
+      "checksum": "560001b82083976ba150b30c21a7eec3",
+      "last_updated": "2026-03-21T23:20:12.860726+00:00",
+      "file_count": 4,
+      "size_bytes": 44527,
+      "description": "When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers. Also use when the user mentions 'AI SEO,' 'AEO,' 'GEO,' 'LLMO,' 'answer engine optimization,' 'generative engine optimization,' 'LLM optimization,' 'AI Overviews,' 'optimize for ChatGPT,' 'optimize for Perplexity,' 'AI citations,' 'AI visibility,' 'zero-click search,' 'how do I show up in AI answers,' 'LLM mentions,' or 'optimize for Claude/Gemini.' Use this whenever someone wants their content to be cited or surfaced by AI assistants and AI search engines. For traditional technical and on-page SEO audits, see seo-audit. For structured data implementation, see schema-markup."
+    },
+    "analytics-tracking": {
+      "checksum": "925bcc6c9542b1dd9854605d4979bb6a",
+      "last_updated": "2026-03-21T23:20:12.863346+00:00",
+      "file_count": 5,
+      "size_bytes": 37307,
+      "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"conversion tracking,\" \"event tracking,\" \"UTM parameters,\" \"tag manager,\" \"GTM,\" \"analytics implementation,\" \"tracking plan,\" \"how do I measure this,\" \"track conversions,\" \"attribution,\" \"Mixpanel,\" \"Segment,\" \"are my events firing,\" or \"analytics isn't working.\" Use this whenever someone asks how to know if something is working or wants to measure marketing results. For A/B test measurement, see ab-test-setup."
+    },
+    "benchmark": {
+      "checksum": "119114ef781bc59d3986db80f0fafc89",
+      "last_updated": "2026-03-21T23:20:12.864190+00:00",
+      "file_count": 2,
+      "size_bytes": 32052,
+      "description": "|"
+    },
+    "brainstorming": {
+      "checksum": "6004094dc4915f4112d03b06596b3b75",
+      "last_updated": "2026-03-21T23:20:12.867615+00:00",
+      "file_count": 8,
+      "size_bytes": 51168,
+      "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
+    },
+    "browse": {
+      "checksum": "26b38abfe77d01cebc86b45792679c88",
+      "last_updated": "2026-03-21T23:20:12.905190+00:00",
+      "file_count": 54,
+      "size_bytes": 122630697,
+      "description": "|"
+    },
+    "canary": {
+      "checksum": "f47fbf3fc2445c265c79578bc0b326dd",
+      "last_updated": "2026-03-21T23:20:12.932387+00:00",
+      "file_count": 2,
+      "size_bytes": 30268,
+      "description": "|"
+    },
+    "careful": {
+      "checksum": "00b3549521a791e9b843a44eadd04d27",
+      "last_updated": "2026-03-21T23:20:12.934124+00:00",
+      "file_count": 3,
+      "size_bytes": 9064,
+      "description": "|"
+    },
+    "churn-prevention": {
+      "checksum": "162c9cb5d5f60b6c92573b3d767a1b31",
+      "last_updated": "2026-03-21T23:20:12.939757+00:00",
+      "file_count": 4,
+      "size_bytes": 48525,
+      "description": "When the user wants to reduce churn, build cancellation flows, set up save offers, recover failed payments, or implement retention strategies. Also use when the user mentions 'churn,' 'cancel flow,' 'offboarding,' 'save offer,' 'dunning,' 'failed payment recovery,' 'win-back,' 'retention,' 'exit survey,' 'pause subscription,' 'involuntary churn,' 'people keep canceling,' 'churn rate is too high,' 'how do I keep users,' or 'customers are leaving.' Use this whenever someone is losing subscribers or wants to build systems to prevent it. For post-cancel win-back email sequences, see email-sequence. For in-app upgrade paywalls, see paywall-upgrade-cro."
+    },
+    "codex": {
+      "checksum": "466d593b9bfcc669eb1d8a0f93946b3f",
+      "last_updated": "2026-03-21T23:20:12.942152+00:00",
+      "file_count": 2,
+      "size_bytes": 46231,
+      "description": "|"
+    },
+    "cold-email": {
+      "checksum": "198aaa14247d7ffd80aad55350a542fe",
+      "last_updated": "2026-03-21T23:20:12.951723+00:00",
+      "file_count": 7,
+      "size_bytes": 36793,
+      "description": "Write B2B cold emails and follow-up sequences that get replies. Use when the user wants to write cold outreach emails, prospecting emails, cold email campaigns, sales development emails, or SDR emails. Also use when the user mentions \"cold outreach,\" \"prospecting email,\" \"outbound email,\" \"email to leads,\" \"reach out to prospects,\" \"sales email,\" \"follow-up email sequence,\" \"nobody's replying to my emails,\" or \"how do I write a cold email.\" Covers subject lines, opening lines, body copy, CTAs, personalization, and multi-touch follow-up sequences. For warm/lifecycle email sequences, see email-sequence. For sales collateral beyond emails, see sales-enablement."
+    },
+    "competitor-alternatives": {
+      "checksum": "e7b74bdbf04dc4c2e1cde4a6fda2bf87",
+      "last_updated": "2026-03-21T23:20:12.953570+00:00",
+      "file_count": 4,
+      "size_bytes": 28027,
+      "description": "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when the user mentions 'alternative page,' 'vs page,' 'competitor comparison,' 'comparison page,' '[Product] vs [Product],' '[Product] alternative,' 'competitive landing pages,' 'how do we compare to X,' 'battle card,' or 'competitor teardown.' Use this for any content that positions your product against competitors. Covers four formats: singular alternative, plural alternatives, you vs competitor, and competitor vs competitor. For sales-specific competitor docs, see sales-enablement."
+    },
+    "content-strategy": {
+      "checksum": "b36b7c036e2f03d6a3e64b49977fa4dc",
+      "last_updated": "2026-03-21T23:20:12.955252+00:00",
+      "file_count": 3,
+      "size_bytes": 27241,
+      "description": "When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also use when the user mentions \"content strategy,\" \"what should I write about,\" \"content ideas,\" \"blog strategy,\" \"topic clusters,\" \"content planning,\" \"editorial calendar,\" \"content marketing,\" \"content roadmap,\" \"what content should I create,\" \"blog topics,\" \"content pillars,\" or \"I don't know what to write.\" Use this whenever someone needs help deciding what content to produce, not just writing it. For writing individual pieces, see copywriting. For SEO-specific audits, see seo-audit. For social media content specifically, see social-content."
+    },
+    "copy-editing": {
+      "checksum": "44daa44e140f7f1471d83adedba7bd4d",
+      "last_updated": "2026-03-21T23:20:12.956665+00:00",
+      "file_count": 3,
+      "size_bytes": 29247,
+      "description": "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' 'copy sweep,' 'tighten this up,' 'this reads awkwardly,' 'clean up this text,' 'too wordy,' or 'sharpen the messaging.' Use this when the user already has copy and wants it improved rather than rewritten from scratch. For writing new copy, see copywriting."
+    },
+    "copywriting": {
+      "checksum": "a89f3aea36c704a73fc186149848de11",
+      "last_updated": "2026-03-21T23:20:12.958543+00:00",
+      "file_count": 4,
+      "size_bytes": 29262,
+      "description": "When the user wants to write, rewrite, or improve marketing copy for any page \u2014 including homepage, landing pages, pricing pages, feature pages, about pages, or product pages. Also use when the user says \"write copy for,\" \"improve this copy,\" \"rewrite this page,\" \"marketing copy,\" \"headline help,\" \"CTA copy,\" \"value proposition,\" \"tagline,\" \"subheadline,\" \"hero section copy,\" \"above the fold,\" \"this copy is weak,\" \"make this more compelling,\" or \"help me describe my product.\" Use this whenever someone is working on website text that needs to persuade or convert. For email copy, see email-sequence. For popup copy, see popup-cro. For editing existing copy, see copy-editing."
+    },
+    "design-consultation": {
+      "checksum": "a5316008ad5c6c2181dfe8808491a18e",
+      "last_updated": "2026-03-21T23:20:12.959249+00:00",
+      "file_count": 2,
+      "size_bytes": 51862,
+      "description": "|"
+    },
+    "design-review": {
+      "checksum": "00d2c649fcc16443709f3c965e4223c8",
+      "last_updated": "2026-03-21T23:20:12.959938+00:00",
+      "file_count": 2,
+      "size_bytes": 55214,
+      "description": "|"
+    },
+    "dispatching-parallel-agents": {
+      "checksum": "af319c60c986d9024c49de78dff43593",
+      "last_updated": "2026-03-21T23:20:12.960315+00:00",
+      "file_count": 1,
+      "size_bytes": 6441,
+      "description": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies"
+    },
+    "document-release": {
+      "checksum": "464e268b5cefb1c6c05c6d62bd0c447b",
+      "last_updated": "2026-03-21T23:20:12.961038+00:00",
+      "file_count": 2,
+      "size_bytes": 41477,
+      "description": "|"
+    },
+    "docx": {
+      "checksum": "d28a2127322043e335577c5e71961d2c",
+      "last_updated": "2026-03-21T23:20:12.983263+00:00",
+      "file_count": 61,
+      "size_bytes": 1121303,
+      "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation."
+    },
+    "email-sequence": {
+      "checksum": "d03acb8b59ac725fa187d374503c745d",
+      "last_updated": "2026-03-21T23:20:12.985161+00:00",
+      "file_count": 5,
+      "size_bytes": 35624,
+      "description": "When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program. Also use when the user mentions \"email sequence,\" \"drip campaign,\" \"nurture sequence,\" \"onboarding emails,\" \"welcome sequence,\" \"re-engagement emails,\" \"email automation,\" \"lifecycle emails,\" \"trigger-based emails,\" \"email funnel,\" \"email workflow,\" \"what emails should I send,\" \"welcome series,\" or \"email cadence.\" Use this for any multi-email automated flow. For cold outreach emails, see cold-email. For in-app onboarding, see onboarding-cro."
+    },
+    "executing-plans": {
+      "checksum": "37939229bd59f8a4cc8c7bfd51b2b3eb",
+      "last_updated": "2026-03-21T23:20:12.985747+00:00",
+      "file_count": 1,
+      "size_bytes": 2459,
+      "description": "Use when you have a written implementation plan to execute in a separate session with review checkpoints"
+    },
+    "finishing-a-development-branch": {
+      "checksum": "843f51fc511c9c850063ad26a24cbd12",
+      "last_updated": "2026-03-21T23:20:12.986196+00:00",
+      "file_count": 1,
+      "size_bytes": 4250,
+      "description": "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting structured options for merge, PR, or cleanup"
+    },
+    "form-cro": {
+      "checksum": "7cbee7b7ae41e452834652b2847afc6d",
+      "last_updated": "2026-03-21T23:20:12.987202+00:00",
+      "file_count": 2,
+      "size_bytes": 17506,
+      "description": "When the user wants to optimize any form that is NOT signup/registration \u2014 including lead capture forms, contact forms, demo request forms, application forms, survey forms, or checkout forms. Also use when the user mentions \"form optimization,\" \"lead form conversions,\" \"form friction,\" \"form fields,\" \"form completion rate,\" \"contact form,\" \"nobody fills out our form,\" \"form abandonment,\" \"too many fields,\" \"demo request form,\" or \"lead form isn't converting.\" Use this for any non-signup form that captures information. For signup/registration forms, see signup-flow-cro. For popups containing forms, see popup-cro."
+    },
+    "free-tool-strategy": {
+      "checksum": "9c4dfdf0a8b83c05ff44cb0899f75f47",
+      "last_updated": "2026-03-21T23:20:12.988591+00:00",
+      "file_count": 3,
+      "size_bytes": 16227,
+      "description": "When the user wants to plan, evaluate, or build a free tool for marketing purposes \u2014 lead generation, SEO value, or brand awareness. Also use when the user mentions \"engineering as marketing,\" \"free tool,\" \"marketing tool,\" \"calculator,\" \"generator,\" \"interactive tool,\" \"lead gen tool,\" \"build a tool for leads,\" \"free resource,\" \"ROI calculator,\" \"grader tool,\" \"audit tool,\" \"should I build a free tool,\" or \"tools for lead gen.\" Use this whenever someone wants to build something useful and give it away to attract leads or earn links. For downloadable content lead magnets (ebooks, checklists, templates), see lead-magnets."
+    },
+    "freeze": {
+      "checksum": "b924bf43f58936a097e79591de98acdc",
+      "last_updated": "2026-03-21T23:20:12.989847+00:00",
+      "file_count": 3,
+      "size_bytes": 8221,
+      "description": "|"
+    },
+    "frontend-design": {
+      "checksum": "60b3f39d40841422e04215d8c3035ac0",
+      "last_updated": "2026-03-21T23:20:12.990509+00:00",
+      "file_count": 2,
+      "size_bytes": 14614,
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics."
+    },
+    "gstack": {
+      "checksum": "d47c0f5f28ba8c0b65eff1cb57a5a258",
+      "last_updated": "2026-03-21T23:20:13.854926+00:00",
+      "file_count": 2234,
+      "size_bytes": 173232454,
+      "description": "|"
+    },
+    "gstack-upgrade": {
+      "checksum": "f537f44310a4d62b642acf457bca4227",
+      "last_updated": "2026-03-21T23:20:13.855876+00:00",
+      "file_count": 2,
+      "size_bytes": 15972,
+      "description": "|"
+    },
+    "guard": {
+      "checksum": "3397fe6c603f828e922e27919dd33c79",
+      "last_updated": "2026-03-21T23:20:13.856540+00:00",
+      "file_count": 2,
+      "size_bytes": 6204,
+      "description": "|"
+    },
+    "hook-factory": {
+      "checksum": "950cf8b9ad70e6ad2fcb3bb881ca453a",
+      "last_updated": "2026-03-21T23:20:13.867150+00:00",
+      "file_count": 28,
+      "size_bytes": 189304,
+      "description": "Generate production-ready Claude Code hooks with interactive Q&A, automated installation, and enhanced validation. Supports 10 templates across 7 event types for comprehensive workflow automation."
+    },
+    "investigate": {
+      "checksum": "80adc930a60a9892622eec09828d5bf0",
+      "last_updated": "2026-03-21T23:20:13.867806+00:00",
+      "file_count": 2,
+      "size_bytes": 29665,
+      "description": "|"
+    },
+    "land-and-deploy": {
+      "checksum": "1459b641abda462d5b61f1415d163559",
+      "last_updated": "2026-03-21T23:20:13.868383+00:00",
+      "file_count": 2,
+      "size_bytes": 58258,
+      "description": "|"
+    },
+    "launch-strategy": {
+      "checksum": "6c340291dfb13f2fe47398112b8ffacc",
+      "last_updated": "2026-03-21T23:20:13.869282+00:00",
+      "file_count": 2,
+      "size_bytes": 19230,
+      "description": "When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user mentions 'launch,' 'Product Hunt,' 'feature release,' 'announcement,' 'go-to-market,' 'beta launch,' 'early access,' 'waitlist,' 'product update,' 'how do I launch this,' 'launch checklist,' 'GTM plan,' or 'we're about to ship.' Use this whenever someone is preparing to release something publicly. For ongoing marketing after launch, see marketing-ideas."
+    },
+    "lead-magnets": {
+      "checksum": "3ec1c361f10d2831c0119554a1035220",
+      "last_updated": "2026-03-21T23:20:13.870686+00:00",
+      "file_count": 3,
+      "size_bytes": 21057,
+      "description": "When the user wants to create, plan, or optimize a lead magnet for email capture or lead generation. Also use when the user mentions \"lead magnet,\" \"gated content,\" \"content upgrade,\" \"downloadable,\" \"ebook,\" \"cheat sheet,\" \"checklist,\" \"template download,\" \"opt-in,\" \"freebie,\" \"PDF download,\" \"resource library,\" \"content offer,\" \"email capture content,\" \"Notion template,\" \"spreadsheet template,\" or \"what should I give away for emails.\" Use this for planning what to create and how to distribute it. For interactive tools as lead magnets, see free-tool-strategy. For writing the actual content, see copywriting. For the email sequence after capture, see email-sequence."
+    },
+    "marketing-ideas": {
+      "checksum": "fa6631cc7a04464645f5faf6f3556382",
+      "last_updated": "2026-03-21T23:20:13.872247+00:00",
+      "file_count": 3,
+      "size_bytes": 26358,
+      "description": "When the user needs marketing ideas, inspiration, or strategies for their SaaS or software product. Also use when the user asks for 'marketing ideas,' 'growth ideas,' 'how to market,' 'marketing strategies,' 'marketing tactics,' 'ways to promote,' 'ideas to grow,' 'what else can I try,' 'I don't know how to market this,' 'brainstorm marketing,' or 'what marketing should I do.' Use this as a starting point whenever someone is stuck or looking for inspiration on how to grow. For specific channel execution, see the relevant skill (paid-ads, social-content, email-sequence, etc.)."
+    },
+    "marketing-psychology": {
+      "checksum": "62fda18ba6fa2ecec6defd40a64553f2",
+      "last_updated": "2026-03-21T23:20:13.873243+00:00",
+      "file_count": 2,
+      "size_bytes": 27800,
+      "description": "When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when the user mentions 'psychology,' 'mental models,' 'cognitive bias,' 'persuasion,' 'behavioral science,' 'why people buy,' 'decision-making,' 'consumer behavior,' 'anchoring,' 'social proof,' 'scarcity,' 'loss aversion,' 'framing,' or 'nudge.' Use this whenever someone wants to understand or leverage how people think and make decisions in a marketing context."
+    },
+    "notebooklm": {
+      "checksum": "996b4c17c3b776e562bae34c00112aa5",
+      "last_updated": "2026-03-21T23:20:13.881447+00:00",
+      "file_count": 49,
+      "size_bytes": 497985,
+      "description": "Use this skill to query your Google NotebookLM notebooks directly from Claude Code for source-grounded, citation-backed answers from Gemini. Browser automation, library management, persistent auth. Drastically reduced hallucinations through document-only responses."
+    },
+    "office-hours": {
+      "checksum": "41a930e509fbc98e01ddff1eb72823c3",
+      "last_updated": "2026-03-21T23:20:13.891685+00:00",
+      "file_count": 2,
+      "size_bytes": 74961,
+      "description": "|"
+    },
+    "onboarding-cro": {
+      "checksum": "533f2006f73d41ddf5103c7d60813ebf",
+      "last_updated": "2026-03-21T23:20:13.893040+00:00",
+      "file_count": 3,
+      "size_bytes": 20717,
+      "description": "When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions \"onboarding flow,\" \"activation rate,\" \"user activation,\" \"first-run experience,\" \"empty states,\" \"onboarding checklist,\" \"aha moment,\" \"new user experience,\" \"users aren't activating,\" \"nobody completes setup,\" \"low activation rate,\" \"users sign up but don't use the product,\" \"time to value,\" or \"first session experience.\" Use this whenever users are signing up but not sticking around. For signup/registration optimization, see signup-flow-cro. For ongoing email sequences, see email-sequence."
+    },
+    "page-cro": {
+      "checksum": "afab9725096d67d691475c0a7e058fbe",
+      "last_updated": "2026-03-21T23:20:13.894447+00:00",
+      "file_count": 3,
+      "size_bytes": 21606,
+      "description": "When the user wants to optimize, improve, or increase conversions on any marketing page \u2014 including homepage, landing pages, pricing pages, feature pages, or blog posts. Also use when the user says \"CRO,\" \"conversion rate optimization,\" \"this page isn't converting,\" \"improve conversions,\" \"why isn't this page working,\" \"my landing page sucks,\" \"nobody's converting,\" \"low conversion rate,\" \"bounce rate is too high,\" \"people leave without signing up,\" or \"this page needs work.\" Use this even if the user just shares a URL and asks for feedback \u2014 they probably want conversion help. For signup/registration flows, see signup-flow-cro. For post-signup activation, see onboarding-cro. For forms outside of signup, see form-cro. For popups/modals, see popup-cro."
+    },
+    "paid-ads": {
+      "checksum": "a8a228bdbe123515d579165d9ff745d1",
+      "last_updated": "2026-03-21T23:20:13.896556+00:00",
+      "file_count": 5,
+      "size_bytes": 35208,
+      "description": "When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X, or other ad platforms. Also use when the user mentions 'PPC,' 'paid media,' 'ROAS,' 'CPA,' 'ad campaign,' 'retargeting,' 'audience targeting,' 'Google Ads,' 'Facebook ads,' 'LinkedIn ads,' 'ad budget,' 'cost per click,' 'ad spend,' or 'should I run ads.' Use this for campaign strategy, audience targeting, bidding, and optimization. For bulk ad creative generation and iteration, see ad-creative. For landing page optimization, see page-cro."
+    },
+    "paywall-upgrade-cro": {
+      "checksum": "3544af68ab899381412adf45c9921a78",
+      "last_updated": "2026-03-21T23:20:13.898146+00:00",
+      "file_count": 3,
+      "size_bytes": 17670,
+      "description": "When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions \"paywall,\" \"upgrade screen,\" \"upgrade modal,\" \"upsell,\" \"feature gate,\" \"convert free to paid,\" \"freemium conversion,\" \"trial expiration screen,\" \"limit reached screen,\" \"plan upgrade prompt,\" \"in-app pricing,\" \"free users won't upgrade,\" \"trial to paid conversion,\" or \"how do I get users to pay.\" Use this for any in-product moment where you're asking users to upgrade. Distinct from public pricing pages (see page-cro) \u2014 this focuses on in-product upgrade moments where the user has already experienced value. For pricing decisions, see pricing-strategy."
+    },
+    "pdf": {
+      "checksum": "e58c156cec83821d317b53f7a7448739",
+      "last_updated": "2026-03-21T23:20:13.902554+00:00",
+      "file_count": 12,
+      "size_bytes": 58692,
+      "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill."
+    },
+    "plan-ceo-review": {
+      "checksum": "5c0f0316a6786d14d94bce889a853aa8",
+      "last_updated": "2026-03-21T23:20:13.903213+00:00",
+      "file_count": 2,
+      "size_bytes": 139640,
+      "description": "|"
+    },
+    "plan-design-review": {
+      "checksum": "b602109fd8255e500b362c1567a9d118",
+      "last_updated": "2026-03-21T23:20:13.903724+00:00",
+      "file_count": 2,
+      "size_bytes": 58785,
+      "description": "|"
+    },
+    "plan-eng-review": {
+      "checksum": "676b3321f9db29ce9183c0f01478707f",
+      "last_updated": "2026-03-21T23:20:13.904247+00:00",
+      "file_count": 2,
+      "size_bytes": 64860,
+      "description": "|"
+    },
+    "popup-cro": {
+      "checksum": "e14171bca40d187bce4e7d4610a6335a",
+      "last_updated": "2026-03-21T23:20:13.904969+00:00",
+      "file_count": 2,
+      "size_bytes": 18418,
+      "description": "When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also use when the user mentions \"exit intent,\" \"popup conversions,\" \"modal optimization,\" \"lead capture popup,\" \"email popup,\" \"announcement banner,\" \"overlay,\" \"collect emails with a popup,\" \"exit popup,\" \"scroll trigger,\" \"sticky bar,\" or \"notification bar.\" Use this for any overlay or interrupt-style conversion element. For forms outside of popups, see form-cro. For general page conversion optimization, see page-cro."
+    },
+    "pptx": {
+      "checksum": "3e9ac1776b29cec3eb6286ebc0acde63",
+      "last_updated": "2026-03-21T23:20:13.930157+00:00",
+      "file_count": 59,
+      "size_bytes": 1129944,
+      "description": "Use this skill any time a .pptx file is involved in any way \u2014 as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates, layouts, speaker notes, or comments. Trigger whenever the user mentions \\\"deck,\\\" \\\"slides,\\\" \\\"presentation,\\\" or references a .pptx filename, regardless of what they plan to do with the content afterward. If a .pptx file needs to be opened, created, or touched, use this skill."
+    },
+    "pricing-strategy": {
+      "checksum": "edbc33ba2fe9b95a6228165eb322363f",
+      "last_updated": "2026-03-21T23:20:13.932257+00:00",
+      "file_count": 4,
+      "size_bytes": 25535,
+      "description": "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'free trial,' 'packaging,' 'price increase,' 'value metric,' 'Van Westendorp,' 'willingness to pay,' 'monetization,' 'how much should I charge,' 'my pricing is wrong,' 'pricing page,' 'annual vs monthly,' 'per seat pricing,' or 'should I offer a free plan.' Use this whenever someone is figuring out what to charge or how to structure their plans. For in-app upgrade screens, see paywall-upgrade-cro."
+    },
+    "product-marketing-context": {
+      "checksum": "642ebf5a9e8161a894e4ef44f10e4fc9",
+      "last_updated": "2026-03-21T23:20:13.933052+00:00",
+      "file_count": 2,
+      "size_bytes": 13506,
+      "description": "When the user wants to create or update their product marketing context document. Also use when the user mentions 'product context,' 'marketing context,' 'set up context,' 'positioning,' 'who is my target audience,' 'describe my product,' 'ICP,' 'ideal customer profile,' or wants to avoid repeating foundational information across marketing tasks. Use this at the start of any new project before using other marketing skills \u2014 it creates `.agents/product-marketing-context.md` that all other skills reference for product, audience, and positioning context."
+    },
+    "programmatic-seo": {
+      "checksum": "23bc6f3f762c3c68b278d81511db7129",
+      "last_updated": "2026-03-21T23:20:13.934553+00:00",
+      "file_count": 3,
+      "size_bytes": 22310,
+      "description": "When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions \"programmatic SEO,\" \"template pages,\" \"pages at scale,\" \"directory pages,\" \"location pages,\" \"[keyword] + [city] pages,\" \"comparison pages,\" \"integration pages,\" \"building many pages for SEO,\" \"pSEO,\" \"generate 100 pages,\" \"data-driven pages,\" or \"templated landing pages.\" Use this whenever someone wants to create many similar pages targeting different keywords or locations. For auditing existing SEO issues, see seo-audit. For content strategy planning, see content-strategy."
+    },
+    "prompt-factory": {
+      "checksum": "29502d6758f03dc78c2e7d82a6c6e960",
+      "last_updated": "2026-03-21T23:20:13.962975+00:00",
+      "file_count": 85,
+      "size_bytes": 1075945,
+      "description": "World-class prompt powerhouse that generates production-ready mega-prompts for any role, industry, and task through intelligent 7-question flow, 69 comprehensive presets across 15 professional domains (technical, business, creative, legal, finance, HR, design, customer, executive, manufacturing, R&D, regulatory, specialized-technical, research, creative-media), multiple output formats (XML/Claude/ChatGPT/Gemini), quality validation gates, and contextual best practices from OpenAI/Anthropic/Google. Supports both core and advanced modes with testing scenarios and prompt variations."
+    },
+    "qa": {
+      "checksum": "2aea9e73ef6ce47004aac1464f45a5e2",
+      "last_updated": "2026-03-21T23:20:13.964212+00:00",
+      "file_count": 4,
+      "size_bytes": 60971,
+      "description": "|"
+    },
+    "qa-only": {
+      "checksum": "230922087a175dd0975952f2863a2eef",
+      "last_updated": "2026-03-21T23:20:13.964969+00:00",
+      "file_count": 2,
+      "size_bytes": 32470,
+      "description": "|"
+    },
+    "receiving-code-review": {
+      "checksum": "dd0aadbca70fe3bedbd059b730a6edbb",
+      "last_updated": "2026-03-21T23:20:13.965404+00:00",
+      "file_count": 1,
+      "size_bytes": 6314,
+      "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation"
+    },
+    "referral-program": {
+      "checksum": "986e1c4092b72984024186795630f62f",
+      "last_updated": "2026-03-21T23:20:13.967151+00:00",
+      "file_count": 4,
+      "size_bytes": 21259,
+      "description": "When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy. Also use when the user mentions 'referral,' 'affiliate,' 'ambassador,' 'word of mouth,' 'viral loop,' 'refer a friend,' 'partner program,' 'referral incentive,' 'how to get referrals,' 'customers referring customers,' or 'affiliate payout.' Use this whenever someone wants existing users or partners to bring in new customers. For launch-specific virality, see launch-strategy."
+    },
+    "requesting-code-review": {
+      "checksum": "751c4a3b3ef333fa14cda273d188d045",
+      "last_updated": "2026-03-21T23:20:13.967857+00:00",
+      "file_count": 2,
+      "size_bytes": 6320,
+      "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements"
+    },
+    "retro": {
+      "checksum": "63cadbc8d7fc010c89f402fe8dc7a370",
+      "last_updated": "2026-03-21T23:20:13.968533+00:00",
+      "file_count": 2,
+      "size_bytes": 59419,
+      "description": "|"
+    },
+    "review": {
+      "checksum": "84c0f2fe47e7c207f59f1f2fe83c3652",
+      "last_updated": "2026-03-21T23:20:13.970122+00:00",
+      "file_count": 6,
+      "size_bytes": 73387,
+      "description": "|"
+    },
+    "revops": {
+      "checksum": "21a8ca1d65aa2e1195d0e17c112d223d",
+      "last_updated": "2026-03-21T23:20:13.979571+00:00",
+      "file_count": 6,
+      "size_bytes": 53376,
+      "description": "When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes. Also use when the user mentions 'RevOps,' 'revenue operations,' 'lead scoring,' 'lead routing,' 'MQL,' 'SQL,' 'pipeline stages,' 'deal desk,' 'CRM automation,' 'marketing-to-sales handoff,' 'data hygiene,' 'leads aren't getting to sales,' 'pipeline management,' 'lead qualification,' or 'when should marketing hand off to sales.' Use this for anything involving the systems and processes that connect marketing to revenue. For cold outreach emails, see cold-email. For email drip campaigns, see email-sequence. For pricing decisions, see pricing-strategy."
+    },
+    "sales-enablement": {
+      "checksum": "2d4e59a3be5329e71ec2b2f66363af60",
+      "last_updated": "2026-03-21T23:20:13.986322+00:00",
+      "file_count": 6,
+      "size_bytes": 59514,
+      "description": "When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also use when the user mentions 'sales deck,' 'pitch deck,' 'one-pager,' 'leave-behind,' 'objection handling,' 'deal-specific ROI analysis,' 'demo script,' 'talk track,' 'sales playbook,' 'proposal template,' 'buyer persona card,' 'help my sales team,' 'sales materials,' or 'what should I give my sales reps.' Use this for any document or asset that helps a sales team close deals. For competitor comparison pages and battle cards, see competitor-alternatives. For marketing website copy, see copywriting. For cold outreach emails, see cold-email."
+    },
+    "schema-markup": {
+      "checksum": "0d76ac1cdc96f351da474841ebc37db5",
+      "last_updated": "2026-03-21T23:20:13.987949+00:00",
+      "file_count": 3,
+      "size_bytes": 19457,
+      "description": "When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user mentions \"schema markup,\" \"structured data,\" \"JSON-LD,\" \"rich snippets,\" \"schema.org,\" \"FAQ schema,\" \"product schema,\" \"review schema,\" \"breadcrumb schema,\" \"Google rich results,\" \"knowledge panel,\" \"star ratings in search,\" or \"add structured data.\" Use this whenever someone wants their pages to show enhanced results in Google. For broader SEO issues, see seo-audit. For AI search optimization, see ai-seo."
+    },
+    "seo-audit": {
+      "checksum": "a2357920126c5153e85082a2770a8197",
+      "last_updated": "2026-03-21T23:20:13.991385+00:00",
+      "file_count": 3,
+      "size_bytes": 27049,
+      "description": "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO audit,\" \"technical SEO,\" \"why am I not ranking,\" \"SEO issues,\" \"on-page SEO,\" \"meta tags review,\" \"SEO health check,\" \"my traffic dropped,\" \"lost rankings,\" \"not showing up in Google,\" \"site isn't ranking,\" \"Google update hit me,\" \"page speed,\" \"core web vitals,\" \"crawl errors,\" or \"indexing issues.\" Use this even if the user just says something vague like \"my SEO is bad\" or \"help with SEO\" \u2014 start with an audit. For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema-markup. For AI search optimization, see ai-seo."
+    },
+    "setup-browser-cookies": {
+      "checksum": "7742367ca6663300330ddf6954c6bcb4",
+      "last_updated": "2026-03-21T23:20:13.992264+00:00",
+      "file_count": 2,
+      "size_bytes": 17974,
+      "description": "|"
+    },
+    "setup-deploy": {
+      "checksum": "935f2697b427d69742d06782d6bc0cab",
+      "last_updated": "2026-03-21T23:20:13.992825+00:00",
+      "file_count": 2,
+      "size_bytes": 28276,
+      "description": "|"
+    },
+    "shannon": {
+      "checksum": "e8724349bc98902a0e89e04fe884c0a3",
+      "last_updated": "2026-03-21T23:20:13.994953+00:00",
+      "file_count": 5,
+      "size_bytes": 25566,
+      "description": "Autonomous AI pentester for web apps and APIs. Run white-box security assessments with Shannon \u2014 analyzes source code, identifies attack vectors, and executes real exploits to prove vulnerabilities. Triggered by 'shannon', 'pentest', 'security audit', 'vuln scan'."
+    },
+    "ship": {
+      "checksum": "9e334d50d08c9f84943b9131e570e336",
+      "last_updated": "2026-03-21T23:20:13.995609+00:00",
+      "file_count": 2,
+      "size_bytes": 95191,
+      "description": "|"
+    },
+    "signup-flow-cro": {
+      "checksum": "aef459983c5dc1653eaa4d2f0b61695e",
+      "last_updated": "2026-03-21T23:20:13.996450+00:00",
+      "file_count": 2,
+      "size_bytes": 16673,
+      "description": "When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions \"signup conversions,\" \"registration friction,\" \"signup form optimization,\" \"free trial signup,\" \"reduce signup dropoff,\" \"account creation flow,\" \"people aren't signing up,\" \"signup abandonment,\" \"trial conversion rate,\" \"nobody completes registration,\" \"too many steps to sign up,\" or \"simplify our signup.\" Use this whenever the user has a signup or registration flow that isn't performing. For post-signup onboarding, see onboarding-cro. For lead capture forms (not account creation), see form-cro."
+    },
+    "site-architecture": {
+      "checksum": "4ea79290ff2a6ff282dca970c285daf0",
+      "last_updated": "2026-03-21T23:20:13.998975+00:00",
+      "file_count": 5,
+      "size_bytes": 45043,
+      "description": "When the user wants to plan, map, or restructure their website's page hierarchy, navigation, URL structure, or internal linking. Also use when the user mentions \"sitemap,\" \"site map,\" \"visual sitemap,\" \"site structure,\" \"page hierarchy,\" \"information architecture,\" \"IA,\" \"navigation design,\" \"URL structure,\" \"breadcrumbs,\" \"internal linking strategy,\" \"website planning,\" \"what pages do I need,\" \"how should I organize my site,\" or \"site navigation.\" Use this whenever someone is planning what pages a website should have and how they connect. NOT for XML sitemaps (that's technical SEO \u2014 see seo-audit). For SEO audits, see seo-audit. For structured data, see schema-markup."
+    },
+    "slash-command-factory": {
+      "checksum": "f941702e108eda00e2ff0fd91cc962ed",
+      "last_updated": "2026-03-21T23:20:14.001525+00:00",
+      "file_count": 7,
+      "size_bytes": 79195,
+      "description": "Generate custom Claude Code slash commands through intelligent 5-7 question flow. Creates powerful commands for business research, content analysis, healthcare compliance, API integration, documentation automation, and workflow optimization. Outputs organized commands to generated-commands/ with validation and installation guidance."
+    },
+    "social-content": {
+      "checksum": "6b3aa63b696c8fddeea0daf9f73e0b28",
+      "last_updated": "2026-03-21T23:20:14.003700+00:00",
+      "file_count": 5,
+      "size_bytes": 28675,
+      "description": "When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram, TikTok, Facebook, or other platforms. Also use when the user mentions 'LinkedIn post,' 'Twitter thread,' 'social media,' 'content calendar,' 'social scheduling,' 'engagement,' 'viral content,' 'what should I post,' 'repurpose this content,' 'tweet ideas,' 'LinkedIn carousel,' 'social media strategy,' or 'grow my following.' Use this for any social media content creation, repurposing, or scheduling task. For broader content strategy, see content-strategy."
+    },
+    "subagent-driven-development": {
+      "checksum": "105fd35249bd04d21d67a4a472c18353",
+      "last_updated": "2026-03-21T23:20:14.005249+00:00",
+      "file_count": 4,
+      "size_bytes": 19511,
+      "description": "Use when executing implementation plans with independent tasks in the current session"
+    },
+    "systematic-debugging": {
+      "checksum": "27a9a88d885a38a90ec820b92b96a11a",
+      "last_updated": "2026-03-21T23:20:14.008886+00:00",
+      "file_count": 11,
+      "size_bytes": 40755,
+      "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes"
+    },
+    "test-driven-development": {
+      "checksum": "a0c7108cc1ca432ea94640326c12b886",
+      "last_updated": "2026-03-21T23:20:14.009768+00:00",
+      "file_count": 2,
+      "size_bytes": 18118,
+      "description": "Use when implementing any feature or bugfix, before writing implementation code"
+    },
+    "unfreeze": {
+      "checksum": "9f395e7120c2a2576f03caec17164680",
+      "last_updated": "2026-03-21T23:20:14.010453+00:00",
+      "file_count": 2,
+      "size_bytes": 2598,
+      "description": "|"
+    },
+    "using-git-worktrees": {
+      "checksum": "068743993231737c40eb5656ee0ac629",
+      "last_updated": "2026-03-21T23:20:14.010784+00:00",
+      "file_count": 1,
+      "size_bytes": 5635,
+      "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification"
+    },
+    "using-superpowers": {
+      "checksum": "0af53ce2220079fb9973517a0fca5fdf",
+      "last_updated": "2026-03-21T23:20:14.012047+00:00",
+      "file_count": 3,
+      "size_bytes": 7673,
+      "description": "Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions"
+    },
+    "valyu-best-practices": {
+      "checksum": "e6227df0f248163100385d429d12ddcd",
+      "last_updated": "2026-03-21T23:20:14.026532+00:00",
+      "file_count": 47,
+      "size_bytes": 171279,
+      "description": "Complete Valyu API toolkit for AI agents. Use this skill when asked to perform real-time search across web, academic, medical, transportation, financial sources, content extraction from URLs, AI-powered answers with citations, or comprehensive deep research reports."
+    },
+    "verification-before-completion": {
+      "checksum": "ccf0e58c597adc512d920263562b5391",
+      "last_updated": "2026-03-21T23:20:14.027032+00:00",
+      "file_count": 1,
+      "size_bytes": 4201,
+      "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always"
+    },
+    "writing-plans": {
+      "checksum": "38c62a0c5551595518237217efba48ed",
+      "last_updated": "2026-03-21T23:20:14.027746+00:00",
+      "file_count": 2,
+      "size_bytes": 7113,
+      "description": "Use when you have a spec or requirements for a multi-step task, before touching code"
+    },
+    "writing-skills": {
+      "checksum": "472473a2ebd72bd91ec6ec3e41834111",
+      "last_updated": "2026-03-21T23:20:14.030586+00:00",
+      "file_count": 7,
+      "size_bytes": 103006,
+      "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment"
+    },
+    "xlsx": {
+      "checksum": "b5b1271577e51ca1444b564d886ba09c",
+      "last_updated": "2026-03-21T23:20:14.050620+00:00",
+      "file_count": 54,
+      "size_bytes": 1093063,
+      "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path \u2014 even casually (like \\\"the xlsx in my downloads\\\") \u2014 and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved."
+    }
+  }
+}
