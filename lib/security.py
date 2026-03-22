@@ -97,9 +97,18 @@ IGNORE_PATTERNS = [
 ]
 
 
+# Directories that contain reference/educational content (not executable)
+REFERENCE_DIRS = {"references", "examples", "evals", "templates", "presets", "node_modules"}
+
+
 def scan_file(filepath: Path) -> list[dict]:
     """Scan a single file for risk patterns."""
     findings = []
+
+    # Skip files in reference/educational directories
+    parts = set(filepath.parts)
+    is_reference_file = bool(parts & REFERENCE_DIRS)
+
     try:
         content = filepath.read_text(encoding="utf-8", errors="ignore")
     except Exception:
@@ -110,6 +119,7 @@ def scan_file(filepath: Path) -> list[dict]:
     for line_num, line in enumerate(lines, 1):
         # Skip lines that are clearly documentation
         is_doc = any(re.match(p, line.strip()) for p in IGNORE_PATTERNS)
+        is_doc = is_doc or is_reference_file
 
         for category, severity, pattern, description in RISK_PATTERNS:
             if re.search(pattern, line, re.IGNORECASE):
@@ -145,16 +155,16 @@ def scan_skill(skill_name: str) -> dict:
     severity_weights = {"critical": 10, "high": 5, "medium": 2, "low": 1}
     # Don't count documentation mentions as heavily
     risk_score = sum(
-        severity_weights.get(f["severity"], 0) * (0.3 if f["in_documentation"] else 1.0)
+        severity_weights.get(f["severity"], 0) * (0.1 if f["in_documentation"] else 1.0)
         for f in findings
     )
 
-    # Determine risk level
-    if risk_score >= 20:
+    # Determine risk level (thresholds tuned to reduce false positives)
+    if risk_score >= 50:
         risk_level = "dangerous"
-    elif risk_score >= 10:
+    elif risk_score >= 25:
         risk_level = "high"
-    elif risk_score >= 5:
+    elif risk_score >= 10:
         risk_level = "medium"
     elif risk_score > 0:
         risk_level = "low"

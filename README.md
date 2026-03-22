@@ -62,6 +62,23 @@ git pull && ./install.sh --update      # Pull latest, sync changes
 
 This repo is AI-native. See [CLAUDE.md](CLAUDE.md) for how to query `rankings.json` — the machine-readable source of truth with scores, scenarios, and signal breakdowns for all 79 skills.
 
+## Security
+
+Skills are scanned for risky patterns (database access, messaging, credentials, destructive commands). Dangerous skills are **excluded by default** during installation.
+
+```bash
+python3 lib/security.py              # Scan all skills
+python3 lib/security.py --verbose    # Show every finding
+python3 lib/security.py --strict     # CI mode: exit 1 on dangerous
+./install.sh --allow-dangerous       # Opt in to dangerous skills
+```
+
+To mark a skill as dangerous, add to its `SKILL.md` frontmatter:
+```yaml
+dangerous: true
+dangerous_reason: Why this skill is risky
+```
+
 ## How Skills Work
 
 Each skill is a directory with a `SKILL.md` file:

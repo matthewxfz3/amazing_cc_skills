@@ -286,17 +286,14 @@ def build_rankings_config(
 
 
 def update_manifest(manifest: dict, scores: dict, repo_signals: dict) -> None:
-    """Write ranking summary back into skills-manifest.json."""
+    """Update manifest with last-ranked timestamp only. Scores live in rankings.json."""
+    # Remove duplicated ranking data from individual skills (scores live in rankings.json)
     for name, skill_data in manifest.get("skills", {}).items():
-        if name in scores:
-            skill_data["ranking"] = {
-                "score": scores[name]["score"],
-                "tier": scores[name]["tier"],
-            }
+        skill_data.pop("ranking", None)
 
     manifest.setdefault("ranking", {})
     manifest["ranking"]["last_ranked"] = datetime.now(timezone.utc).isoformat()
-    manifest["ranking"]["repo_signals"] = repo_signals
+    manifest["ranking"]["scores_in"] = "rankings.json"
 
     with open(MANIFEST_PATH, "w") as f:
         json.dump(manifest, f, indent=2)
