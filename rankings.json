@@ -1,7 +1,42 @@
 {
   "_comment": "Source of truth for skill rankings. Read/write by scripts and LLMs.",
+  "_schema": {
+    "meta": "{last_updated: ISO8601, total_skills: int, total_scenarios: int, version: str}",
+    "repo_signals": "{stars: int, forks: int, open_issues: int, contributors: int, discussions: int}",
+    "scoring.weights": "{depth: str, community: str, documentation: str, repo_health: str}",
+    "scoring.category_weights": "{phase_id: float} \u2014 multiplier per phase",
+    "scoring.tiers": "{tier_letter: {min_score: int, label: str}}",
+    "leaderboard": "[{rank: int, name: str, score: float, tier: str, phase: str}] \u2014 ordered best first",
+    "scenarios.<phase_id>": "{label: str, scenarios: {scenario_id: {trigger: str, problem: str, skills: [str]}}}",
+    "by_phase.<phase_id>": "[{name: str, score: float, tier: str}]",
+    "by_tier.<tier>": "[{name: str, score: float, phase: str}]",
+    "skills.<name>": "{score: float, tier: str, phase: str, all_phases: [str], description: str, signals: {depth, mentions, mention_score, desc_quality, repo_bonus, category_weight, raw_score}}",
+    "user_overrides.<name>": "{score: float?, tier: str?} \u2014 manual overrides preserved across re-ranks",
+    "_writable_fields": [
+      "user_overrides"
+    ],
+    "_read_only_fields": [
+      "meta",
+      "repo_signals",
+      "scoring",
+      "leaderboard",
+      "scenarios",
+      "by_phase",
+      "by_tier",
+      "skills",
+      "tier_summary"
+    ],
+    "_query_examples": {
+      "best_skill_for_problem": "scenarios['4-get-found']['scenarios']['not-ranking-in-google']['skills']",
+      "top_5_overall": "leaderboard[:5]",
+      "all_s_tier": "by_tier['S']",
+      "skill_score": "skills['ship']['score']",
+      "skills_in_phase": "by_phase['3-ship']",
+      "search_by_keyword": "python3 lib/scenarios.py --search 'bug'"
+    }
+  },
   "meta": {
-    "last_updated": "2026-03-22T00:12:56.376295+00:00",
+    "last_updated": "2026-03-22T00:37:45.790840+00:00",
     "total_skills": 79,
     "total_scenarios": 63,
     "version": "2.0.0",

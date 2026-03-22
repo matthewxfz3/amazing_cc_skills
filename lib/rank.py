@@ -227,6 +227,29 @@ def build_rankings_config(
 
     rankings = {
         "_comment": "Source of truth for skill rankings. Read/write by scripts and LLMs.",
+        "_schema": {
+            "meta": "{last_updated: ISO8601, total_skills: int, total_scenarios: int, version: str}",
+            "repo_signals": "{stars: int, forks: int, open_issues: int, contributors: int, discussions: int}",
+            "scoring.weights": "{depth: str, community: str, documentation: str, repo_health: str}",
+            "scoring.category_weights": "{phase_id: float} — multiplier per phase",
+            "scoring.tiers": "{tier_letter: {min_score: int, label: str}}",
+            "leaderboard": "[{rank: int, name: str, score: float, tier: str, phase: str}] — ordered best first",
+            "scenarios.<phase_id>": "{label: str, scenarios: {scenario_id: {trigger: str, problem: str, skills: [str]}}}",
+            "by_phase.<phase_id>": "[{name: str, score: float, tier: str}]",
+            "by_tier.<tier>": "[{name: str, score: float, phase: str}]",
+            "skills.<name>": "{score: float, tier: str, phase: str, all_phases: [str], description: str, signals: {depth, mentions, mention_score, desc_quality, repo_bonus, category_weight, raw_score}}",
+            "user_overrides.<name>": "{score: float?, tier: str?} — manual overrides preserved across re-ranks",
+            "_writable_fields": ["user_overrides"],
+            "_read_only_fields": ["meta", "repo_signals", "scoring", "leaderboard", "scenarios", "by_phase", "by_tier", "skills", "tier_summary"],
+            "_query_examples": {
+                "best_skill_for_problem": "scenarios['4-get-found']['scenarios']['not-ranking-in-google']['skills']",
+                "top_5_overall": "leaderboard[:5]",
+                "all_s_tier": "by_tier['S']",
+                "skill_score": "skills['ship']['score']",
+                "skills_in_phase": "by_phase['3-ship']",
+                "search_by_keyword": "python3 lib/scenarios.py --search 'bug'",
+            },
+        },
         "meta": {
             "last_updated": now,
             "total_skills": len(scores),
@@ -341,6 +364,64 @@ def generate_rankings_md(rankings: dict) -> None:
         f.write("\n")
 
 
+SCENARIOS_MD_PATH = PROJ_ROOT / "SCENARIOS.md"
+
+
+def generate_scenarios_md(rankings: dict) -> None:
+    """Generate SCENARIOS.md — decision-tree format for humans."""
+    scenarios_data = rankings.get("scenarios", {})
+    skills_data = rankings.get("skills", {})
+
+    lines = [
+        "# Find the Right Skill",
+        "",
+        "<!-- Auto-generated from rankings.json — do not edit manually -->",
+        "",
+        "Start with your situation. Find the phase you're in, then the problem you're facing.",
+        "",
+    ]
+
+    # Table of contents
+    lines.append("## Phases")
+    lines.append("")
+    for phase_id in sorted(scenarios_data):
+        phase = scenarios_data[phase_id]
+        count = len(phase["scenarios"])
+        lines.append(f"- [{phase['label']}](#{phase_id}) ({count} scenarios)")
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+
+    # Each phase
+    for phase_id in sorted(scenarios_data):
+        phase = scenarios_data[phase_id]
+        lines.append(f"## {phase['label']}")
+        lines.append("")
+
+        for scenario_id, scenario in phase["scenarios"].items():
+            # Get tier info for recommended skills
+            skill_badges = []
+            for skill_name in scenario["skills"]:
+                info = skills_data.get(skill_name, {})
+                tier = info.get("tier", "?")
+                _, emoji = TIER_LABELS.get(tier, ("", ""))
+                skill_badges.append(f"`{skill_name}` {emoji}")
+
+            lines.append(f"> **\"{scenario['trigger']}\"**")
+            lines.append(f">")
+            lines.append(f"> {scenario['problem']}")
+            lines.append(f">")
+            lines.append(f"> Use: {' | '.join(skill_badges)}")
+            lines.append("")
+
+        lines.append("---")
+        lines.append("")
+
+    with open(SCENARIOS_MD_PATH, "w") as f:
+        f.write("\n".join(lines))
+        f.write("\n")
+
+
 def main():
     json_output = "--json" in sys.argv
 
@@ -378,8 +459,9 @@ def main():
     # 2. Update manifest with ranking summary
     update_manifest(manifest, scores, repo_signals)
 
-    # 3. Generate RANKINGS.md from rankings.json
+    # 3. Generate RANKINGS.md and SCENARIOS.md from rankings.json
     generate_rankings_md(rankings)
+    generate_scenarios_md(rankings)
 
     ranked = sorted(scores.items(), key=lambda x: x[1]["score"], reverse=True)
 
