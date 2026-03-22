@@ -24,8 +24,32 @@ VERBOSE=false
 DRY_RUN=false
 ALLOW_DANGEROUS=false
 
-# Skills marked as dangerous (access private data, require special permissions)
-DANGEROUS_SKILLS="imessage"
+# Skills marked as dangerous — auto-detected from SKILL.md frontmatter
+# Falls back to hardcoded list if python3 not available
+DANGEROUS_SKILLS=""
+if command -v python3 &>/dev/null && [[ -d "$PROJ_ROOT/skills" ]]; then
+    DANGEROUS_SKILLS=$(python3 -c "
+import os, sys
+skills_dir = sys.argv[1]
+dangerous = []
+for skill in sorted(os.listdir(skills_dir)):
+    skill_md = os.path.join(skills_dir, skill, 'SKILL.md')
+    if os.path.isfile(skill_md):
+        with open(skill_md) as f:
+            in_frontmatter = False
+            for line in f:
+                if line.strip() == '---':
+                    if in_frontmatter: break
+                    in_frontmatter = True
+                    continue
+                if in_frontmatter and line.startswith('dangerous:') and 'true' in line.lower():
+                    dangerous.append(skill)
+                    break
+print(' '.join(dangerous))
+" "$PROJ_ROOT/skills" 2>/dev/null || echo "imessage")
+else
+    DANGEROUS_SKILLS="imessage"
+fi
 
 # Temp dir for per-skill status tracking (race-safe: one file per skill)
 STATUS_DIR=$(mktemp -d)
