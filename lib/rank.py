@@ -8,11 +8,12 @@ Usage:
     python3 lib/rank.py --json                    # Output JSON to stdout
 
 Reads: skills-manifest.json
-Writes: skills-manifest.json (updated rankings), RANKINGS.md
+Writes: skills-manifest.json (updated rankings), rankings.json, RANKINGS.md
 """
 
 import json
 import os
+from scenarios import get_all_scenarios
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -221,12 +222,16 @@ def build_rankings_config(
             "name": name, "score": data["score"], "phase": data["category"],
         })
 
+    # Build scenario index
+    scenarios = get_all_scenarios()
+
     rankings = {
         "_comment": "Source of truth for skill rankings. Read/write by scripts and LLMs.",
         "meta": {
             "last_updated": now,
             "total_skills": len(scores),
-            "version": "1.0.0",
+            "total_scenarios": sum(len(p["scenarios"]) for p in scenarios.values()),
+            "version": "2.0.0",
             "generated_by": "lib/rank.py",
         },
         "repo_signals": repo_signals,
@@ -247,6 +252,7 @@ def build_rankings_config(
             tier: len(entries) for tier, entries in by_tier.items()
         },
         "leaderboard": leaderboard,
+        "scenarios": scenarios,
         "by_phase": by_phase,
         "by_tier": by_tier,
         "skills": skills_detail,
