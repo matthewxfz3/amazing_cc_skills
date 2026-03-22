@@ -1,27 +1,21 @@
 # Skill Rankings
 
+<!-- Auto-generated from rankings.json — do not edit manually -->
+
 Last updated: 2026-03-22
 
 **Repo signals**: 0 stars, 0 forks, 1 contributors, 0 discussions
 
-## Ranking Method
+**Tier breakdown**: 🏆 S: 1, ⭐ A: 1, 📋 C: 61, 📝 D: 16
 
-Each skill is scored 0-100 based on:
-- **Depth** (40%): file count and content size as a proxy for comprehensiveness
-- **Community** (20%): issue/discussion mentions on GitHub
-- **Documentation** (10%): quality of skill description
-- **Repo health** (30%): stars, forks, contributors, discussions
-- **Phase weight**: build/ship/acquire skills get a slight boost
+## Scoring
 
-## Tiers
-
-| Tier | Score | Meaning |
-|------|-------|---------|
-| 🏆 S | 80-100 | Best-in-class, comprehensive, well-documented |
-| ⭐ A | 60-79 | High quality, feature-rich |
-| ✅ B | 40-59 | Solid, does the job well |
-| 📋 C | 20-39 | Good baseline |
-| 📝 D | 0-19 | Minimal, could use improvement |
+| Signal | Weight |
+|--------|--------|
+| Depth (files + size) | 40% |
+| Community mentions | 20% |
+| Documentation quality | 10% |
+| Repo health (stars, forks) | 30% |
 
 ## Leaderboard
 

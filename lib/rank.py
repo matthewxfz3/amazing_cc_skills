@@ -19,7 +19,8 @@ from pathlib import Path
 
 PROJ_ROOT = Path(__file__).resolve().parent.parent
 MANIFEST_PATH = PROJ_ROOT / "skills-manifest.json"
-RANKINGS_PATH = PROJ_ROOT / "RANKINGS.md"
+RANKINGS_JSON_PATH = PROJ_ROOT / "rankings.json"
+RANKINGS_MD_PATH = PROJ_ROOT / "RANKINGS.md"
 
 # Category weights for the journey-based taxonomy
 CATEGORY_WEIGHTS = {
@@ -128,18 +129,140 @@ def compute_scores(
     return scores
 
 
+def load_rankings() -> dict:
+    """Load existing rankings.json if it exists."""
+    if RANKINGS_JSON_PATH.exists():
+        with open(RANKINGS_JSON_PATH) as f:
+            return json.load(f)
+    return {}
+
+
+def save_rankings(rankings: dict) -> None:
+    """Write rankings.json — the source of truth for all ranking data."""
+    with open(RANKINGS_JSON_PATH, "w") as f:
+        json.dump(rankings, f, indent=2)
+        f.write("\n")
+
+
+def build_rankings_config(
+    scores: dict,
+    repo_signals: dict,
+    manifest: dict,
+) -> dict:
+    """
+    Build the rankings.json config — structured for both scripts and LLMs.
+
+    Schema:
+      meta:           when/how rankings were computed
+      repo_signals:   GitHub-level signals (stars, forks, etc.)
+      scoring:        weights and tier thresholds (so LLMs understand the formula)
+      leaderboard:    ordered list of {name, score, tier, phase, ...}
+      by_phase:       skills grouped by startup journey phase
+      by_tier:        skills grouped by quality tier
+      skills:         per-skill detail (score, tier, signals breakdown)
+    """
+    ranked = sorted(scores.items(), key=lambda x: x[1]["score"], reverse=True)
+    now = datetime.now(timezone.utc).isoformat()
+
+    # Load previous rankings to preserve manual overrides or user ratings
+    previous = load_rankings()
+    user_overrides = previous.get("user_overrides", {})
+
+    # Per-skill detail
+    skills_detail = {}
+    for name, data in scores.items():
+        desc = manifest.get("skills", {}).get(name, {}).get("description", "")
+        phases = manifest.get("skills", {}).get(name, {}).get("phases", [data["category"]])
+        entry = {
+            "score": data["score"],
+            "tier": data["tier"],
+            "phase": data["category"],
+            "all_phases": phases,
+            "description": desc,
+            "signals": {
+                "depth": data["depth"],
+                "mentions": data["mentions"],
+                "mention_score": data["mention_score"],
+                "desc_quality": data["desc_score"],
+                "repo_bonus": data["repo_bonus"],
+                "category_weight": data["category_weight"],
+                "raw_score": data["raw_score"],
+            },
+        }
+        # Preserve user overrides
+        if name in user_overrides:
+            entry["user_override"] = user_overrides[name]
+        skills_detail[name] = entry
+
+    # Leaderboard (ordered)
+    leaderboard = []
+    for rank, (name, data) in enumerate(ranked, 1):
+        leaderboard.append({
+            "rank": rank,
+            "name": name,
+            "score": data["score"],
+            "tier": data["tier"],
+            "phase": data["category"],
+        })
+
+    # Group by phase
+    by_phase: dict[str, list] = {}
+    for name, data in ranked:
+        phase = data["category"]
+        by_phase.setdefault(phase, []).append({
+            "name": name, "score": data["score"], "tier": data["tier"],
+        })
+
+    # Group by tier
+    by_tier: dict[str, list] = {}
+    for name, data in ranked:
+        tier = data["tier"]
+        by_tier.setdefault(tier, []).append({
+            "name": name, "score": data["score"], "phase": data["category"],
+        })
+
+    rankings = {
+        "_comment": "Source of truth for skill rankings. Read/write by scripts and LLMs.",
+        "meta": {
+            "last_updated": now,
+            "total_skills": len(scores),
+            "version": "1.0.0",
+            "generated_by": "lib/rank.py",
+        },
+        "repo_signals": repo_signals,
+        "scoring": {
+            "weights": {
+                "depth": "40% — file count and content size",
+                "community": "20% — issue/discussion mentions",
+                "documentation": "10% — description quality",
+                "repo_health": "30% — stars, forks, contributors",
+            },
+            "category_weights": {k: v for k, v in CATEGORY_WEIGHTS.items()},
+            "tiers": {
+                tier: {"min_score": threshold, "label": TIER_LABELS[tier][0]}
+                for threshold, tier in TIER_THRESHOLDS
+            },
+        },
+        "tier_summary": {
+            tier: len(entries) for tier, entries in by_tier.items()
+        },
+        "leaderboard": leaderboard,
+        "by_phase": by_phase,
+        "by_tier": by_tier,
+        "skills": skills_detail,
+        "user_overrides": user_overrides,
+    }
+
+    return rankings
+
+
 def update_manifest(manifest: dict, scores: dict, repo_signals: dict) -> None:
-    """Write scores back into the manifest."""
+    """Write ranking summary back into skills-manifest.json."""
     for name, skill_data in manifest.get("skills", {}).items():
         if name in scores:
             skill_data["ranking"] = {
                 "score": scores[name]["score"],
                 "tier": scores[name]["tier"],
-                "signals": {
-                    "depth": scores[name]["depth"],
-                    "mentions": scores[name]["mentions"],
-                    "desc_quality": scores[name]["desc_score"],
-                },
             }
 
     manifest.setdefault("ranking", {})
@@ -151,73 +274,63 @@ def update_manifest(manifest: dict, scores: dict, repo_signals: dict) -> None:
         f.write("\n")
 
 
-def generate_rankings_md(scores: dict, repo_signals: dict) -> None:
-    """Generate RANKINGS.md leaderboard."""
-    ranked = sorted(scores.items(), key=lambda x: x[1]["score"], reverse=True)
-    now = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+def generate_rankings_md(rankings: dict) -> None:
+    """Generate RANKINGS.md from rankings.json (human-readable view)."""
+    meta = rankings.get("meta", {})
+    repo = rankings.get("repo_signals", {})
+    leaderboard = rankings.get("leaderboard", [])
+    by_phase = rankings.get("by_phase", {})
+    tier_summary = rankings.get("tier_summary", {})
 
     lines = [
         "# Skill Rankings",
         "",
-        f"Last updated: {now}",
+        "<!-- Auto-generated from rankings.json — do not edit manually -->",
         "",
-        f"**Repo signals**: {repo_signals.get('stars', 0)} stars, "
-        f"{repo_signals.get('forks', 0)} forks, "
-        f"{repo_signals.get('contributors', 0)} contributors, "
-        f"{repo_signals.get('discussions', 0)} discussions",
+        f"Last updated: {meta.get('last_updated', 'unknown')[:10]}",
         "",
-        "## Ranking Method",
+        f"**Repo signals**: {repo.get('stars', 0)} stars, "
+        f"{repo.get('forks', 0)} forks, "
+        f"{repo.get('contributors', 0)} contributors, "
+        f"{repo.get('discussions', 0)} discussions",
         "",
-        "Each skill is scored 0-100 based on:",
-        "- **Depth** (40%): file count and content size as a proxy for comprehensiveness",
-        "- **Community** (20%): issue/discussion mentions on GitHub",
-        "- **Documentation** (10%): quality of skill description",
-        "- **Repo health** (30%): stars, forks, contributors, discussions",
-        "- **Phase weight**: build/ship/acquire skills get a slight boost",
+        f"**Tier breakdown**: "
+        + ", ".join(f"{TIER_LABELS[t][1]} {t}: {tier_summary.get(t, 0)}" for t in ["S", "A", "B", "C", "D"] if tier_summary.get(t, 0) > 0),
         "",
-        "## Tiers",
+        "## Scoring",
         "",
-        "| Tier | Score | Meaning |",
-        "|------|-------|---------|",
-    ]
-    for _, tier in TIER_THRESHOLDS:
-        label, emoji = TIER_LABELS[tier]
-        lo = [t for t, _ in TIER_THRESHOLDS if _ == tier][0]
-        hi_idx = TIER_THRESHOLDS.index((lo, tier))
-        hi = TIER_THRESHOLDS[hi_idx - 1][0] - 1 if hi_idx > 0 else 100
-        lines.append(f"| {emoji} {tier} | {lo}-{hi} | {label} |")
-
-    lines += [
+        "| Signal | Weight |",
+        "|--------|--------|",
+        "| Depth (files + size) | 40% |",
+        "| Community mentions | 20% |",
+        "| Documentation quality | 10% |",
+        "| Repo health (stars, forks) | 30% |",
         "",
         "## Leaderboard",
         "",
         "| Rank | Skill | Phase | Score | Tier |",
         "|------|-------|-------|-------|------|",
     ]
-    for i, (name, data) in enumerate(ranked, 1):
-        _, emoji = TIER_LABELS.get(data["tier"], ("", ""))
+    for entry in leaderboard:
+        _, emoji = TIER_LABELS.get(entry["tier"], ("", ""))
         lines.append(
-            f"| {i} | `{name}` | {data['category']} | {data['score']} | {emoji} {data['tier']} |"
+            f"| {entry['rank']} | `{entry['name']}` | {entry['phase']} "
+            f"| {entry['score']} | {emoji} {entry['tier']} |"
         )
 
-    # Per-category breakdown
     lines += ["", "## By Phase", ""]
-    cats: dict[str, list] = {}
-    for name, data in ranked:
-        cats.setdefault(data["category"], []).append((name, data))
-
-    for cat in sorted(cats):
-        skills = cats[cat]
-        lines.append(f"### {cat}")
+    for phase in sorted(by_phase):
+        skills = by_phase[phase]
+        lines.append(f"### {phase}")
         lines.append("")
         lines.append("| Skill | Score | Tier |")
         lines.append("|-------|-------|------|")
-        for name, data in skills:
-            _, emoji = TIER_LABELS.get(data["tier"], ("", ""))
-            lines.append(f"| `{name}` | {data['score']} | {emoji} {data['tier']} |")
+        for s in skills:
+            _, emoji = TIER_LABELS.get(s["tier"], ("", ""))
+            lines.append(f"| `{s['name']}` | {s['score']} | {emoji} {s['tier']} |")
         lines.append("")
 
-    with open(RANKINGS_PATH, "w") as f:
+    with open(RANKINGS_MD_PATH, "w") as f:
         f.write("\n".join(lines))
         f.write("\n")
 
@@ -251,13 +364,21 @@ def main():
 
     manifest = load_manifest()
     scores = compute_scores(manifest, repo_signals, skill_mentions)
+
+    # 1. Build rankings.json (source of truth)
+    rankings = build_rankings_config(scores, repo_signals, manifest)
+    save_rankings(rankings)
+
+    # 2. Update manifest with ranking summary
     update_manifest(manifest, scores, repo_signals)
-    generate_rankings_md(scores, repo_signals)
+
+    # 3. Generate RANKINGS.md from rankings.json
+    generate_rankings_md(rankings)
 
     ranked = sorted(scores.items(), key=lambda x: x[1]["score"], reverse=True)
 
     if json_output:
-        print(json.dumps({"ranked": [{**v, "name": k} for k, v in ranked]}, indent=2))
+        print(json.dumps(rankings, indent=2))
     else:
         tier_counts = {}
         for _, d in ranked:

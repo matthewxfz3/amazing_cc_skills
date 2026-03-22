@@ -1,0 +1,2863 @@
+{
+  "_comment": "Source of truth for skill rankings. Read/write by scripts and LLMs.",
+  "meta": {
+    "last_updated": "2026-03-22T00:05:42.500394+00:00",
+    "total_skills": 79,
+    "version": "1.0.0",
+    "generated_by": "lib/rank.py"
+  },
+  "repo_signals": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "contributors": 1,
+    "discussions": 0
+  },
+  "scoring": {
+    "weights": {
+      "depth": "40% \u2014 file count and content size",
+      "community": "20% \u2014 issue/discussion mentions",
+      "documentation": "10% \u2014 description quality",
+      "repo_health": "30% \u2014 stars, forks, contributors"
+    },
+    "category_weights": {
+      "1-validate": 1.2,
+      "2-build": 1.2,
+      "3-ship": 1.3,
+      "4-get-found": 1.0,
+      "5-acquire": 1.1,
+      "6-convert": 1.1,
+      "7-retain": 1.0,
+      "8-power-tools": 1.1
+    },
+    "tiers": {
+      "S": {
+        "min_score": 80,
+        "label": "Best-in-class, comprehensive, well-documented"
+      },
+      "A": {
+        "min_score": 60,
+        "label": "High quality, feature-rich"
+      },
+      "B": {
+        "min_score": 40,
+        "label": "Solid, does the job well"
+      },
+      "C": {
+        "min_score": 20,
+        "label": "Good baseline"
+      },
+      "D": {
+        "min_score": 0,
+        "label": "Minimal, could use improvement"
+      }
+    }
+  },
+  "tier_summary": {
+    "S": 1,
+    "A": 1,
+    "C": 61,
+    "D": 16
+  },
+  "leaderboard": [
+    {
+      "rank": 1,
+      "name": "gstack",
+      "score": 100.0,
+      "tier": "S",
+      "phase": "2-build"
+    },
+    {
+      "rank": 2,
+      "name": "browse",
+      "score": 68.8,
+      "tier": "A",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 3,
+      "name": "qa",
+      "score": 25.2,
+      "tier": "C",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 4,
+      "name": "review",
+      "score": 25.2,
+      "tier": "C",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 5,
+      "name": "shannon",
+      "score": 25.2,
+      "tier": "C",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 6,
+      "name": "benchmark",
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 7,
+      "name": "canary",
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 8,
+      "name": "careful",
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 9,
+      "name": "design-review",
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 10,
+      "name": "document-release",
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 11,
+      "name": "guard",
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 12,
+      "name": "land-and-deploy",
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 13,
+      "name": "qa-only",
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 14,
+      "name": "retro",
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 15,
+      "name": "setup-browser-cookies",
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 16,
+      "name": "setup-deploy",
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 17,
+      "name": "ship",
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship"
+    },
+    {
+      "rank": 18,
+      "name": "brainstorming",
+      "score": 23.2,
+      "tier": "C",
+      "phase": "1-validate"
+    },
+    {
+      "rank": 19,
+      "name": "writing-skills",
+      "score": 23.2,
+      "tier": "C",
+      "phase": "2-build"
+    },
+    {
+      "rank": 20,
+      "name": "codex",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build"
+    },
+    {
+      "rank": 21,
+      "name": "competitor-alternatives",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "1-validate"
+    },
+    {
+      "rank": 22,
+      "name": "design-consultation",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build"
+    },
+    {
+      "rank": 23,
+      "name": "executing-plans",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build"
+    },
+    {
+      "rank": 24,
+      "name": "frontend-design",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build"
+    },
+    {
+      "rank": 25,
+      "name": "investigate",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build"
+    },
+    {
+      "rank": 26,
+      "name": "office-hours",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "1-validate"
+    },
+    {
+      "rank": 27,
+      "name": "plan-ceo-review",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "1-validate"
+    },
+    {
+      "rank": 28,
+      "name": "plan-design-review",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build"
+    },
+    {
+      "rank": 29,
+      "name": "plan-eng-review",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build"
+    },
+    {
+      "rank": 30,
+      "name": "product-marketing-context",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "1-validate"
+    },
+    {
+      "rank": 31,
+      "name": "receiving-code-review",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build"
+    },
+    {
+      "rank": 32,
+      "name": "subagent-driven-development",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build"
+    },
+    {
+      "rank": 33,
+      "name": "test-driven-development",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build"
+    },
+    {
+      "rank": 34,
+      "name": "using-git-worktrees",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build"
+    },
+    {
+      "rank": 35,
+      "name": "writing-plans",
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build"
+    },
+    {
+      "rank": 36,
+      "name": "prompt-factory",
+      "score": 22.6,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 37,
+      "name": "docx",
+      "score": 22.3,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 38,
+      "name": "pptx",
+      "score": 22.3,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 39,
+      "name": "xlsx",
+      "score": 22.1,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 40,
+      "name": "notebooklm",
+      "score": 22.0,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 41,
+      "name": "valyu-best-practices",
+      "score": 21.8,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 42,
+      "name": "hook-factory",
+      "score": 21.6,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 43,
+      "name": "agent-factory",
+      "score": 21.3,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 44,
+      "name": "cold-email",
+      "score": 21.3,
+      "tier": "C",
+      "phase": "5-acquire"
+    },
+    {
+      "rank": 45,
+      "name": "pdf",
+      "score": 21.3,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 46,
+      "name": "revops",
+      "score": 21.3,
+      "tier": "C",
+      "phase": "5-acquire"
+    },
+    {
+      "rank": 47,
+      "name": "sales-enablement",
+      "score": 21.3,
+      "tier": "C",
+      "phase": "5-acquire"
+    },
+    {
+      "rank": 48,
+      "name": "slash-command-factory",
+      "score": 21.3,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 49,
+      "name": "ab-test-setup",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert"
+    },
+    {
+      "rank": 50,
+      "name": "ad-creative",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "5-acquire"
+    },
+    {
+      "rank": 51,
+      "name": "analytics-tracking",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert"
+    },
+    {
+      "rank": 52,
+      "name": "email-sequence",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "5-acquire"
+    },
+    {
+      "rank": 53,
+      "name": "form-cro",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert"
+    },
+    {
+      "rank": 54,
+      "name": "freeze",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 55,
+      "name": "manage-skills",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 56,
+      "name": "onboarding-cro",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert"
+    },
+    {
+      "rank": 57,
+      "name": "page-cro",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert"
+    },
+    {
+      "rank": 58,
+      "name": "paid-ads",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "5-acquire"
+    },
+    {
+      "rank": 59,
+      "name": "paywall-upgrade-cro",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert"
+    },
+    {
+      "rank": 60,
+      "name": "pricing-strategy",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert"
+    },
+    {
+      "rank": 61,
+      "name": "referral-program",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "5-acquire"
+    },
+    {
+      "rank": 62,
+      "name": "signup-flow-cro",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert"
+    },
+    {
+      "rank": 63,
+      "name": "unfreeze",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 64,
+      "name": "ai-seo",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found"
+    },
+    {
+      "rank": 65,
+      "name": "churn-prevention",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "7-retain"
+    },
+    {
+      "rank": 66,
+      "name": "content-strategy",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found"
+    },
+    {
+      "rank": 67,
+      "name": "copy-editing",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found"
+    },
+    {
+      "rank": 68,
+      "name": "copywriting",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found"
+    },
+    {
+      "rank": 69,
+      "name": "free-tool-strategy",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found"
+    },
+    {
+      "rank": 70,
+      "name": "launch-strategy",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found"
+    },
+    {
+      "rank": 71,
+      "name": "lead-magnets",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found"
+    },
+    {
+      "rank": 72,
+      "name": "marketing-ideas",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found"
+    },
+    {
+      "rank": 73,
+      "name": "marketing-psychology",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found"
+    },
+    {
+      "rank": 74,
+      "name": "popup-cro",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found"
+    },
+    {
+      "rank": 75,
+      "name": "programmatic-seo",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found"
+    },
+    {
+      "rank": 76,
+      "name": "schema-markup",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found"
+    },
+    {
+      "rank": 77,
+      "name": "seo-audit",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found"
+    },
+    {
+      "rank": 78,
+      "name": "site-architecture",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found"
+    },
+    {
+      "rank": 79,
+      "name": "social-content",
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found"
+    }
+  ],
+  "by_phase": {
+    "2-build": [
+      {
+        "name": "gstack",
+        "score": 100.0,
+        "tier": "S"
+      },
+      {
+        "name": "writing-skills",
+        "score": 23.2,
+        "tier": "C"
+      },
+      {
+        "name": "codex",
+        "score": 23.1,
+        "tier": "C"
+      },
+      {
+        "name": "design-consultation",
+        "score": 23.1,
+        "tier": "C"
+      },
+      {
+        "name": "executing-plans",
+        "score": 23.1,
+        "tier": "C"
+      },
+      {
+        "name": "frontend-design",
+        "score": 23.1,
+        "tier": "C"
+      },
+      {
+        "name": "investigate",
+        "score": 23.1,
+        "tier": "C"
+      },
+      {
+        "name": "plan-design-review",
+        "score": 23.1,
+        "tier": "C"
+      },
+      {
+        "name": "plan-eng-review",
+        "score": 23.1,
+        "tier": "C"
+      },
+      {
+        "name": "receiving-code-review",
+        "score": 23.1,
+        "tier": "C"
+      },
+      {
+        "name": "subagent-driven-development",
+        "score": 23.1,
+        "tier": "C"
+      },
+      {
+        "name": "test-driven-development",
+        "score": 23.1,
+        "tier": "C"
+      },
+      {
+        "name": "using-git-worktrees",
+        "score": 23.1,
+        "tier": "C"
+      },
+      {
+        "name": "writing-plans",
+        "score": 23.1,
+        "tier": "C"
+      }
+    ],
+    "3-ship": [
+      {
+        "name": "browse",
+        "score": 68.8,
+        "tier": "A"
+      },
+      {
+        "name": "qa",
+        "score": 25.2,
+        "tier": "C"
+      },
+      {
+        "name": "review",
+        "score": 25.2,
+        "tier": "C"
+      },
+      {
+        "name": "shannon",
+        "score": 25.2,
+        "tier": "C"
+      },
+      {
+        "name": "benchmark",
+        "score": 25.0,
+        "tier": "C"
+      },
+      {
+        "name": "canary",
+        "score": 25.0,
+        "tier": "C"
+      },
+      {
+        "name": "careful",
+        "score": 25.0,
+        "tier": "C"
+      },
+      {
+        "name": "design-review",
+        "score": 25.0,
+        "tier": "C"
+      },
+      {
+        "name": "document-release",
+        "score": 25.0,
+        "tier": "C"
+      },
+      {
+        "name": "guard",
+        "score": 25.0,
+        "tier": "C"
+      },
+      {
+        "name": "land-and-deploy",
+        "score": 25.0,
+        "tier": "C"
+      },
+      {
+        "name": "qa-only",
+        "score": 25.0,
+        "tier": "C"
+      },
+      {
+        "name": "retro",
+        "score": 25.0,
+        "tier": "C"
+      },
+      {
+        "name": "setup-browser-cookies",
+        "score": 25.0,
+        "tier": "C"
+      },
+      {
+        "name": "setup-deploy",
+        "score": 25.0,
+        "tier": "C"
+      },
+      {
+        "name": "ship",
+        "score": 25.0,
+        "tier": "C"
+      }
+    ],
+    "1-validate": [
+      {
+        "name": "brainstorming",
+        "score": 23.2,
+        "tier": "C"
+      },
+      {
+        "name": "competitor-alternatives",
+        "score": 23.1,
+        "tier": "C"
+      },
+      {
+        "name": "office-hours",
+        "score": 23.1,
+        "tier": "C"
+      },
+      {
+        "name": "plan-ceo-review",
+        "score": 23.1,
+        "tier": "C"
+      },
+      {
+        "name": "product-marketing-context",
+        "score": 23.1,
+        "tier": "C"
+      }
+    ],
+    "8-power-tools": [
+      {
+        "name": "prompt-factory",
+        "score": 22.6,
+        "tier": "C"
+      },
+      {
+        "name": "docx",
+        "score": 22.3,
+        "tier": "C"
+      },
+      {
+        "name": "pptx",
+        "score": 22.3,
+        "tier": "C"
+      },
+      {
+        "name": "xlsx",
+        "score": 22.1,
+        "tier": "C"
+      },
+      {
+        "name": "notebooklm",
+        "score": 22.0,
+        "tier": "C"
+      },
+      {
+        "name": "valyu-best-practices",
+        "score": 21.8,
+        "tier": "C"
+      },
+      {
+        "name": "hook-factory",
+        "score": 21.6,
+        "tier": "C"
+      },
+      {
+        "name": "agent-factory",
+        "score": 21.3,
+        "tier": "C"
+      },
+      {
+        "name": "pdf",
+        "score": 21.3,
+        "tier": "C"
+      },
+      {
+        "name": "slash-command-factory",
+        "score": 21.3,
+        "tier": "C"
+      },
+      {
+        "name": "freeze",
+        "score": 21.2,
+        "tier": "C"
+      },
+      {
+        "name": "manage-skills",
+        "score": 21.2,
+        "tier": "C"
+      },
+      {
+        "name": "unfreeze",
+        "score": 21.2,
+        "tier": "C"
+      }
+    ],
+    "5-acquire": [
+      {
+        "name": "cold-email",
+        "score": 21.3,
+        "tier": "C"
+      },
+      {
+        "name": "revops",
+        "score": 21.3,
+        "tier": "C"
+      },
+      {
+        "name": "sales-enablement",
+        "score": 21.3,
+        "tier": "C"
+      },
+      {
+        "name": "ad-creative",
+        "score": 21.2,
+        "tier": "C"
+      },
+      {
+        "name": "email-sequence",
+        "score": 21.2,
+        "tier": "C"
+      },
+      {
+        "name": "paid-ads",
+        "score": 21.2,
+        "tier": "C"
+      },
+      {
+        "name": "referral-program",
+        "score": 21.2,
+        "tier": "C"
+      }
+    ],
+    "6-convert": [
+      {
+        "name": "ab-test-setup",
+        "score": 21.2,
+        "tier": "C"
+      },
+      {
+        "name": "analytics-tracking",
+        "score": 21.2,
+        "tier": "C"
+      },
+      {
+        "name": "form-cro",
+        "score": 21.2,
+        "tier": "C"
+      },
+      {
+        "name": "onboarding-cro",
+        "score": 21.2,
+        "tier": "C"
+      },
+      {
+        "name": "page-cro",
+        "score": 21.2,
+        "tier": "C"
+      },
+      {
+        "name": "paywall-upgrade-cro",
+        "score": 21.2,
+        "tier": "C"
+      },
+      {
+        "name": "pricing-strategy",
+        "score": 21.2,
+        "tier": "C"
+      },
+      {
+        "name": "signup-flow-cro",
+        "score": 21.2,
+        "tier": "C"
+      }
+    ],
+    "4-get-found": [
+      {
+        "name": "ai-seo",
+        "score": 19.2,
+        "tier": "D"
+      },
+      {
+        "name": "content-strategy",
+        "score": 19.2,
+        "tier": "D"
+      },
+      {
+        "name": "copy-editing",
+        "score": 19.2,
+        "tier": "D"
+      },
+      {
+        "name": "copywriting",
+        "score": 19.2,
+        "tier": "D"
+      },
+      {
+        "name": "free-tool-strategy",
+        "score": 19.2,
+        "tier": "D"
+      },
+      {
+        "name": "launch-strategy",
+        "score": 19.2,
+        "tier": "D"
+      },
+      {
+        "name": "lead-magnets",
+        "score": 19.2,
+        "tier": "D"
+      },
+      {
+        "name": "marketing-ideas",
+        "score": 19.2,
+        "tier": "D"
+      },
+      {
+        "name": "marketing-psychology",
+        "score": 19.2,
+        "tier": "D"
+      },
+      {
+        "name": "popup-cro",
+        "score": 19.2,
+        "tier": "D"
+      },
+      {
+        "name": "programmatic-seo",
+        "score": 19.2,
+        "tier": "D"
+      },
+      {
+        "name": "schema-markup",
+        "score": 19.2,
+        "tier": "D"
+      },
+      {
+        "name": "seo-audit",
+        "score": 19.2,
+        "tier": "D"
+      },
+      {
+        "name": "site-architecture",
+        "score": 19.2,
+        "tier": "D"
+      },
+      {
+        "name": "social-content",
+        "score": 19.2,
+        "tier": "D"
+      }
+    ],
+    "7-retain": [
+      {
+        "name": "churn-prevention",
+        "score": 19.2,
+        "tier": "D"
+      }
+    ]
+  },
+  "by_tier": {
+    "S": [
+      {
+        "name": "gstack",
+        "score": 100.0,
+        "phase": "2-build"
+      }
+    ],
+    "A": [
+      {
+        "name": "browse",
+        "score": 68.8,
+        "phase": "3-ship"
+      }
+    ],
+    "C": [
+      {
+        "name": "qa",
+        "score": 25.2,
+        "phase": "3-ship"
+      },
+      {
+        "name": "review",
+        "score": 25.2,
+        "phase": "3-ship"
+      },
+      {
+        "name": "shannon",
+        "score": 25.2,
+        "phase": "3-ship"
+      },
+      {
+        "name": "benchmark",
+        "score": 25.0,
+        "phase": "3-ship"
+      },
+      {
+        "name": "canary",
+        "score": 25.0,
+        "phase": "3-ship"
+      },
+      {
+        "name": "careful",
+        "score": 25.0,
+        "phase": "3-ship"
+      },
+      {
+        "name": "design-review",
+        "score": 25.0,
+        "phase": "3-ship"
+      },
+      {
+        "name": "document-release",
+        "score": 25.0,
+        "phase": "3-ship"
+      },
+      {
+        "name": "guard",
+        "score": 25.0,
+        "phase": "3-ship"
+      },
+      {
+        "name": "land-and-deploy",
+        "score": 25.0,
+        "phase": "3-ship"
+      },
+      {
+        "name": "qa-only",
+        "score": 25.0,
+        "phase": "3-ship"
+      },
+      {
+        "name": "retro",
+        "score": 25.0,
+        "phase": "3-ship"
+      },
+      {
+        "name": "setup-browser-cookies",
+        "score": 25.0,
+        "phase": "3-ship"
+      },
+      {
+        "name": "setup-deploy",
+        "score": 25.0,
+        "phase": "3-ship"
+      },
+      {
+        "name": "ship",
+        "score": 25.0,
+        "phase": "3-ship"
+      },
+      {
+        "name": "brainstorming",
+        "score": 23.2,
+        "phase": "1-validate"
+      },
+      {
+        "name": "writing-skills",
+        "score": 23.2,
+        "phase": "2-build"
+      },
+      {
+        "name": "codex",
+        "score": 23.1,
+        "phase": "2-build"
+      },
+      {
+        "name": "competitor-alternatives",
+        "score": 23.1,
+        "phase": "1-validate"
+      },
+      {
+        "name": "design-consultation",
+        "score": 23.1,
+        "phase": "2-build"
+      },
+      {
+        "name": "executing-plans",
+        "score": 23.1,
+        "phase": "2-build"
+      },
+      {
+        "name": "frontend-design",
+        "score": 23.1,
+        "phase": "2-build"
+      },
+      {
+        "name": "investigate",
+        "score": 23.1,
+        "phase": "2-build"
+      },
+      {
+        "name": "office-hours",
+        "score": 23.1,
+        "phase": "1-validate"
+      },
+      {
+        "name": "plan-ceo-review",
+        "score": 23.1,
+        "phase": "1-validate"
+      },
+      {
+        "name": "plan-design-review",
+        "score": 23.1,
+        "phase": "2-build"
+      },
+      {
+        "name": "plan-eng-review",
+        "score": 23.1,
+        "phase": "2-build"
+      },
+      {
+        "name": "product-marketing-context",
+        "score": 23.1,
+        "phase": "1-validate"
+      },
+      {
+        "name": "receiving-code-review",
+        "score": 23.1,
+        "phase": "2-build"
+      },
+      {
+        "name": "subagent-driven-development",
+        "score": 23.1,
+        "phase": "2-build"
+      },
+      {
+        "name": "test-driven-development",
+        "score": 23.1,
+        "phase": "2-build"
+      },
+      {
+        "name": "using-git-worktrees",
+        "score": 23.1,
+        "phase": "2-build"
+      },
+      {
+        "name": "writing-plans",
+        "score": 23.1,
+        "phase": "2-build"
+      },
+      {
+        "name": "prompt-factory",
+        "score": 22.6,
+        "phase": "8-power-tools"
+      },
+      {
+        "name": "docx",
+        "score": 22.3,
+        "phase": "8-power-tools"
+      },
+      {
+        "name": "pptx",
+        "score": 22.3,
+        "phase": "8-power-tools"
+      },
+      {
+        "name": "xlsx",
+        "score": 22.1,
+        "phase": "8-power-tools"
+      },
+      {
+        "name": "notebooklm",
+        "score": 22.0,
+        "phase": "8-power-tools"
+      },
+      {
+        "name": "valyu-best-practices",
+        "score": 21.8,
+        "phase": "8-power-tools"
+      },
+      {
+        "name": "hook-factory",
+        "score": 21.6,
+        "phase": "8-power-tools"
+      },
+      {
+        "name": "agent-factory",
+        "score": 21.3,
+        "phase": "8-power-tools"
+      },
+      {
+        "name": "cold-email",
+        "score": 21.3,
+        "phase": "5-acquire"
+      },
+      {
+        "name": "pdf",
+        "score": 21.3,
+        "phase": "8-power-tools"
+      },
+      {
+        "name": "revops",
+        "score": 21.3,
+        "phase": "5-acquire"
+      },
+      {
+        "name": "sales-enablement",
+        "score": 21.3,
+        "phase": "5-acquire"
+      },
+      {
+        "name": "slash-command-factory",
+        "score": 21.3,
+        "phase": "8-power-tools"
+      },
+      {
+        "name": "ab-test-setup",
+        "score": 21.2,
+        "phase": "6-convert"
+      },
+      {
+        "name": "ad-creative",
+        "score": 21.2,
+        "phase": "5-acquire"
+      },
+      {
+        "name": "analytics-tracking",
+        "score": 21.2,
+        "phase": "6-convert"
+      },
+      {
+        "name": "email-sequence",
+        "score": 21.2,
+        "phase": "5-acquire"
+      },
+      {
+        "name": "form-cro",
+        "score": 21.2,
+        "phase": "6-convert"
+      },
+      {
+        "name": "freeze",
+        "score": 21.2,
+        "phase": "8-power-tools"
+      },
+      {
+        "name": "manage-skills",
+        "score": 21.2,
+        "phase": "8-power-tools"
+      },
+      {
+        "name": "onboarding-cro",
+        "score": 21.2,
+        "phase": "6-convert"
+      },
+      {
+        "name": "page-cro",
+        "score": 21.2,
+        "phase": "6-convert"
+      },
+      {
+        "name": "paid-ads",
+        "score": 21.2,
+        "phase": "5-acquire"
+      },
+      {
+        "name": "paywall-upgrade-cro",
+        "score": 21.2,
+        "phase": "6-convert"
+      },
+      {
+        "name": "pricing-strategy",
+        "score": 21.2,
+        "phase": "6-convert"
+      },
+      {
+        "name": "referral-program",
+        "score": 21.2,
+        "phase": "5-acquire"
+      },
+      {
+        "name": "signup-flow-cro",
+        "score": 21.2,
+        "phase": "6-convert"
+      },
+      {
+        "name": "unfreeze",
+        "score": 21.2,
+        "phase": "8-power-tools"
+      }
+    ],
+    "D": [
+      {
+        "name": "ai-seo",
+        "score": 19.2,
+        "phase": "4-get-found"
+      },
+      {
+        "name": "churn-prevention",
+        "score": 19.2,
+        "phase": "7-retain"
+      },
+      {
+        "name": "content-strategy",
+        "score": 19.2,
+        "phase": "4-get-found"
+      },
+      {
+        "name": "copy-editing",
+        "score": 19.2,
+        "phase": "4-get-found"
+      },
+      {
+        "name": "copywriting",
+        "score": 19.2,
+        "phase": "4-get-found"
+      },
+      {
+        "name": "free-tool-strategy",
+        "score": 19.2,
+        "phase": "4-get-found"
+      },
+      {
+        "name": "launch-strategy",
+        "score": 19.2,
+        "phase": "4-get-found"
+      },
+      {
+        "name": "lead-magnets",
+        "score": 19.2,
+        "phase": "4-get-found"
+      },
+      {
+        "name": "marketing-ideas",
+        "score": 19.2,
+        "phase": "4-get-found"
+      },
+      {
+        "name": "marketing-psychology",
+        "score": 19.2,
+        "phase": "4-get-found"
+      },
+      {
+        "name": "popup-cro",
+        "score": 19.2,
+        "phase": "4-get-found"
+      },
+      {
+        "name": "programmatic-seo",
+        "score": 19.2,
+        "phase": "4-get-found"
+      },
+      {
+        "name": "schema-markup",
+        "score": 19.2,
+        "phase": "4-get-found"
+      },
+      {
+        "name": "seo-audit",
+        "score": 19.2,
+        "phase": "4-get-found"
+      },
+      {
+        "name": "site-architecture",
+        "score": 19.2,
+        "phase": "4-get-found"
+      },
+      {
+        "name": "social-content",
+        "score": 19.2,
+        "phase": "4-get-found"
+      }
+    ]
+  },
+  "skills": {
+    "ab-test-setup": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert",
+      "all_phases": [
+        "6-convert"
+      ],
+      "description": "When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions \"A/B...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
+      }
+    },
+    "ad-creative": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "5-acquire",
+      "all_phases": [
+        "5-acquire"
+      ],
+      "description": "When the user wants to generate, iterate, or scale ad creative \u2014 headlines, descriptions, primary text, or full ad...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
+      }
+    },
+    "agent-factory": {
+      "score": 21.3,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "Claude Code agent generation system that creates custom agents and sub-agents with enhanced YAML frontmatter, tool...",
+      "signals": {
+        "depth": 0.1,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.3
+      }
+    },
+    "ai-seo": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found",
+      "all_phases": [
+        "4-get-found"
+      ],
+      "description": "When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers....",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "analytics-tracking": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert",
+      "all_phases": [
+        "6-convert"
+      ],
+      "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
+      }
+    },
+    "benchmark": {
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 15.6
+      }
+    },
+    "brainstorming": {
+      "score": 23.2,
+      "tier": "C",
+      "phase": "1-validate",
+      "all_phases": [
+        "1-validate"
+      ],
+      "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying...",
+      "signals": {
+        "depth": 0.1,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.5
+      }
+    },
+    "browse": {
+      "score": 68.8,
+      "tier": "A",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 21.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 42.9
+      }
+    },
+    "canary": {
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 15.6
+      }
+    },
+    "careful": {
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 15.6
+      }
+    },
+    "churn-prevention": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "7-retain",
+      "all_phases": [
+        "7-retain"
+      ],
+      "description": "When the user wants to reduce churn, build cancellation flows, set up save offers, recover failed payments, or...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "codex": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build",
+      "all_phases": [
+        "2-build"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "cold-email": {
+      "score": 21.3,
+      "tier": "C",
+      "phase": "5-acquire",
+      "all_phases": [
+        "5-acquire"
+      ],
+      "description": "Write B2B cold emails and follow-up sequences that get replies. Use when the user wants to write cold outreach emails,...",
+      "signals": {
+        "depth": 0.1,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.3
+      }
+    },
+    "competitor-alternatives": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "1-validate",
+      "all_phases": [
+        "1-validate",
+        "5-acquire"
+      ],
+      "description": "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "content-strategy": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found",
+      "all_phases": [
+        "4-get-found"
+      ],
+      "description": "When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "copy-editing": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found",
+      "all_phases": [
+        "4-get-found"
+      ],
+      "description": "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "copywriting": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found",
+      "all_phases": [
+        "4-get-found"
+      ],
+      "description": "When the user wants to write, rewrite, or improve marketing copy for any page \u2014 including homepage, landing pages,...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "design-consultation": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build",
+      "all_phases": [
+        "2-build"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "design-review": {
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 15.6
+      }
+    },
+    "document-release": {
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 15.6
+      }
+    },
+    "docx": {
+      "score": 22.3,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers...",
+      "signals": {
+        "depth": 0.6,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.9
+      }
+    },
+    "email-sequence": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "5-acquire",
+      "all_phases": [
+        "5-acquire",
+        "7-retain"
+      ],
+      "description": "When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
+      }
+    },
+    "executing-plans": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build",
+      "all_phases": [
+        "2-build"
+      ],
+      "description": "Use when you have a written implementation plan to execute in a separate session with review checkpoints",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "form-cro": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert",
+      "all_phases": [
+        "6-convert"
+      ],
+      "description": "When the user wants to optimize any form that is NOT signup/registration \u2014 including lead capture forms, contact forms,...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
+      }
+    },
+    "free-tool-strategy": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found",
+      "all_phases": [
+        "4-get-found"
+      ],
+      "description": "When the user wants to plan, evaluate, or build a free tool for marketing purposes \u2014 lead generation, SEO value, or...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "freeze": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
+      }
+    },
+    "frontend-design": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build",
+      "all_phases": [
+        "2-build"
+      ],
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "gstack": {
+      "score": 100.0,
+      "tier": "S",
+      "phase": "2-build",
+      "all_phases": [
+        "2-build"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 40.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 62.4
+      }
+    },
+    "guard": {
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 15.6
+      }
+    },
+    "hook-factory": {
+      "score": 21.6,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "Generate production-ready Claude Code hooks with interactive Q&A, automated installation, and enhanced validation....",
+      "signals": {
+        "depth": 0.2,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.5
+      }
+    },
+    "investigate": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build",
+      "all_phases": [
+        "2-build"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "land-and-deploy": {
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 15.6
+      }
+    },
+    "launch-strategy": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found",
+      "all_phases": [
+        "4-get-found"
+      ],
+      "description": "When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "lead-magnets": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found",
+      "all_phases": [
+        "4-get-found"
+      ],
+      "description": "When the user wants to create, plan, or optimize a lead magnet for email capture or lead generation. Also use when the...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "manage-skills": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "Install, update, list, or remove Claude Code skills from the amazing_cc_skills collection. Use when the user mentions...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
+      }
+    },
+    "marketing-ideas": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found",
+      "all_phases": [
+        "4-get-found"
+      ],
+      "description": "When the user needs marketing ideas, inspiration, or strategies for their SaaS or software product. Also use when the...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "marketing-psychology": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found",
+      "all_phases": [
+        "4-get-found"
+      ],
+      "description": "When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "notebooklm": {
+      "score": 22.0,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "Use this skill to query your Google NotebookLM notebooks directly from Claude Code for source-grounded, citation-backed...",
+      "signals": {
+        "depth": 0.4,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.7
+      }
+    },
+    "office-hours": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "1-validate",
+      "all_phases": [
+        "1-validate"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "onboarding-cro": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert",
+      "all_phases": [
+        "6-convert"
+      ],
+      "description": "When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
+      }
+    },
+    "page-cro": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert",
+      "all_phases": [
+        "6-convert"
+      ],
+      "description": "When the user wants to optimize, improve, or increase conversions on any marketing page \u2014 including homepage, landing...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
+      }
+    },
+    "paid-ads": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "5-acquire",
+      "all_phases": [
+        "5-acquire"
+      ],
+      "description": "When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X,...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
+      }
+    },
+    "paywall-upgrade-cro": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert",
+      "all_phases": [
+        "6-convert"
+      ],
+      "description": "When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
+      }
+    },
+    "pdf": {
+      "score": 21.3,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables...",
+      "signals": {
+        "depth": 0.1,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.3
+      }
+    },
+    "plan-ceo-review": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "1-validate",
+      "all_phases": [
+        "1-validate"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "plan-design-review": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build",
+      "all_phases": [
+        "2-build"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "plan-eng-review": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build",
+      "all_phases": [
+        "2-build"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "popup-cro": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found",
+      "all_phases": [
+        "4-get-found"
+      ],
+      "description": "When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "pptx": {
+      "score": 22.3,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "Use this skill any time a .pptx file is involved in any way \u2014 as input, output, or both. This includes: creating slide...",
+      "signals": {
+        "depth": 0.6,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.9
+      }
+    },
+    "pricing-strategy": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert",
+      "all_phases": [
+        "6-convert",
+        "7-retain"
+      ],
+      "description": "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
+      }
+    },
+    "product-marketing-context": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "1-validate",
+      "all_phases": [
+        "1-validate"
+      ],
+      "description": "When the user wants to create or update their product marketing context document. Also use when the user mentions...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "programmatic-seo": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found",
+      "all_phases": [
+        "4-get-found"
+      ],
+      "description": "When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "prompt-factory": {
+      "score": 22.6,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "World-class prompt powerhouse that generates production-ready mega-prompts for any role, industry, and task through...",
+      "signals": {
+        "depth": 0.8,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 14.1
+      }
+    },
+    "qa": {
+      "score": 25.2,
+      "tier": "C",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 15.7
+      }
+    },
+    "qa-only": {
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 15.6
+      }
+    },
+    "receiving-code-review": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build",
+      "all_phases": [
+        "2-build"
+      ],
+      "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "referral-program": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "5-acquire",
+      "all_phases": [
+        "5-acquire"
+      ],
+      "description": "When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy....",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
+      }
+    },
+    "retro": {
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 15.6
+      }
+    },
+    "review": {
+      "score": 25.2,
+      "tier": "C",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.1,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 15.7
+      }
+    },
+    "revops": {
+      "score": 21.3,
+      "tier": "C",
+      "phase": "5-acquire",
+      "all_phases": [
+        "5-acquire"
+      ],
+      "description": "When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes....",
+      "signals": {
+        "depth": 0.1,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.3
+      }
+    },
+    "sales-enablement": {
+      "score": 21.3,
+      "tier": "C",
+      "phase": "5-acquire",
+      "all_phases": [
+        "5-acquire"
+      ],
+      "description": "When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also...",
+      "signals": {
+        "depth": 0.1,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.3
+      }
+    },
+    "schema-markup": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found",
+      "all_phases": [
+        "4-get-found"
+      ],
+      "description": "When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "seo-audit": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found",
+      "all_phases": [
+        "4-get-found"
+      ],
+      "description": "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "setup-browser-cookies": {
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 15.6
+      }
+    },
+    "setup-deploy": {
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 15.6
+      }
+    },
+    "shannon": {
+      "score": 25.2,
+      "tier": "C",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "Autonomous AI pentester for web apps and APIs. Run white-box security assessments with Shannon \u2014 analyzes source code,...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 15.7
+      }
+    },
+    "ship": {
+      "score": 25.0,
+      "tier": "C",
+      "phase": "3-ship",
+      "all_phases": [
+        "3-ship"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.3,
+        "raw_score": 15.6
+      }
+    },
+    "signup-flow-cro": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "6-convert",
+      "all_phases": [
+        "6-convert"
+      ],
+      "description": "When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
+      }
+    },
+    "site-architecture": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found",
+      "all_phases": [
+        "4-get-found"
+      ],
+      "description": "When the user wants to plan, map, or restructure their website's page hierarchy, navigation, URL structure, or internal...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "slash-command-factory": {
+      "score": 21.3,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "Generate custom Claude Code slash commands through intelligent 5-7 question flow. Creates powerful commands for...",
+      "signals": {
+        "depth": 0.1,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.3
+      }
+    },
+    "social-content": {
+      "score": 19.2,
+      "tier": "D",
+      "phase": "4-get-found",
+      "all_phases": [
+        "4-get-found"
+      ],
+      "description": "When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram,...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.0,
+        "raw_score": 12.0
+      }
+    },
+    "subagent-driven-development": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build",
+      "all_phases": [
+        "2-build"
+      ],
+      "description": "Use when executing implementation plans with independent tasks in the current session",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "test-driven-development": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build",
+      "all_phases": [
+        "2-build"
+      ],
+      "description": "Use when implementing any feature or bugfix, before writing implementation code",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "unfreeze": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "|",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
+      }
+    },
+    "using-git-worktrees": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build",
+      "all_phases": [
+        "2-build"
+      ],
+      "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans -...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "valyu-best-practices": {
+      "score": 21.8,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "Complete Valyu API toolkit for AI agents. Use this skill when asked to perform real-time search across web, academic,...",
+      "signals": {
+        "depth": 0.4,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.6
+      }
+    },
+    "writing-plans": {
+      "score": 23.1,
+      "tier": "C",
+      "phase": "2-build",
+      "all_phases": [
+        "2-build"
+      ],
+      "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.4
+      }
+    },
+    "writing-skills": {
+      "score": 23.2,
+      "tier": "C",
+      "phase": "2-build",
+      "all_phases": [
+        "2-build"
+      ],
+      "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+      "signals": {
+        "depth": 0.1,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.2,
+        "raw_score": 14.5
+      }
+    },
+    "xlsx": {
+      "score": 22.1,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to:...",
+      "signals": {
+        "depth": 0.6,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.8
+      }
+    }
+  },
+  "user_overrides": {}
+}

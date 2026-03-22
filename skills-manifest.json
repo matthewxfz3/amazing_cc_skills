@@ -151,7 +151,7 @@
       "discussions",
       "contributors"
     ],
-    "last_ranked": "2026-03-22T00:00:02.550986+00:00",
+    "last_ranked": "2026-03-22T00:05:42.502403+00:00",
     "repo_signals": {
       "stars": 0,
       "forks": 0,
@@ -173,12 +173,7 @@
       "description": "When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions \"A/B...",
       "ranking": {
         "score": 21.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "ad-creative": {
@@ -193,12 +188,7 @@
       "description": "When the user wants to generate, iterate, or scale ad creative \u2014 headlines, descriptions, primary text, or full ad...",
       "ranking": {
         "score": 21.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "agent-factory": {
@@ -213,12 +203,7 @@
       "description": "Claude Code agent generation system that creates custom agents and sub-agents with enhanced YAML frontmatter, tool...",
       "ranking": {
         "score": 21.3,
-        "tier": "C",
-        "signals": {
-          "depth": 0.1,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "ai-seo": {
@@ -233,12 +218,7 @@
       "description": "When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers....",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "analytics-tracking": {
@@ -253,12 +233,7 @@
       "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions...",
       "ranking": {
         "score": 21.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "benchmark": {
@@ -273,12 +248,7 @@
       "description": "|",
       "ranking": {
         "score": 25.0,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "brainstorming": {
@@ -293,12 +263,7 @@
       "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying...",
       "ranking": {
         "score": 23.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.1,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "browse": {
@@ -313,12 +278,7 @@
       "description": "|",
       "ranking": {
         "score": 68.8,
-        "tier": "A",
-        "signals": {
-          "depth": 21.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "A"
       }
     },
     "canary": {
@@ -333,12 +293,7 @@
       "description": "|",
       "ranking": {
         "score": 25.0,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "careful": {
@@ -353,12 +308,7 @@
       "description": "|",
       "ranking": {
         "score": 25.0,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "churn-prevention": {
@@ -373,12 +323,7 @@
       "description": "When the user wants to reduce churn, build cancellation flows, set up save offers, recover failed payments, or...",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "codex": {
@@ -393,12 +338,7 @@
       "description": "|",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "cold-email": {
@@ -413,12 +353,7 @@
       "description": "Write B2B cold emails and follow-up sequences that get replies. Use when the user wants to write cold outreach emails,...",
       "ranking": {
         "score": 21.3,
-        "tier": "C",
-        "signals": {
-          "depth": 0.1,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "competitor-alternatives": {
@@ -434,12 +369,7 @@
       "description": "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when...",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "content-strategy": {
@@ -454,12 +384,7 @@
       "description": "When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also...",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "copy-editing": {
@@ -474,12 +399,7 @@
       "description": "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this...",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "copywriting": {
@@ -494,12 +414,7 @@
       "description": "When the user wants to write, rewrite, or improve marketing copy for any page \u2014 including homepage, landing pages,...",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "design-consultation": {
@@ -514,12 +429,7 @@
       "description": "|",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "design-review": {
@@ -534,12 +444,7 @@
       "description": "|",
       "ranking": {
         "score": 25.0,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "document-release": {
@@ -554,12 +459,7 @@
       "description": "|",
       "ranking": {
         "score": 25.0,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "docx": {
@@ -574,12 +474,7 @@
       "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers...",
       "ranking": {
         "score": 22.3,
-        "tier": "C",
-        "signals": {
-          "depth": 0.6,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "email-sequence": {
@@ -595,12 +490,7 @@
       "description": "When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email...",
       "ranking": {
         "score": 21.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "executing-plans": {
@@ -615,12 +505,7 @@
       "description": "Use when you have a written implementation plan to execute in a separate session with review checkpoints",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "form-cro": {
@@ -635,12 +520,7 @@
       "description": "When the user wants to optimize any form that is NOT signup/registration \u2014 including lead capture forms, contact forms,...",
       "ranking": {
         "score": 21.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "free-tool-strategy": {
@@ -655,12 +535,7 @@
       "description": "When the user wants to plan, evaluate, or build a free tool for marketing purposes \u2014 lead generation, SEO value, or...",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "freeze": {
@@ -675,12 +550,7 @@
       "description": "|",
       "ranking": {
         "score": 21.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "frontend-design": {
@@ -695,12 +565,7 @@
       "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to...",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "gstack": {
@@ -715,12 +580,7 @@
       "description": "|",
       "ranking": {
         "score": 100.0,
-        "tier": "S",
-        "signals": {
-          "depth": 40.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "S"
       }
     },
     "guard": {
@@ -735,12 +595,7 @@
       "description": "|",
       "ranking": {
         "score": 25.0,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "hook-factory": {
@@ -755,12 +610,7 @@
       "description": "Generate production-ready Claude Code hooks with interactive Q&A, automated installation, and enhanced validation....",
       "ranking": {
         "score": 21.6,
-        "tier": "C",
-        "signals": {
-          "depth": 0.2,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "investigate": {
@@ -775,12 +625,7 @@
       "description": "|",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "land-and-deploy": {
@@ -795,12 +640,7 @@
       "description": "|",
       "ranking": {
         "score": 25.0,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "launch-strategy": {
@@ -815,12 +655,7 @@
       "description": "When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user...",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "lead-magnets": {
@@ -835,12 +670,7 @@
       "description": "When the user wants to create, plan, or optimize a lead magnet for email capture or lead generation. Also use when the...",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "manage-skills": {
@@ -855,12 +685,7 @@
       "description": "Install, update, list, or remove Claude Code skills from the amazing_cc_skills collection. Use when the user mentions...",
       "ranking": {
         "score": 21.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "marketing-ideas": {
@@ -875,12 +700,7 @@
       "description": "When the user needs marketing ideas, inspiration, or strategies for their SaaS or software product. Also use when the...",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "marketing-psychology": {
@@ -895,12 +715,7 @@
       "description": "When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when...",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "notebooklm": {
@@ -915,12 +730,7 @@
       "description": "Use this skill to query your Google NotebookLM notebooks directly from Claude Code for source-grounded, citation-backed...",
       "ranking": {
         "score": 22.0,
-        "tier": "C",
-        "signals": {
-          "depth": 0.4,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "office-hours": {
@@ -935,12 +745,7 @@
       "description": "|",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "onboarding-cro": {
@@ -955,12 +760,7 @@
       "description": "When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also...",
       "ranking": {
         "score": 21.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "page-cro": {
@@ -975,12 +775,7 @@
       "description": "When the user wants to optimize, improve, or increase conversions on any marketing page \u2014 including homepage, landing...",
       "ranking": {
         "score": 21.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "paid-ads": {
@@ -995,12 +790,7 @@
       "description": "When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X,...",
       "ranking": {
         "score": 21.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "paywall-upgrade-cro": {
@@ -1015,12 +805,7 @@
       "description": "When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use...",
       "ranking": {
         "score": 21.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "pdf": {
@@ -1035,12 +820,7 @@
       "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables...",
       "ranking": {
         "score": 21.3,
-        "tier": "C",
-        "signals": {
-          "depth": 0.1,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "plan-ceo-review": {
@@ -1055,12 +835,7 @@
       "description": "|",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "plan-design-review": {
@@ -1075,12 +850,7 @@
       "description": "|",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "plan-eng-review": {
@@ -1095,12 +865,7 @@
       "description": "|",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "popup-cro": {
@@ -1115,12 +880,7 @@
       "description": "When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also...",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "pptx": {
@@ -1135,12 +895,7 @@
       "description": "Use this skill any time a .pptx file is involved in any way \u2014 as input, output, or both. This includes: creating slide...",
       "ranking": {
         "score": 22.3,
-        "tier": "C",
-        "signals": {
-          "depth": 0.6,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "pricing-strategy": {
@@ -1156,12 +911,7 @@
       "description": "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions...",
       "ranking": {
         "score": 21.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "product-marketing-context": {
@@ -1176,12 +926,7 @@
       "description": "When the user wants to create or update their product marketing context document. Also use when the user mentions...",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "programmatic-seo": {
@@ -1196,12 +941,7 @@
       "description": "When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions...",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "prompt-factory": {
@@ -1216,12 +956,7 @@
       "description": "World-class prompt powerhouse that generates production-ready mega-prompts for any role, industry, and task through...",
       "ranking": {
         "score": 22.6,
-        "tier": "C",
-        "signals": {
-          "depth": 0.8,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "qa": {
@@ -1236,12 +971,7 @@
       "description": "|",
       "ranking": {
         "score": 25.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "qa-only": {
@@ -1256,12 +986,7 @@
       "description": "|",
       "ranking": {
         "score": 25.0,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "receiving-code-review": {
@@ -1276,12 +1001,7 @@
       "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or...",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "referral-program": {
@@ -1296,12 +1016,7 @@
       "description": "When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy....",
       "ranking": {
         "score": 21.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "retro": {
@@ -1316,12 +1031,7 @@
       "description": "|",
       "ranking": {
         "score": 25.0,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "review": {
@@ -1336,12 +1046,7 @@
       "description": "|",
       "ranking": {
         "score": 25.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.1,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "revops": {
@@ -1356,12 +1061,7 @@
       "description": "When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes....",
       "ranking": {
         "score": 21.3,
-        "tier": "C",
-        "signals": {
-          "depth": 0.1,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "sales-enablement": {
@@ -1376,12 +1076,7 @@
       "description": "When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also...",
       "ranking": {
         "score": 21.3,
-        "tier": "C",
-        "signals": {
-          "depth": 0.1,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "schema-markup": {
@@ -1396,12 +1091,7 @@
       "description": "When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user...",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "seo-audit": {
@@ -1416,12 +1106,7 @@
       "description": "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO...",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "setup-browser-cookies": {
@@ -1436,12 +1121,7 @@
       "description": "|",
       "ranking": {
         "score": 25.0,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "setup-deploy": {
@@ -1456,12 +1136,7 @@
       "description": "|",
       "ranking": {
         "score": 25.0,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "shannon": {
@@ -1476,12 +1151,7 @@
       "description": "Autonomous AI pentester for web apps and APIs. Run white-box security assessments with Shannon \u2014 analyzes source code,...",
       "ranking": {
         "score": 25.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "ship": {
@@ -1496,12 +1166,7 @@
       "description": "|",
       "ranking": {
         "score": 25.0,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "signup-flow-cro": {
@@ -1516,12 +1181,7 @@
       "description": "When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the...",
       "ranking": {
         "score": 21.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "site-architecture": {
@@ -1536,12 +1196,7 @@
       "description": "When the user wants to plan, map, or restructure their website's page hierarchy, navigation, URL structure, or internal...",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "slash-command-factory": {
@@ -1556,12 +1211,7 @@
       "description": "Generate custom Claude Code slash commands through intelligent 5-7 question flow. Creates powerful commands for...",
       "ranking": {
         "score": 21.3,
-        "tier": "C",
-        "signals": {
-          "depth": 0.1,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "social-content": {
@@ -1576,12 +1226,7 @@
       "description": "When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram,...",
       "ranking": {
         "score": 19.2,
-        "tier": "D",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "D"
       }
     },
     "subagent-driven-development": {
@@ -1596,12 +1241,7 @@
       "description": "Use when executing implementation plans with independent tasks in the current session",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "test-driven-development": {
@@ -1616,12 +1256,7 @@
       "description": "Use when implementing any feature or bugfix, before writing implementation code",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "unfreeze": {
@@ -1636,12 +1271,7 @@
       "description": "|",
       "ranking": {
         "score": 21.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "using-git-worktrees": {
@@ -1656,12 +1286,7 @@
       "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans -...",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "valyu-best-practices": {
@@ -1676,12 +1301,7 @@
       "description": "Complete Valyu API toolkit for AI agents. Use this skill when asked to perform real-time search across web, academic,...",
       "ranking": {
         "score": 21.8,
-        "tier": "C",
-        "signals": {
-          "depth": 0.4,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "writing-plans": {
@@ -1696,12 +1316,7 @@
       "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
       "ranking": {
         "score": 23.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.0,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "writing-skills": {
@@ -1716,12 +1331,7 @@
       "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
       "ranking": {
         "score": 23.2,
-        "tier": "C",
-        "signals": {
-          "depth": 0.1,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     },
     "xlsx": {
@@ -1736,12 +1346,7 @@
       "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to:...",
       "ranking": {
         "score": 22.1,
-        "tier": "C",
-        "signals": {
-          "depth": 0.6,
-          "mentions": 0,
-          "desc_quality": 10
-        }
+        "tier": "C"
       }
     }
   }
