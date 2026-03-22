@@ -29,63 +29,39 @@ PROJ_ROOT = Path(__file__).resolve().parent.parent
 SKILLS_DIR = PROJ_ROOT / "skills"
 
 # ============================================================================
-# Risk patterns: (category, severity, pattern, description)
-#
-# Severity levels:
-#   critical  — almost certainly dangerous (sending messages, DB access)
-#   high      — likely dangerous (network calls, file access)
-#   medium    — potentially dangerous (code execution, env vars)
-#   low       — worth noting (logging, file writes)
+# Risk patterns loaded from security-patterns.json
+# To add new patterns, edit lib/security-patterns.json — not this file.
 # ============================================================================
 
-RISK_PATTERNS = [
-    # --- Database access ---
-    ("database", "critical", r"chat\.db|messages\.db|contacts\.db", "Accesses local message/contact database"),
-    ("database", "critical", r"~/Library/Messages|~/Library/Mail", "Accesses private macOS app data"),
-    ("database", "high", r"sqlite3|sqlite|\.db\b", "Uses SQLite database access"),
-    ("database", "high", r"SELECT\s+.+\s+FROM|INSERT\s+INTO|DELETE\s+FROM|DROP\s+TABLE", "Contains raw SQL queries"),
+PATTERNS_FILE = Path(__file__).parent / "security-patterns.json"
 
-    # --- Messaging / sending ---
-    ("messaging", "critical", r"send.?message|send.?text|send.?sms|send.?imessage", "Can send messages (iMessage/SMS)"),
-    ("messaging", "critical", r"send.?email|smtp|sendgrid|mailgun|ses\.send", "Can send emails"),
-    ("messaging", "high", r"slack.*post|slack.*send|webhook.*send", "Can post to Slack/webhooks"),
-    ("messaging", "high", r"osascript.*Messages|tell application.*Messages", "Uses AppleScript to control Messages.app"),
 
-    # --- File system access ---
-    ("filesystem", "high", r"~/Library/|/Library/|/Users/\w+/Library", "Accesses macOS Library directories"),
-    ("filesystem", "high", r"Full Disk Access|full.?disk.?access", "Requires Full Disk Access permission"),
-    ("filesystem", "medium", r"~/.ssh|~/.aws|~/.config|~/.env|credentials", "Accesses sensitive config/credential files"),
-    ("filesystem", "medium", r"keychain|security find-password|security find-generic", "Accesses macOS Keychain"),
+def load_patterns() -> list[tuple[str, str, str, str]]:
+    """Load risk patterns from config file. Falls back to minimal hardcoded set."""
+    if PATTERNS_FILE.exists():
+        try:
+            with open(PATTERNS_FILE) as f:
+                data = json.load(f)
+            return [
+                (p["category"], p["severity"], p["pattern"], p["description"])
+                for p in data.get("patterns", [])
+            ]
+        except (json.JSONDecodeError, KeyError) as e:
+            print(f"Warning: Failed to load {PATTERNS_FILE}: {e}", file=sys.stderr)
 
-    # --- Network / external calls ---
-    ("network", "high", r"curl\s+.*POST|curl\s+.*-X\s+POST|requests\.post\(", "Makes POST requests to external services"),
-    ("network", "medium", r"curl\s|wget\s|requests\.(get|put|delete)\(|fetch\(|urllib", "Makes network requests"),
-    ("network", "medium", r"https?://(?!kroki\.io|cdn\.jsdelivr|github\.com|storage\.googleapis)", "Calls external URLs (not common CDNs)"),
+    # Minimal fallback if config file is missing or broken
+    return [
+        ("database", "critical", r"chat\.db|messages\.db", "Accesses message database"),
+        ("messaging", "critical", r"send.?message|send.?email", "Can send messages/email"),
+        ("filesystem", "high", r"~/Library/|Full Disk Access", "Accesses private dirs"),
+        ("execution", "high", r"eval\(|exec\(|shell=True", "Dynamic code execution"),
+        ("credentials", "high", r"API.?KEY|SECRET.?KEY|password", "References credentials"),
+        ("destructive", "critical", r"rm\s+-rf\s+[~/]", "Destructive file deletion"),
+        ("exfiltration", "critical", r"base64.*encode.*curl", "Data exfiltration"),
+    ]
 
-    # --- Code execution ---
-    ("execution", "high", r"eval\(|exec\(|subprocess.*shell\s*=\s*True", "Dynamic code execution (eval/exec/shell)"),
-    ("execution", "medium", r"os\.system\(|os\.popen\(|subprocess\.run\(|subprocess\.Popen\(", "Spawns system processes"),
-    ("execution", "medium", r"osascript|applescript", "Runs AppleScript (can control macOS apps)"),
 
-    # --- Credential / token access ---
-    ("credentials", "high", r"API.?KEY|API.?TOKEN|SECRET.?KEY|PRIVATE.?KEY|Bearer\s", "References API keys or tokens"),
-    ("credentials", "high", r"password|passwd|OPENAI_API_KEY|ANTHROPIC_API_KEY", "References passwords or known API keys"),
-    ("credentials", "medium", r"os\.environ|process\.env|getenv\(", "Reads environment variables"),
-
-    # --- Destructive operations ---
-    ("destructive", "critical", r"rm\s+-rf\s+[~/]|rm\s+-rf\s+/", "Destructive file deletion from root/home"),
-    ("destructive", "high", r"git\s+push\s+.*--force|git\s+reset\s+--hard", "Force push or hard reset"),
-    ("destructive", "medium", r"DROP\s+TABLE|TRUNCATE\s+TABLE|DELETE\s+FROM\s+\w+\s*;", "Destructive database operations"),
-
-    # --- Data exfiltration ---
-    ("exfiltration", "critical", r"base64.*encode.*curl|curl.*base64|upload.*private|exfil", "Potential data exfiltration pattern"),
-    ("exfiltration", "high", r"upload.*to.*external|send.*data.*to.*server", "Sends data to external server"),
-
-    # --- Privacy ---
-    ("privacy", "high", r"location|GPS|geolocation|CLLocationManager", "Accesses location data"),
-    ("privacy", "high", r"camera|microphone|screen.?capture|screenshot.*upload", "Accesses camera/microphone/screen"),
-    ("privacy", "medium", r"browsing.?history|browser.?history|cookies|localStorage", "Accesses browser data"),
-]
+RISK_PATTERNS = load_patterns()
 
 # Patterns to ignore (documentation, comments about security)
 IGNORE_PATTERNS = [
@@ -143,13 +119,21 @@ def scan_skill(skill_name: str) -> dict:
     if not skill_dir.is_dir():
         return {"skill": skill_name, "error": "not found", "findings": []}
 
+    SCAN_EXTENSIONS = {".md", ".py", ".js", ".ts", ".sh", ".bash", ".yaml", ".yml",
+                       ".json", ".toml", ".cfg", ".conf", ".html"}
+    MAX_FILE_SIZE = 100_000  # Skip files >100KB (likely generated/bundled)
+
     findings = []
     for filepath in skill_dir.rglob("*"):
-        if filepath.is_file() and filepath.suffix in (
-            ".md", ".py", ".js", ".ts", ".sh", ".bash", ".yaml", ".yml",
-            ".json", ".toml", ".cfg", ".conf", ".html",
-        ):
-            findings.extend(scan_file(filepath))
+        if not filepath.is_file():
+            continue
+        if filepath.suffix not in SCAN_EXTENSIONS:
+            continue
+        if filepath.stat().st_size > MAX_FILE_SIZE:
+            continue
+        if filepath.is_symlink():
+            continue
+        findings.extend(scan_file(filepath))
 
     # Compute risk score
     severity_weights = {"critical": 10, "high": 5, "medium": 2, "low": 1}

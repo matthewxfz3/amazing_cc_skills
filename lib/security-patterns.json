@@ -1,0 +1,340 @@
+{
+  "_comment": "Security risk patterns for Claude Code skill scanning. Add new patterns here, not in security.py.",
+  "_schema": {
+    "pattern_entry": "{category: str, severity: critical|high|medium|low, pattern: regex, description: str}",
+    "categories": ["database", "messaging", "filesystem", "network", "execution", "credentials", "destructive", "exfiltration", "prompt-injection", "supply-chain", "persistence"],
+    "severities": {
+      "critical": "Almost certainly dangerous — sending messages, DB access, data exfil",
+      "high": "Likely dangerous — network calls, private file access, code execution",
+      "medium": "Potentially dangerous — env vars, subprocess, external URLs",
+      "low": "Worth noting — logging, file writes, non-sensitive operations"
+    }
+  },
+  "version": "2.0.0",
+  "last_updated": "2026-03-22",
+  "patterns": [
+    {
+      "category": "database",
+      "severity": "critical",
+      "pattern": "chat\\.db|messages\\.db|contacts\\.db|call_history\\.db",
+      "description": "Accesses local message/contact/call database"
+    },
+    {
+      "category": "database",
+      "severity": "critical",
+      "pattern": "~/Library/Messages|~/Library/Mail|~/Library/Calendars",
+      "description": "Accesses private macOS app data directories"
+    },
+    {
+      "category": "database",
+      "severity": "high",
+      "pattern": "sqlite3|sqlite|import sqlite|\\.db\\b",
+      "description": "Uses SQLite database access"
+    },
+    {
+      "category": "database",
+      "severity": "high",
+      "pattern": "SELECT\\s+.+\\s+FROM|INSERT\\s+INTO|DELETE\\s+FROM|DROP\\s+TABLE|UPDATE\\s+\\w+\\s+SET",
+      "description": "Contains raw SQL queries"
+    },
+
+    {
+      "category": "messaging",
+      "severity": "critical",
+      "pattern": "send.?message|send.?text|send.?sms|send.?imessage|tool_send_message",
+      "description": "Can send messages (iMessage/SMS)"
+    },
+    {
+      "category": "messaging",
+      "severity": "critical",
+      "pattern": "send.?email|smtp|sendgrid|mailgun|ses\\.send|resend\\.emails",
+      "description": "Can send emails"
+    },
+    {
+      "category": "messaging",
+      "severity": "high",
+      "pattern": "slack.*post|slack.*send|webhook.*send|discord.*send",
+      "description": "Can post to Slack/Discord/webhooks"
+    },
+    {
+      "category": "messaging",
+      "severity": "high",
+      "pattern": "osascript.*Messages|tell application.*Messages",
+      "description": "Uses AppleScript to control Messages.app"
+    },
+    {
+      "category": "messaging",
+      "severity": "high",
+      "pattern": "twilio|messagebird|vonage|plivo",
+      "description": "Uses SMS/messaging API service"
+    },
+
+    {
+      "category": "filesystem",
+      "severity": "high",
+      "pattern": "~/Library/|/Library/|/Users/\\w+/Library",
+      "description": "Accesses macOS Library directories"
+    },
+    {
+      "category": "filesystem",
+      "severity": "high",
+      "pattern": "Full Disk Access|full.?disk.?access|FDA",
+      "description": "Requires Full Disk Access permission"
+    },
+    {
+      "category": "filesystem",
+      "severity": "high",
+      "pattern": "~/.ssh|~/.gnupg|~/.aws/credentials|~/.config/gcloud",
+      "description": "Accesses SSH keys, GPG keys, or cloud credentials"
+    },
+    {
+      "category": "filesystem",
+      "severity": "medium",
+      "pattern": "~/.env|\\.env\\b|credentials\\.json|service.?account",
+      "description": "Accesses environment or credential files"
+    },
+    {
+      "category": "filesystem",
+      "severity": "medium",
+      "pattern": "keychain|security find-password|security find-generic|security find-identity",
+      "description": "Accesses macOS Keychain"
+    },
+    {
+      "category": "filesystem",
+      "severity": "medium",
+      "pattern": "/etc/passwd|/etc/shadow|/etc/hosts",
+      "description": "Accesses system files"
+    },
+
+    {
+      "category": "network",
+      "severity": "high",
+      "pattern": "curl\\s+.*POST|curl\\s+.*-X\\s+POST|curl\\s+.*-d\\s|requests\\.post\\(",
+      "description": "Makes POST requests to external services"
+    },
+    {
+      "category": "network",
+      "severity": "medium",
+      "pattern": "curl\\s|wget\\s|requests\\.(get|put|delete)\\(|fetch\\(|urllib|httpx",
+      "description": "Makes network requests"
+    },
+    {
+      "category": "network",
+      "severity": "medium",
+      "pattern": "ngrok|localtunnel|serveo|bore\\.pub",
+      "description": "Exposes local services to the internet"
+    },
+    {
+      "category": "network",
+      "severity": "low",
+      "pattern": "https?://(?!kroki\\.io|cdn\\.jsdelivr|github\\.com|storage\\.googleapis)",
+      "description": "References external URLs (not common CDNs)"
+    },
+
+    {
+      "category": "execution",
+      "severity": "critical",
+      "pattern": "eval\\(.*\\$|eval\\(.*input|eval\\(.*request|eval\\(.*user",
+      "description": "Evals user-controlled input (injection risk)"
+    },
+    {
+      "category": "execution",
+      "severity": "high",
+      "pattern": "eval\\(|exec\\(|subprocess.*shell\\s*=\\s*True",
+      "description": "Dynamic code execution (eval/exec/shell)"
+    },
+    {
+      "category": "execution",
+      "severity": "medium",
+      "pattern": "os\\.system\\(|os\\.popen\\(|subprocess\\.run\\(|subprocess\\.Popen\\(",
+      "description": "Spawns system processes"
+    },
+    {
+      "category": "execution",
+      "severity": "medium",
+      "pattern": "osascript|applescript|tell application",
+      "description": "Runs AppleScript (can control macOS apps)"
+    },
+    {
+      "category": "execution",
+      "severity": "medium",
+      "pattern": "child_process|spawn\\(|execSync\\(",
+      "description": "Node.js child process execution"
+    },
+
+    {
+      "category": "credentials",
+      "severity": "high",
+      "pattern": "API.?KEY|API.?TOKEN|SECRET.?KEY|PRIVATE.?KEY|Bearer\\s",
+      "description": "References API keys or tokens"
+    },
+    {
+      "category": "credentials",
+      "severity": "high",
+      "pattern": "password|passwd|OPENAI_API_KEY|ANTHROPIC_API_KEY|GOOGLE_API_KEY",
+      "description": "References passwords or known API keys"
+    },
+    {
+      "category": "credentials",
+      "severity": "medium",
+      "pattern": "os\\.environ|process\\.env|getenv\\(",
+      "description": "Reads environment variables"
+    },
+    {
+      "category": "credentials",
+      "severity": "medium",
+      "pattern": "jwt\\.decode|jwt\\.sign|token.*secret|signing.?key",
+      "description": "Handles JWT tokens or signing keys"
+    },
+
+    {
+      "category": "destructive",
+      "severity": "critical",
+      "pattern": "rm\\s+-rf\\s+[~/]|rm\\s+-rf\\s+/|rm\\s+-rf\\s+\\$",
+      "description": "Destructive file deletion from root/home/variable path"
+    },
+    {
+      "category": "destructive",
+      "severity": "high",
+      "pattern": "git\\s+push\\s+.*--force|git\\s+reset\\s+--hard|git\\s+clean\\s+-fd",
+      "description": "Force push, hard reset, or force clean"
+    },
+    {
+      "category": "destructive",
+      "severity": "medium",
+      "pattern": "DROP\\s+TABLE|TRUNCATE\\s+TABLE|DELETE\\s+FROM\\s+\\w+\\s*;",
+      "description": "Destructive database operations"
+    },
+    {
+      "category": "destructive",
+      "severity": "medium",
+      "pattern": "format\\s+disk|mkfs|fdisk|diskutil\\s+erase",
+      "description": "Disk formatting operations"
+    },
+
+    {
+      "category": "exfiltration",
+      "severity": "critical",
+      "pattern": "base64.*encode.*curl|curl.*base64|upload.*private|exfil",
+      "description": "Data exfiltration pattern (encode + send)"
+    },
+    {
+      "category": "exfiltration",
+      "severity": "critical",
+      "pattern": "cat.*\\|.*curl|tar.*\\|.*curl|zip.*\\|.*nc\\s",
+      "description": "Pipes file content to network command"
+    },
+    {
+      "category": "exfiltration",
+      "severity": "high",
+      "pattern": "upload.*to.*external|send.*data.*to.*server|post.*to.*webhook",
+      "description": "Sends data to external server"
+    },
+    {
+      "category": "exfiltration",
+      "severity": "high",
+      "pattern": "dns.*exfil|nslookup.*\\$|dig.*\\$",
+      "description": "DNS-based data exfiltration"
+    },
+
+    {
+      "category": "prompt-injection",
+      "severity": "critical",
+      "pattern": "ignore previous|ignore above|disregard.*instructions|forget.*instructions|override.*system",
+      "description": "Prompt injection attempt in skill content"
+    },
+    {
+      "category": "prompt-injection",
+      "severity": "critical",
+      "pattern": "you are now|act as|pretend to be|new role|new persona|jailbreak",
+      "description": "Role hijacking attempt"
+    },
+    {
+      "category": "prompt-injection",
+      "severity": "high",
+      "pattern": "system:\\s|<system>|\\[SYSTEM\\]|IMPORTANT:\\s*ignore|IMPORTANT:\\s*override",
+      "description": "Fake system message injection"
+    },
+    {
+      "category": "prompt-injection",
+      "severity": "high",
+      "pattern": "do not reveal|never mention|hide.*from.*user|don't tell.*user",
+      "description": "Attempts to hide behavior from user"
+    },
+    {
+      "category": "prompt-injection",
+      "severity": "medium",
+      "pattern": "base64.*decode.*execute|decode.*run|hidden.*instruction",
+      "description": "Obfuscated instruction execution"
+    },
+
+    {
+      "category": "supply-chain",
+      "severity": "critical",
+      "pattern": "curl.*\\|\\s*sh|curl.*\\|\\s*bash|wget.*\\|\\s*sh|pip install.*--index-url",
+      "description": "Pipe-to-shell installation (supply chain risk)"
+    },
+    {
+      "category": "supply-chain",
+      "severity": "high",
+      "pattern": "npm install.*--registry|pip install.*-i\\s|gem install.*--source",
+      "description": "Installs from non-default registry"
+    },
+    {
+      "category": "supply-chain",
+      "severity": "medium",
+      "pattern": "git clone.*&&.*cd.*&&.*make|git clone.*&&.*install",
+      "description": "Clone and execute pattern"
+    },
+    {
+      "category": "supply-chain",
+      "severity": "medium",
+      "pattern": "docker run.*--privileged|docker.*-v /:/|docker.*--pid=host",
+      "description": "Docker with host-level access"
+    },
+
+    {
+      "category": "persistence",
+      "severity": "critical",
+      "pattern": "crontab|launchctl.*load|systemctl.*enable|~/.bashrc|~/.zshrc|~/.profile",
+      "description": "Installs persistent scheduled task or modifies shell profile"
+    },
+    {
+      "category": "persistence",
+      "severity": "high",
+      "pattern": "LaunchAgents|LaunchDaemons|/etc/cron|autostart",
+      "description": "Creates persistent service or autostart entry"
+    },
+    {
+      "category": "persistence",
+      "severity": "medium",
+      "pattern": "chmod\\s+[47]|chmod.*\\+s|setuid|setgid",
+      "description": "Changes file permissions (setuid/world-writable)"
+    },
+
+    {
+      "category": "privacy",
+      "severity": "high",
+      "pattern": "location|GPS|geolocation|CLLocationManager|CoreLocation",
+      "description": "Accesses location data"
+    },
+    {
+      "category": "privacy",
+      "severity": "high",
+      "pattern": "camera|microphone|screen.?capture|screenshot.*upload|AVCaptureDevice",
+      "description": "Accesses camera/microphone/screen"
+    },
+    {
+      "category": "privacy",
+      "severity": "medium",
+      "pattern": "browsing.?history|browser.?history|cookies|localStorage|IndexedDB",
+      "description": "Accesses browser data"
+    },
+    {
+      "category": "privacy",
+      "severity": "medium",
+      "pattern": "clipboard|pasteboard|pbpaste|pbcopy.*sensitive",
+      "description": "Accesses clipboard content"
+    }
+  ]
+}
