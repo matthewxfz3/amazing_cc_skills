@@ -1,6 +1,6 @@
 {
   "version": "3.0.0",
-  "last_updated": "2026-03-21T23:47:05.374806+00:00",
+  "last_updated": "2026-03-21T23:58:53.168305+00:00",
   "repo": "https://github.com/matthewxfz3/amazing_cc_skills",
   "categories": {
     "1-validate": {
@@ -151,8 +151,7 @@
       "discussions",
       "contributors"
     ],
-    "formula": "composite = stars*1.0 + forks*2.0 + issues_opened*0.5 + discussions*0.3 + contributors*3.0",
-    "last_ranked": "2026-03-21T23:47:12.057802+00:00",
+    "last_ranked": "2026-03-22T00:00:02.550986+00:00",
     "repo_signals": {
       "stars": 0,
       "forks": 0,
@@ -164,226 +163,229 @@
   "skills": {
     "ab-test-setup": {
       "category": "6-convert",
+      "phases": [
+        "6-convert"
+      ],
       "checksum": "e663f0ebe256a9864366f42752c127db",
       "last_updated": "2026-03-21T23:20:12.854150+00:00",
       "file_count": 4,
       "size_bytes": 29298,
       "description": "When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions \"A/B...",
       "ranking": {
-        "score": 23.1,
+        "score": 21.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "6-convert"
-      ]
+      }
     },
     "ad-creative": {
       "category": "5-acquire",
+      "phases": [
+        "5-acquire"
+      ],
       "checksum": "9a7094558a04c6f549bd71f78565cd18",
       "last_updated": "2026-03-21T23:20:12.856013+00:00",
       "file_count": 4,
       "size_bytes": 51069,
       "description": "When the user wants to generate, iterate, or scale ad creative \u2014 headlines, descriptions, primary text, or full ad...",
       "ranking": {
-        "score": 23.1,
+        "score": 21.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "5-acquire"
-      ]
+      }
     },
     "agent-factory": {
       "category": "8-power-tools",
+      "phases": [
+        "8-power-tools"
+      ],
       "checksum": "7a275bfdf83b5ebd1ca246cbe4517c07",
       "last_updated": "2026-03-21T23:20:12.858408+00:00",
       "file_count": 6,
       "size_bytes": 35846,
       "description": "Claude Code agent generation system that creates custom agents and sub-agents with enhanced YAML frontmatter, tool...",
       "ranking": {
-        "score": 23.3,
+        "score": 21.3,
         "tier": "C",
         "signals": {
           "depth": 0.1,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "8-power-tools"
-      ]
+      }
     },
     "ai-seo": {
       "category": "4-get-found",
+      "phases": [
+        "4-get-found"
+      ],
       "checksum": "560001b82083976ba150b30c21a7eec3",
       "last_updated": "2026-03-21T23:20:12.860726+00:00",
       "file_count": 4,
       "size_bytes": 44527,
       "description": "When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers....",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "4-get-found"
-      ]
+      }
     },
     "analytics-tracking": {
       "category": "6-convert",
+      "phases": [
+        "6-convert"
+      ],
       "checksum": "925bcc6c9542b1dd9854605d4979bb6a",
       "last_updated": "2026-03-21T23:20:12.863346+00:00",
       "file_count": 5,
       "size_bytes": 37307,
       "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions...",
       "ranking": {
-        "score": 23.1,
+        "score": 21.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "6-convert"
-      ]
+      }
     },
     "benchmark": {
       "category": "3-ship",
+      "phases": [
+        "3-ship"
+      ],
       "checksum": "119114ef781bc59d3986db80f0fafc89",
       "last_updated": "2026-03-21T23:20:12.864190+00:00",
       "file_count": 2,
       "size_bytes": 32052,
       "description": "|",
       "ranking": {
-        "score": 23.1,
+        "score": 25.0,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "brainstorming": {
       "category": "1-validate",
+      "phases": [
+        "1-validate"
+      ],
       "checksum": "6004094dc4915f4112d03b06596b3b75",
       "last_updated": "2026-03-21T23:20:12.867615+00:00",
       "file_count": 8,
       "size_bytes": 51168,
       "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying...",
       "ranking": {
-        "score": 23.3,
+        "score": 23.2,
         "tier": "C",
         "signals": {
           "depth": 0.1,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "1-validate"
-      ]
+      }
     },
     "browse": {
       "category": "3-ship",
-      "checksum": "26b38abfe77d01cebc86b45792679c88",
+      "phases": [
+        "3-ship"
+      ],
+      "checksum": "aab3ec9ea2f7bbf200b9b15611e6a7cf",
       "last_updated": "2026-03-21T23:20:12.905190+00:00",
       "file_count": 54,
       "size_bytes": 122630697,
       "description": "|",
       "ranking": {
-        "score": 63.5,
+        "score": 68.8,
         "tier": "A",
         "signals": {
           "depth": 21.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "canary": {
       "category": "3-ship",
+      "phases": [
+        "3-ship"
+      ],
       "checksum": "f47fbf3fc2445c265c79578bc0b326dd",
       "last_updated": "2026-03-21T23:20:12.932387+00:00",
       "file_count": 2,
       "size_bytes": 30268,
       "description": "|",
       "ranking": {
-        "score": 23.1,
+        "score": 25.0,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "careful": {
       "category": "3-ship",
+      "phases": [
+        "3-ship"
+      ],
       "checksum": "00b3549521a791e9b843a44eadd04d27",
       "last_updated": "2026-03-21T23:20:12.934124+00:00",
       "file_count": 3,
       "size_bytes": 9064,
       "description": "|",
       "ranking": {
-        "score": 23.1,
+        "score": 25.0,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "churn-prevention": {
       "category": "7-retain",
+      "phases": [
+        "7-retain"
+      ],
       "checksum": "162c9cb5d5f60b6c92573b3d767a1b31",
       "last_updated": "2026-03-21T23:20:12.939757+00:00",
       "file_count": 4,
       "size_bytes": 48525,
       "description": "When the user wants to reduce churn, build cancellation flows, set up save offers, recover failed payments, or...",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "7-retain"
-      ]
+      }
     },
     "codex": {
       "category": "2-build",
+      "phases": [
+        "2-build"
+      ],
       "checksum": "466d593b9bfcc669eb1d8a0f93946b3f",
       "last_updated": "2026-03-21T23:20:12.942152+00:00",
       "file_count": 2,
@@ -397,33 +399,34 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "2-build"
-      ]
+      }
     },
     "cold-email": {
       "category": "5-acquire",
+      "phases": [
+        "5-acquire"
+      ],
       "checksum": "198aaa14247d7ffd80aad55350a542fe",
       "last_updated": "2026-03-21T23:20:12.951723+00:00",
       "file_count": 7,
       "size_bytes": 36793,
       "description": "Write B2B cold emails and follow-up sequences that get replies. Use when the user wants to write cold outreach emails,...",
       "ranking": {
-        "score": 23.3,
+        "score": 21.3,
         "tier": "C",
         "signals": {
           "depth": 0.1,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "5-acquire"
-      ]
+      }
     },
     "competitor-alternatives": {
       "category": "1-validate",
+      "phases": [
+        "1-validate",
+        "5-acquire"
+      ],
       "checksum": "e7b74bdbf04dc4c2e1cde4a6fda2bf87",
       "last_updated": "2026-03-21T23:20:12.953570+00:00",
       "file_count": 4,
@@ -437,74 +440,73 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "1-validate",
-        "5-acquire"
-      ]
+      }
     },
     "content-strategy": {
       "category": "4-get-found",
+      "phases": [
+        "4-get-found"
+      ],
       "checksum": "b36b7c036e2f03d6a3e64b49977fa4dc",
       "last_updated": "2026-03-21T23:20:12.955252+00:00",
       "file_count": 3,
       "size_bytes": 27241,
       "description": "When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also...",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "4-get-found"
-      ]
+      }
     },
     "copy-editing": {
       "category": "4-get-found",
+      "phases": [
+        "4-get-found"
+      ],
       "checksum": "44daa44e140f7f1471d83adedba7bd4d",
       "last_updated": "2026-03-21T23:20:12.956665+00:00",
       "file_count": 3,
       "size_bytes": 29247,
       "description": "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this...",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "4-get-found"
-      ]
+      }
     },
     "copywriting": {
       "category": "4-get-found",
+      "phases": [
+        "4-get-found"
+      ],
       "checksum": "a89f3aea36c704a73fc186149848de11",
       "last_updated": "2026-03-21T23:20:12.958543+00:00",
       "file_count": 4,
       "size_bytes": 29262,
       "description": "When the user wants to write, rewrite, or improve marketing copy for any page \u2014 including homepage, landing pages,...",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "4-get-found"
-      ]
+      }
     },
     "design-consultation": {
       "category": "2-build",
+      "phases": [
+        "2-build"
+      ],
       "checksum": "a5316008ad5c6c2181dfe8808491a18e",
       "last_updated": "2026-03-21T23:20:12.959249+00:00",
       "file_count": 2,
@@ -518,94 +520,94 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "2-build"
-      ]
+      }
     },
     "design-review": {
       "category": "3-ship",
+      "phases": [
+        "3-ship"
+      ],
       "checksum": "00d2c649fcc16443709f3c965e4223c8",
       "last_updated": "2026-03-21T23:20:12.959938+00:00",
       "file_count": 2,
       "size_bytes": 55214,
       "description": "|",
       "ranking": {
-        "score": 23.1,
+        "score": 25.0,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "document-release": {
       "category": "3-ship",
+      "phases": [
+        "3-ship"
+      ],
       "checksum": "464e268b5cefb1c6c05c6d62bd0c447b",
       "last_updated": "2026-03-21T23:20:12.961038+00:00",
       "file_count": 2,
       "size_bytes": 41477,
       "description": "|",
       "ranking": {
-        "score": 23.1,
+        "score": 25.0,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "docx": {
       "category": "8-power-tools",
-      "checksum": "d28a2127322043e335577c5e71961d2c",
+      "phases": [
+        "8-power-tools"
+      ],
+      "checksum": "7fb9bbce8fc8fd031140d31fcfa138f1",
       "last_updated": "2026-03-21T23:20:12.983263+00:00",
       "file_count": 61,
       "size_bytes": 1121303,
       "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers...",
       "ranking": {
-        "score": 24.2,
+        "score": 22.3,
         "tier": "C",
         "signals": {
           "depth": 0.6,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "8-power-tools"
-      ]
+      }
     },
     "email-sequence": {
       "category": "5-acquire",
+      "phases": [
+        "5-acquire",
+        "7-retain"
+      ],
       "checksum": "d03acb8b59ac725fa187d374503c745d",
       "last_updated": "2026-03-21T23:20:12.985161+00:00",
       "file_count": 5,
       "size_bytes": 35624,
       "description": "When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email...",
       "ranking": {
-        "score": 23.1,
+        "score": 21.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "5-acquire",
-        "7-retain"
-      ]
+      }
     },
     "executing-plans": {
       "category": "2-build",
+      "phases": [
+        "2-build"
+      ],
       "checksum": "37939229bd59f8a4cc8c7bfd51b2b3eb",
       "last_updated": "2026-03-21T23:20:12.985747+00:00",
       "file_count": 1,
@@ -619,73 +621,73 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "2-build"
-      ]
+      }
     },
     "form-cro": {
       "category": "6-convert",
+      "phases": [
+        "6-convert"
+      ],
       "checksum": "7cbee7b7ae41e452834652b2847afc6d",
       "last_updated": "2026-03-21T23:20:12.987202+00:00",
       "file_count": 2,
       "size_bytes": 17506,
       "description": "When the user wants to optimize any form that is NOT signup/registration \u2014 including lead capture forms, contact forms,...",
       "ranking": {
-        "score": 23.1,
+        "score": 21.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "6-convert"
-      ]
+      }
     },
     "free-tool-strategy": {
       "category": "4-get-found",
+      "phases": [
+        "4-get-found"
+      ],
       "checksum": "9c4dfdf0a8b83c05ff44cb0899f75f47",
       "last_updated": "2026-03-21T23:20:12.988591+00:00",
       "file_count": 3,
       "size_bytes": 16227,
       "description": "When the user wants to plan, evaluate, or build a free tool for marketing purposes \u2014 lead generation, SEO value, or...",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "4-get-found"
-      ]
+      }
     },
     "freeze": {
       "category": "8-power-tools",
+      "phases": [
+        "8-power-tools"
+      ],
       "checksum": "b924bf43f58936a097e79591de98acdc",
       "last_updated": "2026-03-21T23:20:12.989847+00:00",
       "file_count": 3,
       "size_bytes": 8221,
       "description": "|",
       "ranking": {
-        "score": 23.1,
+        "score": 21.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "8-power-tools"
-      ]
+      }
     },
     "frontend-design": {
       "category": "2-build",
+      "phases": [
+        "2-build"
+      ],
       "checksum": "60b3f39d40841422e04215d8c3035ac0",
       "last_updated": "2026-03-21T23:20:12.990509+00:00",
       "file_count": 2,
@@ -699,14 +701,14 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "2-build"
-      ]
+      }
     },
     "gstack": {
       "category": "2-build",
-      "checksum": "29391a523144e2db148327ce4d785d7d",
+      "phases": [
+        "2-build"
+      ],
+      "checksum": "cf4179725ccdd5716d66cde65d6bb7e6",
       "last_updated": "2026-03-21T23:22:57.304049+00:00",
       "file_count": 2172,
       "size_bytes": 142867560,
@@ -719,53 +721,53 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "2-build"
-      ]
+      }
     },
     "guard": {
       "category": "3-ship",
+      "phases": [
+        "3-ship"
+      ],
       "checksum": "3397fe6c603f828e922e27919dd33c79",
       "last_updated": "2026-03-21T23:20:13.856540+00:00",
       "file_count": 2,
       "size_bytes": 6204,
       "description": "|",
       "ranking": {
-        "score": 23.1,
+        "score": 25.0,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "hook-factory": {
       "category": "8-power-tools",
-      "checksum": "950cf8b9ad70e6ad2fcb3bb881ca453a",
+      "phases": [
+        "8-power-tools"
+      ],
+      "checksum": "aee5d6b376c020ab7fdb3cae8e5cde39",
       "last_updated": "2026-03-21T23:20:13.867150+00:00",
       "file_count": 28,
       "size_bytes": 189304,
       "description": "Generate production-ready Claude Code hooks with interactive Q&A, automated installation, and enhanced validation....",
       "ranking": {
-        "score": 23.5,
+        "score": 21.6,
         "tier": "C",
         "signals": {
           "depth": 0.2,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "8-power-tools"
-      ]
+      }
     },
     "investigate": {
       "category": "2-build",
+      "phases": [
+        "2-build"
+      ],
       "checksum": "80adc930a60a9892622eec09828d5bf0",
       "last_updated": "2026-03-21T23:20:13.867806+00:00",
       "file_count": 2,
@@ -779,153 +781,153 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "2-build"
-      ]
+      }
     },
     "land-and-deploy": {
       "category": "3-ship",
+      "phases": [
+        "3-ship"
+      ],
       "checksum": "1459b641abda462d5b61f1415d163559",
       "last_updated": "2026-03-21T23:20:13.868383+00:00",
       "file_count": 2,
       "size_bytes": 58258,
       "description": "|",
       "ranking": {
-        "score": 23.1,
+        "score": 25.0,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "launch-strategy": {
       "category": "4-get-found",
+      "phases": [
+        "4-get-found"
+      ],
       "checksum": "6c340291dfb13f2fe47398112b8ffacc",
       "last_updated": "2026-03-21T23:20:13.869282+00:00",
       "file_count": 2,
       "size_bytes": 19230,
       "description": "When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user...",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "4-get-found"
-      ]
+      }
     },
     "lead-magnets": {
       "category": "4-get-found",
+      "phases": [
+        "4-get-found"
+      ],
       "checksum": "3ec1c361f10d2831c0119554a1035220",
       "last_updated": "2026-03-21T23:20:13.870686+00:00",
       "file_count": 3,
       "size_bytes": 21057,
       "description": "When the user wants to create, plan, or optimize a lead magnet for email capture or lead generation. Also use when the...",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "4-get-found"
-      ]
+      }
     },
     "manage-skills": {
       "category": "8-power-tools",
+      "phases": [
+        "8-power-tools"
+      ],
       "checksum": "3d2f8bf7087e5183e6644f487a64dd7b",
       "last_updated": "2026-03-21T23:22:41.079674+00:00",
       "file_count": 1,
       "size_bytes": 2432,
       "description": "Install, update, list, or remove Claude Code skills from the amazing_cc_skills collection. Use when the user mentions...",
       "ranking": {
-        "score": 23.1,
+        "score": 21.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "8-power-tools"
-      ]
+      }
     },
     "marketing-ideas": {
       "category": "4-get-found",
+      "phases": [
+        "4-get-found"
+      ],
       "checksum": "fa6631cc7a04464645f5faf6f3556382",
       "last_updated": "2026-03-21T23:20:13.872247+00:00",
       "file_count": 3,
       "size_bytes": 26358,
       "description": "When the user needs marketing ideas, inspiration, or strategies for their SaaS or software product. Also use when the...",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "4-get-found"
-      ]
+      }
     },
     "marketing-psychology": {
       "category": "4-get-found",
+      "phases": [
+        "4-get-found"
+      ],
       "checksum": "62fda18ba6fa2ecec6defd40a64553f2",
       "last_updated": "2026-03-21T23:20:13.873243+00:00",
       "file_count": 2,
       "size_bytes": 27800,
       "description": "When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when...",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "4-get-found"
-      ]
+      }
     },
     "notebooklm": {
       "category": "8-power-tools",
-      "checksum": "cd971b28c00d4528b9f32654ffc6b3b0",
+      "phases": [
+        "8-power-tools"
+      ],
+      "checksum": "9ebfd901ffb62b07cdcab027a31178fd",
       "last_updated": "2026-03-21T23:20:13.881447+00:00",
       "file_count": 49,
       "size_bytes": 497985,
       "description": "Use this skill to query your Google NotebookLM notebooks directly from Claude Code for source-grounded, citation-backed...",
       "ranking": {
-        "score": 23.8,
+        "score": 22.0,
         "tier": "C",
         "signals": {
           "depth": 0.4,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "8-power-tools"
-      ]
+      }
     },
     "office-hours": {
       "category": "1-validate",
+      "phases": [
+        "1-validate"
+      ],
       "checksum": "41a930e509fbc98e01ddff1eb72823c3",
       "last_updated": "2026-03-21T23:20:13.891685+00:00",
       "file_count": 2,
@@ -939,113 +941,113 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "1-validate"
-      ]
+      }
     },
     "onboarding-cro": {
       "category": "6-convert",
+      "phases": [
+        "6-convert"
+      ],
       "checksum": "533f2006f73d41ddf5103c7d60813ebf",
       "last_updated": "2026-03-21T23:20:13.893040+00:00",
       "file_count": 3,
       "size_bytes": 20717,
       "description": "When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also...",
       "ranking": {
-        "score": 23.1,
+        "score": 21.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "6-convert"
-      ]
+      }
     },
     "page-cro": {
       "category": "6-convert",
+      "phases": [
+        "6-convert"
+      ],
       "checksum": "afab9725096d67d691475c0a7e058fbe",
       "last_updated": "2026-03-21T23:20:13.894447+00:00",
       "file_count": 3,
       "size_bytes": 21606,
       "description": "When the user wants to optimize, improve, or increase conversions on any marketing page \u2014 including homepage, landing...",
       "ranking": {
-        "score": 23.1,
+        "score": 21.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "6-convert"
-      ]
+      }
     },
     "paid-ads": {
       "category": "5-acquire",
+      "phases": [
+        "5-acquire"
+      ],
       "checksum": "a8a228bdbe123515d579165d9ff745d1",
       "last_updated": "2026-03-21T23:20:13.896556+00:00",
       "file_count": 5,
       "size_bytes": 35208,
       "description": "When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X,...",
       "ranking": {
-        "score": 23.1,
+        "score": 21.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "5-acquire"
-      ]
+      }
     },
     "paywall-upgrade-cro": {
       "category": "6-convert",
+      "phases": [
+        "6-convert"
+      ],
       "checksum": "3544af68ab899381412adf45c9921a78",
       "last_updated": "2026-03-21T23:20:13.898146+00:00",
       "file_count": 3,
       "size_bytes": 17670,
       "description": "When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use...",
       "ranking": {
-        "score": 23.1,
+        "score": 21.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "6-convert"
-      ]
+      }
     },
     "pdf": {
       "category": "8-power-tools",
+      "phases": [
+        "8-power-tools"
+      ],
       "checksum": "e58c156cec83821d317b53f7a7448739",
       "last_updated": "2026-03-21T23:20:13.902554+00:00",
       "file_count": 12,
       "size_bytes": 58692,
       "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables...",
       "ranking": {
-        "score": 23.3,
+        "score": 21.3,
         "tier": "C",
         "signals": {
           "depth": 0.1,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "8-power-tools"
-      ]
+      }
     },
     "plan-ceo-review": {
       "category": "1-validate",
+      "phases": [
+        "1-validate"
+      ],
       "checksum": "5c0f0316a6786d14d94bce889a853aa8",
       "last_updated": "2026-03-21T23:20:13.903213+00:00",
       "file_count": 2,
@@ -1059,13 +1061,13 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "1-validate"
-      ]
+      }
     },
     "plan-design-review": {
       "category": "2-build",
+      "phases": [
+        "2-build"
+      ],
       "checksum": "b602109fd8255e500b362c1567a9d118",
       "last_updated": "2026-03-21T23:20:13.903724+00:00",
       "file_count": 2,
@@ -1079,13 +1081,13 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "2-build"
-      ]
+      }
     },
     "plan-eng-review": {
       "category": "2-build",
+      "phases": [
+        "2-build"
+      ],
       "checksum": "676b3321f9db29ce9183c0f01478707f",
       "last_updated": "2026-03-21T23:20:13.904247+00:00",
       "file_count": 2,
@@ -1099,74 +1101,74 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "2-build"
-      ]
+      }
     },
     "popup-cro": {
       "category": "4-get-found",
+      "phases": [
+        "4-get-found"
+      ],
       "checksum": "e14171bca40d187bce4e7d4610a6335a",
       "last_updated": "2026-03-21T23:20:13.904969+00:00",
       "file_count": 2,
       "size_bytes": 18418,
       "description": "When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also...",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "4-get-found"
-      ]
+      }
     },
     "pptx": {
       "category": "8-power-tools",
-      "checksum": "3e9ac1776b29cec3eb6286ebc0acde63",
+      "phases": [
+        "8-power-tools"
+      ],
+      "checksum": "1e779696a52fe0c950c6f454a4459519",
       "last_updated": "2026-03-21T23:20:13.930157+00:00",
       "file_count": 59,
       "size_bytes": 1129944,
       "description": "Use this skill any time a .pptx file is involved in any way \u2014 as input, output, or both. This includes: creating slide...",
       "ranking": {
-        "score": 24.2,
+        "score": 22.3,
         "tier": "C",
         "signals": {
           "depth": 0.6,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "8-power-tools"
-      ]
+      }
     },
     "pricing-strategy": {
       "category": "6-convert",
+      "phases": [
+        "6-convert",
+        "7-retain"
+      ],
       "checksum": "edbc33ba2fe9b95a6228165eb322363f",
       "last_updated": "2026-03-21T23:20:13.932257+00:00",
       "file_count": 4,
       "size_bytes": 25535,
       "description": "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions...",
       "ranking": {
-        "score": 23.1,
+        "score": 21.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "6-convert",
-        "7-retain"
-      ]
+      }
     },
     "product-marketing-context": {
       "category": "1-validate",
+      "phases": [
+        "1-validate"
+      ],
       "checksum": "642ebf5a9e8161a894e4ef44f10e4fc9",
       "last_updated": "2026-03-21T23:20:13.933052+00:00",
       "file_count": 2,
@@ -1180,93 +1182,93 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "1-validate"
-      ]
+      }
     },
     "programmatic-seo": {
       "category": "4-get-found",
+      "phases": [
+        "4-get-found"
+      ],
       "checksum": "23bc6f3f762c3c68b278d81511db7129",
       "last_updated": "2026-03-21T23:20:13.934553+00:00",
       "file_count": 3,
       "size_bytes": 22310,
       "description": "When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions...",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "4-get-found"
-      ]
+      }
     },
     "prompt-factory": {
       "category": "8-power-tools",
-      "checksum": "29502d6758f03dc78c2e7d82a6c6e960",
+      "phases": [
+        "8-power-tools"
+      ],
+      "checksum": "915193ce64b68ca63d147c4d31ace33e",
       "last_updated": "2026-03-21T23:20:13.962975+00:00",
       "file_count": 85,
       "size_bytes": 1075945,
       "description": "World-class prompt powerhouse that generates production-ready mega-prompts for any role, industry, and task through...",
       "ranking": {
-        "score": 24.6,
+        "score": 22.6,
         "tier": "C",
         "signals": {
           "depth": 0.8,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "8-power-tools"
-      ]
+      }
     },
     "qa": {
       "category": "3-ship",
+      "phases": [
+        "3-ship"
+      ],
       "checksum": "2aea9e73ef6ce47004aac1464f45a5e2",
       "last_updated": "2026-03-21T23:20:13.964212+00:00",
       "file_count": 4,
       "size_bytes": 60971,
       "description": "|",
       "ranking": {
-        "score": 23.1,
+        "score": 25.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "qa-only": {
       "category": "3-ship",
+      "phases": [
+        "3-ship"
+      ],
       "checksum": "230922087a175dd0975952f2863a2eef",
       "last_updated": "2026-03-21T23:20:13.964969+00:00",
       "file_count": 2,
       "size_bytes": 32470,
       "description": "|",
       "ranking": {
-        "score": 23.1,
+        "score": 25.0,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "receiving-code-review": {
       "category": "2-build",
+      "phases": [
+        "2-build"
+      ],
       "checksum": "dd0aadbca70fe3bedbd059b730a6edbb",
       "last_updated": "2026-03-21T23:20:13.965404+00:00",
       "file_count": 1,
@@ -1280,313 +1282,313 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "2-build"
-      ]
+      }
     },
     "referral-program": {
       "category": "5-acquire",
+      "phases": [
+        "5-acquire"
+      ],
       "checksum": "986e1c4092b72984024186795630f62f",
       "last_updated": "2026-03-21T23:20:13.967151+00:00",
       "file_count": 4,
       "size_bytes": 21259,
       "description": "When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy....",
       "ranking": {
-        "score": 23.1,
+        "score": 21.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "5-acquire"
-      ]
+      }
     },
     "retro": {
       "category": "3-ship",
+      "phases": [
+        "3-ship"
+      ],
       "checksum": "63cadbc8d7fc010c89f402fe8dc7a370",
       "last_updated": "2026-03-21T23:20:13.968533+00:00",
       "file_count": 2,
       "size_bytes": 59419,
       "description": "|",
       "ranking": {
-        "score": 23.1,
+        "score": 25.0,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "review": {
       "category": "3-ship",
+      "phases": [
+        "3-ship"
+      ],
       "checksum": "84c0f2fe47e7c207f59f1f2fe83c3652",
       "last_updated": "2026-03-21T23:20:13.970122+00:00",
       "file_count": 6,
       "size_bytes": 73387,
       "description": "|",
       "ranking": {
-        "score": 23.3,
+        "score": 25.2,
         "tier": "C",
         "signals": {
           "depth": 0.1,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "revops": {
       "category": "5-acquire",
+      "phases": [
+        "5-acquire"
+      ],
       "checksum": "21a8ca1d65aa2e1195d0e17c112d223d",
       "last_updated": "2026-03-21T23:20:13.979571+00:00",
       "file_count": 6,
       "size_bytes": 53376,
       "description": "When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes....",
       "ranking": {
-        "score": 23.3,
+        "score": 21.3,
         "tier": "C",
         "signals": {
           "depth": 0.1,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "5-acquire"
-      ]
+      }
     },
     "sales-enablement": {
       "category": "5-acquire",
+      "phases": [
+        "5-acquire"
+      ],
       "checksum": "2d4e59a3be5329e71ec2b2f66363af60",
       "last_updated": "2026-03-21T23:20:13.986322+00:00",
       "file_count": 6,
       "size_bytes": 59514,
       "description": "When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also...",
       "ranking": {
-        "score": 23.3,
+        "score": 21.3,
         "tier": "C",
         "signals": {
           "depth": 0.1,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "5-acquire"
-      ]
+      }
     },
     "schema-markup": {
       "category": "4-get-found",
+      "phases": [
+        "4-get-found"
+      ],
       "checksum": "0d76ac1cdc96f351da474841ebc37db5",
       "last_updated": "2026-03-21T23:20:13.987949+00:00",
       "file_count": 3,
       "size_bytes": 19457,
       "description": "When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user...",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "4-get-found"
-      ]
+      }
     },
     "seo-audit": {
       "category": "4-get-found",
+      "phases": [
+        "4-get-found"
+      ],
       "checksum": "a2357920126c5153e85082a2770a8197",
       "last_updated": "2026-03-21T23:20:13.991385+00:00",
       "file_count": 3,
       "size_bytes": 27049,
       "description": "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO...",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "4-get-found"
-      ]
+      }
     },
     "setup-browser-cookies": {
       "category": "3-ship",
+      "phases": [
+        "3-ship"
+      ],
       "checksum": "7742367ca6663300330ddf6954c6bcb4",
       "last_updated": "2026-03-21T23:20:13.992264+00:00",
       "file_count": 2,
       "size_bytes": 17974,
       "description": "|",
       "ranking": {
-        "score": 23.1,
+        "score": 25.0,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "setup-deploy": {
       "category": "3-ship",
+      "phases": [
+        "3-ship"
+      ],
       "checksum": "935f2697b427d69742d06782d6bc0cab",
       "last_updated": "2026-03-21T23:20:13.992825+00:00",
       "file_count": 2,
       "size_bytes": 28276,
       "description": "|",
       "ranking": {
-        "score": 23.1,
+        "score": 25.0,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "shannon": {
       "category": "3-ship",
+      "phases": [
+        "3-ship"
+      ],
       "checksum": "e8724349bc98902a0e89e04fe884c0a3",
       "last_updated": "2026-03-21T23:20:13.994953+00:00",
       "file_count": 5,
       "size_bytes": 25566,
       "description": "Autonomous AI pentester for web apps and APIs. Run white-box security assessments with Shannon \u2014 analyzes source code,...",
       "ranking": {
-        "score": 23.1,
+        "score": 25.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "ship": {
       "category": "3-ship",
+      "phases": [
+        "3-ship"
+      ],
       "checksum": "9e334d50d08c9f84943b9131e570e336",
       "last_updated": "2026-03-21T23:20:13.995609+00:00",
       "file_count": 2,
       "size_bytes": 95191,
       "description": "|",
       "ranking": {
-        "score": 23.1,
+        "score": 25.0,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "3-ship"
-      ]
+      }
     },
     "signup-flow-cro": {
       "category": "6-convert",
+      "phases": [
+        "6-convert"
+      ],
       "checksum": "aef459983c5dc1653eaa4d2f0b61695e",
       "last_updated": "2026-03-21T23:20:13.996450+00:00",
       "file_count": 2,
       "size_bytes": 16673,
       "description": "When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the...",
       "ranking": {
-        "score": 23.1,
+        "score": 21.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "6-convert"
-      ]
+      }
     },
     "site-architecture": {
       "category": "4-get-found",
+      "phases": [
+        "4-get-found"
+      ],
       "checksum": "4ea79290ff2a6ff282dca970c285daf0",
       "last_updated": "2026-03-21T23:20:13.998975+00:00",
       "file_count": 5,
       "size_bytes": 45043,
       "description": "When the user wants to plan, map, or restructure their website's page hierarchy, navigation, URL structure, or internal...",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "4-get-found"
-      ]
+      }
     },
     "slash-command-factory": {
       "category": "8-power-tools",
+      "phases": [
+        "8-power-tools"
+      ],
       "checksum": "f941702e108eda00e2ff0fd91cc962ed",
       "last_updated": "2026-03-21T23:20:14.001525+00:00",
       "file_count": 7,
       "size_bytes": 79195,
       "description": "Generate custom Claude Code slash commands through intelligent 5-7 question flow. Creates powerful commands for...",
       "ranking": {
-        "score": 23.3,
+        "score": 21.3,
         "tier": "C",
         "signals": {
           "depth": 0.1,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "8-power-tools"
-      ]
+      }
     },
     "social-content": {
       "category": "4-get-found",
+      "phases": [
+        "4-get-found"
+      ],
       "checksum": "6b3aa63b696c8fddeea0daf9f73e0b28",
       "last_updated": "2026-03-21T23:20:14.003700+00:00",
       "file_count": 5,
       "size_bytes": 28675,
       "description": "When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram,...",
       "ranking": {
-        "score": 23.1,
-        "tier": "C",
+        "score": 19.2,
+        "tier": "D",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "4-get-found"
-      ]
+      }
     },
     "subagent-driven-development": {
       "category": "2-build",
+      "phases": [
+        "2-build"
+      ],
       "checksum": "105fd35249bd04d21d67a4a472c18353",
       "last_updated": "2026-03-21T23:20:14.005249+00:00",
       "file_count": 4,
@@ -1600,13 +1602,13 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "2-build"
-      ]
+      }
     },
     "test-driven-development": {
       "category": "2-build",
+      "phases": [
+        "2-build"
+      ],
       "checksum": "a0c7108cc1ca432ea94640326c12b886",
       "last_updated": "2026-03-21T23:20:14.009768+00:00",
       "file_count": 2,
@@ -1620,33 +1622,33 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "2-build"
-      ]
+      }
     },
     "unfreeze": {
       "category": "8-power-tools",
+      "phases": [
+        "8-power-tools"
+      ],
       "checksum": "9f395e7120c2a2576f03caec17164680",
       "last_updated": "2026-03-21T23:20:14.010453+00:00",
       "file_count": 2,
       "size_bytes": 2598,
       "description": "|",
       "ranking": {
-        "score": 23.1,
+        "score": 21.2,
         "tier": "C",
         "signals": {
           "depth": 0.0,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "8-power-tools"
-      ]
+      }
     },
     "using-git-worktrees": {
       "category": "2-build",
+      "phases": [
+        "2-build"
+      ],
       "checksum": "068743993231737c40eb5656ee0ac629",
       "last_updated": "2026-03-21T23:20:14.010784+00:00",
       "file_count": 1,
@@ -1660,33 +1662,33 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "2-build"
-      ]
+      }
     },
     "valyu-best-practices": {
       "category": "8-power-tools",
-      "checksum": "e6227df0f248163100385d429d12ddcd",
+      "phases": [
+        "8-power-tools"
+      ],
+      "checksum": "2ad2b60892fd349befe0a0c7b61246df",
       "last_updated": "2026-03-21T23:20:14.026532+00:00",
       "file_count": 47,
       "size_bytes": 171279,
       "description": "Complete Valyu API toolkit for AI agents. Use this skill when asked to perform real-time search across web, academic,...",
       "ranking": {
-        "score": 23.8,
+        "score": 21.8,
         "tier": "C",
         "signals": {
           "depth": 0.4,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "8-power-tools"
-      ]
+      }
     },
     "writing-plans": {
       "category": "2-build",
+      "phases": [
+        "2-build"
+      ],
       "checksum": "38c62a0c5551595518237217efba48ed",
       "last_updated": "2026-03-21T23:20:14.027746+00:00",
       "file_count": 2,
@@ -1700,50 +1702,47 @@
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "2-build"
-      ]
+      }
     },
     "writing-skills": {
       "category": "2-build",
+      "phases": [
+        "2-build"
+      ],
       "checksum": "472473a2ebd72bd91ec6ec3e41834111",
       "last_updated": "2026-03-21T23:20:14.030586+00:00",
       "file_count": 7,
       "size_bytes": 103006,
       "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
       "ranking": {
-        "score": 23.3,
+        "score": 23.2,
         "tier": "C",
         "signals": {
           "depth": 0.1,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "2-build"
-      ]
+      }
     },
     "xlsx": {
       "category": "8-power-tools",
-      "checksum": "b5b1271577e51ca1444b564d886ba09c",
+      "phases": [
+        "8-power-tools"
+      ],
+      "checksum": "b0ce1509913213d2bde5c41dd3ebffca",
       "last_updated": "2026-03-21T23:20:14.050620+00:00",
       "file_count": 54,
       "size_bytes": 1093063,
       "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to:...",
       "ranking": {
-        "score": 24.2,
+        "score": 22.1,
         "tier": "C",
         "signals": {
           "depth": 0.6,
           "mentions": 0,
           "desc_quality": 10
         }
-      },
-      "phases": [
-        "8-power-tools"
-      ]
+      }
     }
   }
 }

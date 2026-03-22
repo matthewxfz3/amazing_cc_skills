@@ -5,26 +5,21 @@ set -euo pipefail
 # amazing_cc_skills uninstaller
 # ============================================================================
 
-SKILLS_TARGET="$HOME/.claude/skills"
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SKILLS_SOURCE="$SCRIPT_DIR/skills"
+source "$(dirname "$0")/lib/common.sh"
 
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-CYAN='\033[0;36m'
-NC='\033[0m'
+DRY_RUN=false
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --dry-run)   DRY_RUN=true; shift ;;
+        --version)   echo "amazing_cc_skills uninstaller v$VERSION"; exit 0 ;;
+        -h|--help)
+            echo "Usage: $(basename "$0") [--dry-run] [--version]"
+            exit 0 ;;
+        *) shift ;;
+    esac
+done
 
-log() { echo -e "${BLUE}[info]${NC} $*"; }
-success() { echo -e "${GREEN}[ok]${NC} $*"; }
-warn() { echo -e "${YELLOW}[warn]${NC} $*"; }
-
-echo ""
-echo -e "${CYAN}========================================${NC}"
-echo -e "${CYAN}  amazing_cc_skills uninstaller${NC}"
-echo -e "${CYAN}========================================${NC}"
-echo ""
+banner "amazing_cc_skills uninstaller"
 
 if [[ ! -d "$SKILLS_TARGET" ]]; then
     warn "No skills directory found at $SKILLS_TARGET"
@@ -33,23 +28,34 @@ fi
 
 # Only remove skills that came from this repo
 REMOVED=0
+FAILED=0
 for skill_dir in "$SKILLS_SOURCE"/*/; do
+    [[ -d "$skill_dir" ]] || continue
     skill=$(basename "$skill_dir")
     target="$SKILLS_TARGET/$skill"
 
     if [[ -e "$target" ]] || [[ -L "$target" ]]; then
-        rm -rf "$target"
-        success "Removed $skill"
-        REMOVED=$((REMOVED + 1))
+        if [[ "$DRY_RUN" == true ]]; then
+            log "Would remove: $skill"
+        else
+            if rm -rf "$target" 2>/dev/null; then
+                success "Removed $skill"
+                REMOVED=$((REMOVED + 1))
+            else
+                fail "Could not remove $skill"
+                FAILED=$((FAILED + 1))
+            fi
+        fi
     fi
 done
 
 echo ""
 log "Removed $REMOVED skills"
+[[ "$FAILED" -gt 0 ]] && warn "Failed to remove $FAILED skills"
 
 # Check for backup to restore
 LATEST_BACKUP=$(ls -dt "$HOME/.claude/skills.backup."* 2>/dev/null | head -1 || true)
-if [[ -n "$LATEST_BACKUP" ]]; then
+if [[ -n "$LATEST_BACKUP" ]] && [[ "$DRY_RUN" == false ]]; then
     echo ""
     read -p "Restore backup from $LATEST_BACKUP? [y/N] " -n 1 -r
     echo ""

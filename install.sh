@@ -4,15 +4,15 @@ set -euo pipefail
 # ============================================================================
 # amazing_cc_skills installer
 # Fault-tolerant, parallel, update-aware
+#
+# Fixes over v1:
+#   - Race-safe counters using per-skill status files (no shared file writes)
+#   - No export -f (works in zsh + bash)
+#   - Batch checksum comparison via Python (one process, not one per skill)
+#   - Proper cleanup on signals
 # ============================================================================
 
-REPO_URL="https://github.com/matthewxfz3/amazing_cc_skills.git"
-SKILLS_TARGET="$HOME/.claude/skills"
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SKILLS_SOURCE="$SCRIPT_DIR/skills"
-MANIFEST="$SCRIPT_DIR/skills-manifest.json"
-BACKUP_DIR="$HOME/.claude/skills.backup.$(date +%Y%m%d%H%M%S)"
-LOG_FILE="/tmp/amazing_cc_skills_install.log"
+source "$(dirname "$0")/lib/common.sh"
 
 # Defaults
 MODE="symlink"
@@ -21,25 +21,15 @@ OFFLINE=false
 UPDATE_ONLY=false
 SELECTED_SKILLS=""
 VERBOSE=false
+DRY_RUN=false
 
-# Colors
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-CYAN='\033[0;36m'
-NC='\033[0m'
+# Temp dir for per-skill status tracking (race-safe: one file per skill)
+STATUS_DIR=$(mktemp -d)
+LOG_FILE="${TMPDIR:-/tmp}/amazing_cc_skills_install.log"
+: > "$LOG_FILE"
 
-# Counters (use temp files for parallel-safe counting)
-COUNT_DIR=$(mktemp -d)
-echo "0" > "$COUNT_DIR/success"
-echo "0" > "$COUNT_DIR/failed"
-echo "0" > "$COUNT_DIR/skipped"
-
-cleanup() {
-    rm -rf "$COUNT_DIR"
-}
-trap cleanup EXIT
+cleanup() { rm -rf "$STATUS_DIR"; }
+trap cleanup EXIT INT TERM
 
 usage() {
     cat <<EOF
@@ -54,6 +44,8 @@ Options:
   --offline         Skip git pull, use local skills/ folder only
   --update          Update mode: skip backup, only sync changed skills
   --verbose         Show detailed output
+  --dry-run         Show what would be done without doing it
+  --version         Show version
   -h, --help        Show this help
 
 Examples:
@@ -66,84 +58,64 @@ EOF
     exit 0
 }
 
-log() { echo -e "${BLUE}[info]${NC} $*"; }
-success() { echo -e "${GREEN}[ok]${NC} $*"; }
-warn() { echo -e "${YELLOW}[warn]${NC} $*"; }
-fail() { echo -e "${RED}[fail]${NC} $*" >&2; }
-
-increment() {
-    local file="$COUNT_DIR/$1"
-    # Use flock for atomic increment on Linux, or a simple approach for macOS
-    local val
-    val=$(cat "$file")
-    echo $((val + 1)) > "$file"
-}
-
 # Parse arguments
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --copy)     MODE="copy"; shift ;;
-        --select)   SELECTED_SKILLS="$2"; shift 2 ;;
-        --jobs)     MAX_JOBS="$2"; shift 2 ;;
-        --offline)  OFFLINE=true; shift ;;
-        --update)   UPDATE_ONLY=true; shift ;;
-        --verbose)  VERBOSE=true; shift ;;
-        -h|--help)  usage ;;
-        *)          fail "Unknown option: $1"; usage ;;
+        --copy)      MODE="copy"; shift ;;
+        --select)    SELECTED_SKILLS="$2"; shift 2 ;;
+        --jobs)      MAX_JOBS="$2"; shift 2 ;;
+        --offline)   OFFLINE=true; shift ;;
+        --update)    UPDATE_ONLY=true; shift ;;
+        --verbose)   VERBOSE=true; shift ;;
+        --dry-run)   DRY_RUN=true; shift ;;
+        --version)   echo "amazing_cc_skills installer v$VERSION"; exit 0 ;;
+        -h|--help)   usage ;;
+        *)           fail "Unknown option: $1"; usage ;;
     esac
 done
 
-echo ""
-echo -e "${CYAN}========================================${NC}"
-echo -e "${CYAN}  amazing_cc_skills installer${NC}"
-echo -e "${CYAN}========================================${NC}"
-echo ""
+banner "amazing_cc_skills installer v$VERSION"
 
-# Step 1: Update from git if online
+# ---- Step 1: Update from git ----
 if [[ "$OFFLINE" == false ]]; then
-    if command -v git &>/dev/null && [[ -d "$SCRIPT_DIR/.git" ]]; then
-        log "Pulling latest skills from git..."
-        if git -C "$SCRIPT_DIR" pull --ff-only 2>/dev/null; then
-            success "Updated to latest version"
-        else
-            warn "Git pull failed, using local files as fallback"
-        fi
-    elif command -v git &>/dev/null; then
-        warn "Not a git repo — using local skills/ folder"
+    if try_git_pull "$PROJ_ROOT"; then
+        success "Updated to latest version"
     else
-        warn "Git not found — using local skills/ folder"
+        warn "Git pull unavailable, using local files"
     fi
 else
     log "Offline mode: using local skills/ folder"
 fi
 
-# Step 2: Validate source
+# ---- Step 2: Validate source ----
 if [[ ! -d "$SKILLS_SOURCE" ]]; then
     fail "Skills source directory not found: $SKILLS_SOURCE"
     exit 1
 fi
 
-AVAILABLE_SKILLS=($(ls -d "$SKILLS_SOURCE"/*/ 2>/dev/null | xargs -I{} basename {}))
-TOTAL_AVAILABLE=${#AVAILABLE_SKILLS[@]}
+# List available skills (portable: no xargs -I)
+AVAILABLE_SKILLS=()
+for d in "$SKILLS_SOURCE"/*/; do
+    [[ -d "$d" ]] && AVAILABLE_SKILLS+=("$(basename "$d")")
+done
 
-if [[ $TOTAL_AVAILABLE -eq 0 ]]; then
+if [[ ${#AVAILABLE_SKILLS[@]} -eq 0 ]]; then
     fail "No skills found in $SKILLS_SOURCE"
     exit 1
 fi
+log "Found ${#AVAILABLE_SKILLS[@]} skills available"
 
-log "Found $TOTAL_AVAILABLE skills available"
-
-# Step 3: Filter skills if --select was used
+# ---- Step 3: Filter if --select ----
 if [[ -n "$SELECTED_SKILLS" ]]; then
     IFS=',' read -ra SELECTED <<< "$SELECTED_SKILLS"
     INSTALL_SKILLS=()
     for s in "${SELECTED[@]}"; do
-        s=$(echo "$s" | xargs) # trim whitespace
+        s="${s## }"; s="${s%% }"  # trim whitespace (no xargs)
         if [[ -d "$SKILLS_SOURCE/$s" ]]; then
             INSTALL_SKILLS+=("$s")
         else
             warn "Skill not found: $s (skipping)"
-            increment skipped
+            echo "skip" > "$STATUS_DIR/$s"
         fi
     done
 else
@@ -155,85 +127,115 @@ if [[ ${#INSTALL_SKILLS[@]} -eq 0 ]]; then
     exit 1
 fi
 
-log "Installing ${#INSTALL_SKILLS[@]} skills using $MODE mode (parallelism: $MAX_JOBS)"
+# ---- Step 4: Batch checksum comparison for --update mode ----
+# Write unchanged skill names to a file (avoids bash associative arrays for macOS compat)
+SKIP_FILE="$STATUS_DIR/_unchanged"
+: > "$SKIP_FILE"
 
-# Step 4: Backup existing skills (first run only)
-mkdir -p "$SKILLS_TARGET"
+if [[ "$UPDATE_ONLY" == true ]] && [[ -f "$MANIFEST" ]]; then
+    if command -v python3 &>/dev/null; then
+        log "Comparing checksums..."
+        # One Python call compares ALL skills at once (not one per skill)
+        python3 -c "
+import json, hashlib, os, sys
 
-if [[ "$UPDATE_ONLY" == false ]] && [[ -n "$(ls -A "$SKILLS_TARGET" 2>/dev/null)" ]]; then
-    log "Backing up existing skills to $BACKUP_DIR"
-    cp -r "$SKILLS_TARGET" "$BACKUP_DIR" 2>/dev/null || true
-    success "Backup created"
+manifest_path = sys.argv[1]
+skills_target = sys.argv[2]
+out_path = sys.argv[3]
+
+with open(manifest_path) as f:
+    manifest = json.load(f)
+
+unchanged = []
+for name, info in manifest.get('skills', {}).items():
+    src_checksum = info.get('checksum', '')
+    dst = os.path.join(skills_target, name)
+    if not os.path.isdir(dst) or not src_checksum:
+        continue
+    h = hashlib.md5()
+    for root, dirs, files in os.walk(dst):
+        dirs.sort()
+        for f in sorted(files):
+            fp = os.path.join(root, f)
+            with open(fp, 'rb') as fh:
+                for chunk in iter(lambda: fh.read(8192), b''):
+                    h.update(chunk)
+    if h.hexdigest() == src_checksum:
+        unchanged.append(name)
+
+with open(out_path, 'w') as f:
+    f.write('\n'.join(unchanged))
+" "$MANIFEST" "$SKILLS_TARGET" "$SKIP_FILE" 2>/dev/null || true
+
+        SKIP_COUNT=$(wc -l < "$SKIP_FILE" | tr -d ' ')
+        [[ "$SKIP_COUNT" -gt 0 ]] && log "Skipping $SKIP_COUNT unchanged skills"
+    else
+        warn "python3 not found, skipping checksum comparison"
+    fi
 fi
 
-# Step 5: Install skills in parallel
-install_skill() {
+# Helper: check if a skill should be skipped
+is_unchanged() {
+    grep -qx "$1" "$SKIP_FILE" 2>/dev/null
+}
+
+log "Installing ${#INSTALL_SKILLS[@]} skills using $MODE mode (parallelism: $MAX_JOBS)"
+
+# ---- Step 5: Backup (first install only) ----
+mkdir -p "$SKILLS_TARGET"
+
+if [[ "$UPDATE_ONLY" == false ]] && [[ "$DRY_RUN" == false ]]; then
+    if [[ -n "$(ls -A "$SKILLS_TARGET" 2>/dev/null)" ]]; then
+        BACKUP_DIR="$HOME/.claude/skills.backup.$(date +%Y%m%d%H%M%S)"
+        log "Backing up existing skills to $BACKUP_DIR"
+        cp -r "$SKILLS_TARGET" "$BACKUP_DIR" 2>/dev/null || true
+        success "Backup created"
+    fi
+fi
+
+# ---- Step 6: Install skills in parallel ----
+# Each skill writes its own status file (no shared counter = no race condition)
+install_one_skill() {
     local skill="$1"
     local src="$SKILLS_SOURCE/$skill"
     local dst="$SKILLS_TARGET/$skill"
 
-    # Check manifest for changes (skip if unchanged)
-    if [[ "$UPDATE_ONLY" == true ]] && [[ -d "$dst" ]] && [[ -f "$MANIFEST" ]]; then
-        local src_checksum
-        src_checksum=$(python3 -c "
-import json, sys
-try:
-    m = json.load(open('$MANIFEST'))
-    print(m.get('skills',{}).get('$skill',{}).get('checksum',''))
-except: print('')
-" 2>/dev/null || echo "")
+    # Skip if unchanged (already computed in batch)
+    if is_unchanged "$skill"; then
+        [[ "$VERBOSE" == true ]] && echo -e "  ${YELLOW}skip${NC} $skill (unchanged)"
+        echo "skip" > "$STATUS_DIR/$skill"
+        return 0
+    fi
 
-        if [[ -n "$src_checksum" ]]; then
-            local dst_checksum
-            dst_checksum=$(python3 -c "
-import hashlib, os
-h = hashlib.md5()
-for root, dirs, files in os.walk('$dst'):
-    for f in sorted(files):
-        with open(os.path.join(root, f), 'rb') as fh:
-            h.update(fh.read())
-print(h.hexdigest())
-" 2>/dev/null || echo "")
-
-            if [[ "$src_checksum" == "$dst_checksum" ]]; then
-                [[ "$VERBOSE" == true ]] && echo -e "  ${YELLOW}skip${NC} $skill (unchanged)"
-                increment skipped
-                return 0
-            fi
-        fi
+    if [[ "$DRY_RUN" == true ]]; then
+        echo -e "  ${BLUE}dry-run${NC} $skill ($MODE)"
+        echo "ok" > "$STATUS_DIR/$skill"
+        return 0
     fi
 
     # Remove existing
     rm -rf "$dst" 2>/dev/null || true
 
+    local result=0
     if [[ "$MODE" == "symlink" ]]; then
-        if ln -sf "$src" "$dst" 2>>"$LOG_FILE"; then
-            success "  $skill"
-            increment success
-        else
-            fail "  $skill (symlink failed)"
-            increment failed
-        fi
+        ln -sf "$src" "$dst" 2>>"$LOG_FILE" || result=$?
     else
-        if cp -r "$src" "$dst" 2>>"$LOG_FILE"; then
-            success "  $skill"
-            increment success
-        else
-            fail "  $skill (copy failed)"
-            increment failed
-        fi
+        cp -r "$src" "$dst" 2>>"$LOG_FILE" || result=$?
+    fi
+
+    if [[ $result -eq 0 ]]; then
+        success "  $skill"
+        echo "ok" > "$STATUS_DIR/$skill"
+    else
+        fail "  $skill ($MODE failed)"
+        echo "fail" > "$STATUS_DIR/$skill"
     fi
 }
 
-export -f install_skill increment success fail warn
-export SKILLS_SOURCE SKILLS_TARGET MANIFEST MODE UPDATE_ONLY VERBOSE LOG_FILE COUNT_DIR
-export RED GREEN YELLOW BLUE CYAN NC
-
-# Run installs in parallel using background jobs
 echo ""
 active_jobs=0
 for skill in "${INSTALL_SKILLS[@]}"; do
-    install_skill "$skill" &
+    install_one_skill "$skill" &
     active_jobs=$((active_jobs + 1))
 
     if [[ $active_jobs -ge $MAX_JOBS ]]; then
@@ -243,16 +245,18 @@ for skill in "${INSTALL_SKILLS[@]}"; do
 done
 wait
 
-# Step 6: Summary
-echo ""
-echo -e "${CYAN}========================================${NC}"
-echo -e "${CYAN}  Installation Summary${NC}"
-echo -e "${CYAN}========================================${NC}"
+# ---- Step 7: Summary (count from status files — no race condition) ----
+S=0; F=0; K=0
+for f in "$STATUS_DIR"/*; do
+    [[ -f "$f" ]] || continue
+    case "$(cat "$f")" in
+        ok)   S=$((S + 1)) ;;
+        fail) F=$((F + 1)) ;;
+        skip) K=$((K + 1)) ;;
+    esac
+done
 
-S=$(cat "$COUNT_DIR/success")
-F=$(cat "$COUNT_DIR/failed")
-K=$(cat "$COUNT_DIR/skipped")
-
+banner "Installation Summary"
 echo -e "  ${GREEN}Installed:${NC} $S"
 echo -e "  ${YELLOW}Skipped:${NC}   $K"
 echo -e "  ${RED}Failed:${NC}    $F"
