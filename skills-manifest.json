@@ -1,6 +1,6 @@
 {
   "version": "3.0.0",
-  "last_updated": "2026-03-22T01:58:00.161549+00:00",
+  "last_updated": "2026-03-22T02:36:05.186224+00:00",
   "repo": "https://github.com/matthewxfz3/amazing_cc_skills",
   "categories": {
     "1-validate": {
@@ -139,7 +139,8 @@
         "valyu-best-practices",
         "freeze",
         "unfreeze",
-        "visualize"
+        "visualize",
+        "imessage"
       ]
     }
   },
@@ -152,7 +153,7 @@
       "discussions",
       "contributors"
     ],
-    "last_ranked": "2026-03-22T01:58:00.204902+00:00",
+    "last_ranked": "2026-03-22T02:36:05.226015+00:00",
     "repo_signals": {
       "stars": 0,
       "forks": 0,
@@ -611,6 +612,21 @@
       "description": "Generate production-ready Claude Code hooks with interactive Q&A, automated installation, and enhanced validation....",
       "ranking": {
         "score": 21.6,
+        "tier": "C"
+      }
+    },
+    "imessage": {
+      "category": "8-power-tools",
+      "phases": [
+        "8-power-tools"
+      ],
+      "checksum": "00c8b11caec9ff042df5394e27fa7568",
+      "last_updated": "2026-03-22T02:34:57.522107+00:00",
+      "file_count": 1,
+      "size_bytes": 3329,
+      "description": "Read, search, and send iMessages on macOS. Use when the user mentions 'imessage,' 'text message,' 'send a text,' 'read...",
+      "ranking": {
+        "score": 21.2,
         "tier": "C"
       }
     },

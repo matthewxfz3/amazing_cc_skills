@@ -22,6 +22,10 @@ UPDATE_ONLY=false
 SELECTED_SKILLS=""
 VERBOSE=false
 DRY_RUN=false
+ALLOW_DANGEROUS=false
+
+# Skills marked as dangerous (access private data, require special permissions)
+DANGEROUS_SKILLS="imessage"
 
 # Temp dir for per-skill status tracking (race-safe: one file per skill)
 STATUS_DIR=$(mktemp -d)
@@ -38,19 +42,25 @@ Usage: $(basename "$0") [OPTIONS]
 Install or update Claude Code skills from amazing_cc_skills.
 
 Options:
-  --copy            Copy skills instead of symlinking (default: symlink)
-  --select LIST     Comma-separated list of skills to install
-  --jobs N          Max parallel installs (default: 4)
-  --offline         Skip git pull, use local skills/ folder only
-  --update          Update mode: skip backup, only sync changed skills
-  --verbose         Show detailed output
-  --dry-run         Show what would be done without doing it
-  --version         Show version
-  -h, --help        Show this help
+  --copy              Copy skills instead of symlinking (default: symlink)
+  --select LIST       Comma-separated list of skills to install
+  --jobs N            Max parallel installs (default: 4)
+  --offline           Skip git pull, use local skills/ folder only
+  --update            Update mode: skip backup, only sync changed skills
+  --allow-dangerous   Also install dangerous skills (e.g. imessage: local DB access)
+  --verbose           Show detailed output
+  --dry-run           Show what would be done without doing it
+  --version           Show version
+  -h, --help          Show this help
+
+Dangerous skills are excluded by default. They access private data, require
+special OS permissions, or are intended for debugging only. Use --allow-dangerous
+to opt in. Currently dangerous: ${DANGEROUS_SKILLS}
 
 Examples:
-  ./install.sh                           # Install all skills (symlink)
-  ./install.sh --copy                    # Install all skills (copy)
+  ./install.sh                           # Install all safe skills (symlink)
+  ./install.sh --copy                    # Install all safe skills (copy)
+  ./install.sh --allow-dangerous         # Include dangerous skills too
   ./install.sh --select qa,ship,review   # Install specific skills
   ./install.sh --update                  # Update existing installation
   ./install.sh --offline --copy          # Offline install via copy
@@ -61,16 +71,17 @@ EOF
 # Parse arguments
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --copy)      MODE="copy"; shift ;;
-        --select)    SELECTED_SKILLS="$2"; shift 2 ;;
-        --jobs)      MAX_JOBS="$2"; shift 2 ;;
-        --offline)   OFFLINE=true; shift ;;
-        --update)    UPDATE_ONLY=true; shift ;;
-        --verbose)   VERBOSE=true; shift ;;
-        --dry-run)   DRY_RUN=true; shift ;;
-        --version)   echo "amazing_cc_skills installer v$VERSION"; exit 0 ;;
-        -h|--help)   usage ;;
-        *)           fail "Unknown option: $1"; usage ;;
+        --copy)              MODE="copy"; shift ;;
+        --select)            SELECTED_SKILLS="$2"; shift 2 ;;
+        --jobs)              MAX_JOBS="$2"; shift 2 ;;
+        --offline)           OFFLINE=true; shift ;;
+        --update)            UPDATE_ONLY=true; shift ;;
+        --allow-dangerous)   ALLOW_DANGEROUS=true; shift ;;
+        --verbose)           VERBOSE=true; shift ;;
+        --dry-run)           DRY_RUN=true; shift ;;
+        --version)           echo "amazing_cc_skills installer v$VERSION"; exit 0 ;;
+        -h|--help)           usage ;;
+        *)                   fail "Unknown option: $1"; usage ;;
     esac
 done
 
@@ -120,6 +131,31 @@ if [[ -n "$SELECTED_SKILLS" ]]; then
     done
 else
     INSTALL_SKILLS=("${AVAILABLE_SKILLS[@]}")
+fi
+
+# ---- Step 3b: Filter out dangerous skills unless --allow-dangerous ----
+is_dangerous() {
+    local skill="$1"
+    for d in $DANGEROUS_SKILLS; do
+        [[ "$skill" == "$d" ]] && return 0
+    done
+    return 1
+}
+
+if [[ "$ALLOW_DANGEROUS" == false ]]; then
+    SAFE_SKILLS=()
+    SKIPPED_DANGEROUS=0
+    for s in "${INSTALL_SKILLS[@]}"; do
+        if is_dangerous "$s"; then
+            SKIPPED_DANGEROUS=$((SKIPPED_DANGEROUS + 1))
+            [[ "$VERBOSE" == true ]] && warn "Skipping dangerous skill: $s (use --allow-dangerous to include)"
+            echo "skip" > "$STATUS_DIR/$s"
+        else
+            SAFE_SKILLS+=("$s")
+        fi
+    done
+    INSTALL_SKILLS=("${SAFE_SKILLS[@]}")
+    [[ $SKIPPED_DANGEROUS -gt 0 ]] && warn "Excluded $SKIPPED_DANGEROUS dangerous skill(s). Use --allow-dangerous to include."
 fi
 
 if [[ ${#INSTALL_SKILLS[@]} -eq 0 ]]; then

@@ -6,7 +6,7 @@ Last updated: 2026-03-22
 
 **Repo signals**: 0 stars, 0 forks, 1 contributors, 0 discussions
 
-**Tier breakdown**: 🏆 S: 1, ⭐ A: 1, 📋 C: 62, 📝 D: 16
+**Tier breakdown**: 🏆 S: 1, ⭐ A: 1, 📋 C: 63, 📝 D: 16
 
 ## Scoring
 
@@ -75,32 +75,33 @@ Last updated: 2026-03-22
 | 52 | `email-sequence` | 5-acquire | 21.2 | 📋 C |
 | 53 | `form-cro` | 6-convert | 21.2 | 📋 C |
 | 54 | `freeze` | 8-power-tools | 21.2 | 📋 C |
-| 55 | `manage-skills` | 8-power-tools | 21.2 | 📋 C |
-| 56 | `onboarding-cro` | 6-convert | 21.2 | 📋 C |
-| 57 | `page-cro` | 6-convert | 21.2 | 📋 C |
-| 58 | `paid-ads` | 5-acquire | 21.2 | 📋 C |
-| 59 | `paywall-upgrade-cro` | 6-convert | 21.2 | 📋 C |
-| 60 | `pricing-strategy` | 6-convert | 21.2 | 📋 C |
-| 61 | `referral-program` | 5-acquire | 21.2 | 📋 C |
-| 62 | `signup-flow-cro` | 6-convert | 21.2 | 📋 C |
-| 63 | `unfreeze` | 8-power-tools | 21.2 | 📋 C |
-| 64 | `visualize` | 8-power-tools | 21.2 | 📋 C |
-| 65 | `ai-seo` | 4-get-found | 19.2 | 📝 D |
-| 66 | `churn-prevention` | 7-retain | 19.2 | 📝 D |
-| 67 | `content-strategy` | 4-get-found | 19.2 | 📝 D |
-| 68 | `copy-editing` | 4-get-found | 19.2 | 📝 D |
-| 69 | `copywriting` | 4-get-found | 19.2 | 📝 D |
-| 70 | `free-tool-strategy` | 4-get-found | 19.2 | 📝 D |
-| 71 | `launch-strategy` | 4-get-found | 19.2 | 📝 D |
-| 72 | `lead-magnets` | 4-get-found | 19.2 | 📝 D |
-| 73 | `marketing-ideas` | 4-get-found | 19.2 | 📝 D |
-| 74 | `marketing-psychology` | 4-get-found | 19.2 | 📝 D |
-| 75 | `popup-cro` | 4-get-found | 19.2 | 📝 D |
-| 76 | `programmatic-seo` | 4-get-found | 19.2 | 📝 D |
-| 77 | `schema-markup` | 4-get-found | 19.2 | 📝 D |
-| 78 | `seo-audit` | 4-get-found | 19.2 | 📝 D |
-| 79 | `site-architecture` | 4-get-found | 19.2 | 📝 D |
-| 80 | `social-content` | 4-get-found | 19.2 | 📝 D |
+| 55 | `imessage` | 8-power-tools | 21.2 | 📋 C |
+| 56 | `manage-skills` | 8-power-tools | 21.2 | 📋 C |
+| 57 | `onboarding-cro` | 6-convert | 21.2 | 📋 C |
+| 58 | `page-cro` | 6-convert | 21.2 | 📋 C |
+| 59 | `paid-ads` | 5-acquire | 21.2 | 📋 C |
+| 60 | `paywall-upgrade-cro` | 6-convert | 21.2 | 📋 C |
+| 61 | `pricing-strategy` | 6-convert | 21.2 | 📋 C |
+| 62 | `referral-program` | 5-acquire | 21.2 | 📋 C |
+| 63 | `signup-flow-cro` | 6-convert | 21.2 | 📋 C |
+| 64 | `unfreeze` | 8-power-tools | 21.2 | 📋 C |
+| 65 | `visualize` | 8-power-tools | 21.2 | 📋 C |
+| 66 | `ai-seo` | 4-get-found | 19.2 | 📝 D |
+| 67 | `churn-prevention` | 7-retain | 19.2 | 📝 D |
+| 68 | `content-strategy` | 4-get-found | 19.2 | 📝 D |
+| 69 | `copy-editing` | 4-get-found | 19.2 | 📝 D |
+| 70 | `copywriting` | 4-get-found | 19.2 | 📝 D |
+| 71 | `free-tool-strategy` | 4-get-found | 19.2 | 📝 D |
+| 72 | `launch-strategy` | 4-get-found | 19.2 | 📝 D |
+| 73 | `lead-magnets` | 4-get-found | 19.2 | 📝 D |
+| 74 | `marketing-ideas` | 4-get-found | 19.2 | 📝 D |
+| 75 | `marketing-psychology` | 4-get-found | 19.2 | 📝 D |
+| 76 | `popup-cro` | 4-get-found | 19.2 | 📝 D |
+| 77 | `programmatic-seo` | 4-get-found | 19.2 | 📝 D |
+| 78 | `schema-markup` | 4-get-found | 19.2 | 📝 D |
+| 79 | `seo-audit` | 4-get-found | 19.2 | 📝 D |
+| 80 | `site-architecture` | 4-get-found | 19.2 | 📝 D |
+| 81 | `social-content` | 4-get-found | 19.2 | 📝 D |
 
 ## By Phase
 
@@ -220,6 +221,7 @@ Last updated: 2026-03-22
 | `pdf` | 21.3 | 📋 C |
 | `slash-command-factory` | 21.3 | 📋 C |
 | `freeze` | 21.2 | 📋 C |
+| `imessage` | 21.2 | 📋 C |
 | `manage-skills` | 21.2 | 📋 C |
 | `unfreeze` | 21.2 | 📋 C |
 | `visualize` | 21.2 | 📋 C |

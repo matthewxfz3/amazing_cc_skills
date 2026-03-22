@@ -36,9 +36,9 @@
     }
   },
   "meta": {
-    "last_updated": "2026-03-22T01:58:00.202031+00:00",
-    "total_skills": 80,
-    "total_scenarios": 64,
+    "last_updated": "2026-03-22T02:36:05.223085+00:00",
+    "total_skills": 81,
+    "total_scenarios": 65,
     "version": "2.0.0",
     "generated_by": "lib/rank.py"
   },
@@ -92,7 +92,7 @@
   "tier_summary": {
     "S": 1,
     "A": 1,
-    "C": 62,
+    "C": 63,
     "D": 16
   },
   "leaderboard": [
@@ -476,181 +476,188 @@
     },
     {
       "rank": 55,
-      "name": "manage-skills",
+      "name": "imessage",
       "score": 21.2,
       "tier": "C",
       "phase": "8-power-tools"
     },
     {
       "rank": 56,
+      "name": "manage-skills",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 57,
       "name": "onboarding-cro",
       "score": 21.2,
       "tier": "C",
       "phase": "6-convert"
     },
     {
-      "rank": 57,
+      "rank": 58,
       "name": "page-cro",
       "score": 21.2,
       "tier": "C",
       "phase": "6-convert"
     },
     {
-      "rank": 58,
+      "rank": 59,
       "name": "paid-ads",
       "score": 21.2,
       "tier": "C",
       "phase": "5-acquire"
     },
     {
-      "rank": 59,
+      "rank": 60,
       "name": "paywall-upgrade-cro",
       "score": 21.2,
       "tier": "C",
       "phase": "6-convert"
     },
     {
-      "rank": 60,
+      "rank": 61,
       "name": "pricing-strategy",
       "score": 21.2,
       "tier": "C",
       "phase": "6-convert"
     },
     {
-      "rank": 61,
+      "rank": 62,
       "name": "referral-program",
       "score": 21.2,
       "tier": "C",
       "phase": "5-acquire"
     },
     {
-      "rank": 62,
+      "rank": 63,
       "name": "signup-flow-cro",
       "score": 21.2,
       "tier": "C",
       "phase": "6-convert"
     },
     {
-      "rank": 63,
+      "rank": 64,
       "name": "unfreeze",
       "score": 21.2,
       "tier": "C",
       "phase": "8-power-tools"
     },
     {
-      "rank": 64,
+      "rank": 65,
       "name": "visualize",
       "score": 21.2,
       "tier": "C",
       "phase": "8-power-tools"
     },
     {
-      "rank": 65,
+      "rank": 66,
       "name": "ai-seo",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 66,
+      "rank": 67,
       "name": "churn-prevention",
       "score": 19.2,
       "tier": "D",
       "phase": "7-retain"
     },
     {
-      "rank": 67,
+      "rank": 68,
       "name": "content-strategy",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 68,
+      "rank": 69,
       "name": "copy-editing",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 69,
+      "rank": 70,
       "name": "copywriting",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 70,
+      "rank": 71,
       "name": "free-tool-strategy",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 71,
+      "rank": 72,
       "name": "launch-strategy",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 72,
+      "rank": 73,
       "name": "lead-magnets",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 73,
+      "rank": 74,
       "name": "marketing-ideas",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 74,
+      "rank": 75,
       "name": "marketing-psychology",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 75,
+      "rank": 76,
       "name": "popup-cro",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 76,
+      "rank": 77,
       "name": "programmatic-seo",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 77,
+      "rank": 78,
       "name": "schema-markup",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 78,
+      "rank": 79,
       "name": "seo-audit",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 79,
+      "rank": 80,
       "name": "site-architecture",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 80,
+      "rank": 81,
       "name": "social-content",
       "score": 19.2,
       "tier": "D",
@@ -1162,6 +1169,13 @@
           "skills": [
             "visualize"
           ]
+        },
+        "read-or-send-imessage": {
+          "trigger": "I want to read my iMessage history or send a text message",
+          "problem": "Need to search, read, or send messages via Apple Messages (DANGEROUS: reads local DB, debugging only)",
+          "skills": [
+            "imessage"
+          ]
         }
       }
     }
@@ -1401,6 +1415,11 @@
       },
       {
         "name": "freeze",
+        "score": 21.2,
+        "tier": "C"
+      },
+      {
+        "name": "imessage",
         "score": 21.2,
         "tier": "C"
       },
@@ -1857,6 +1876,11 @@
       },
       {
         "name": "freeze",
+        "score": 21.2,
+        "phase": "8-power-tools"
+      },
+      {
+        "name": "imessage",
         "score": 21.2,
         "phase": "8-power-tools"
       },
@@ -2535,6 +2559,24 @@
         "repo_bonus": 2.0,
         "category_weight": 1.1,
         "raw_score": 13.5
+      }
+    },
+    "imessage": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "Read, search, and send iMessages on macOS. Use when the user mentions 'imessage,' 'text message,' 'send a text,' 'read...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
       }
     },
     "investigate": {

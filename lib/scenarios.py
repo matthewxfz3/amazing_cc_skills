@@ -369,6 +369,11 @@ SCENARIOS = {
                 "problem": "Need a shareable link to a visualization — not a local file",
                 "skills": ["visualize"],
             },
+            "read-or-send-imessage": {
+                "trigger": "I want to read my iMessage history or send a text message",
+                "problem": "Need to search, read, or send messages via Apple Messages (DANGEROUS: reads local DB, debugging only)",
+                "skills": ["imessage"],
+            },
         },
     },
 }
