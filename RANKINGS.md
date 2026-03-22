@@ -6,7 +6,7 @@ Last updated: 2026-03-22
 
 **Repo signals**: 0 stars, 0 forks, 1 contributors, 0 discussions
 
-**Tier breakdown**: 🏆 S: 1, ⭐ A: 1, 📋 C: 61, 📝 D: 16
+**Tier breakdown**: 🏆 S: 1, ⭐ A: 1, 📋 C: 62, 📝 D: 16
 
 ## Scoring
 
@@ -84,22 +84,23 @@ Last updated: 2026-03-22
 | 61 | `referral-program` | 5-acquire | 21.2 | 📋 C |
 | 62 | `signup-flow-cro` | 6-convert | 21.2 | 📋 C |
 | 63 | `unfreeze` | 8-power-tools | 21.2 | 📋 C |
-| 64 | `ai-seo` | 4-get-found | 19.2 | 📝 D |
-| 65 | `churn-prevention` | 7-retain | 19.2 | 📝 D |
-| 66 | `content-strategy` | 4-get-found | 19.2 | 📝 D |
-| 67 | `copy-editing` | 4-get-found | 19.2 | 📝 D |
-| 68 | `copywriting` | 4-get-found | 19.2 | 📝 D |
-| 69 | `free-tool-strategy` | 4-get-found | 19.2 | 📝 D |
-| 70 | `launch-strategy` | 4-get-found | 19.2 | 📝 D |
-| 71 | `lead-magnets` | 4-get-found | 19.2 | 📝 D |
-| 72 | `marketing-ideas` | 4-get-found | 19.2 | 📝 D |
-| 73 | `marketing-psychology` | 4-get-found | 19.2 | 📝 D |
-| 74 | `popup-cro` | 4-get-found | 19.2 | 📝 D |
-| 75 | `programmatic-seo` | 4-get-found | 19.2 | 📝 D |
-| 76 | `schema-markup` | 4-get-found | 19.2 | 📝 D |
-| 77 | `seo-audit` | 4-get-found | 19.2 | 📝 D |
-| 78 | `site-architecture` | 4-get-found | 19.2 | 📝 D |
-| 79 | `social-content` | 4-get-found | 19.2 | 📝 D |
+| 64 | `visualize` | 8-power-tools | 21.2 | 📋 C |
+| 65 | `ai-seo` | 4-get-found | 19.2 | 📝 D |
+| 66 | `churn-prevention` | 7-retain | 19.2 | 📝 D |
+| 67 | `content-strategy` | 4-get-found | 19.2 | 📝 D |
+| 68 | `copy-editing` | 4-get-found | 19.2 | 📝 D |
+| 69 | `copywriting` | 4-get-found | 19.2 | 📝 D |
+| 70 | `free-tool-strategy` | 4-get-found | 19.2 | 📝 D |
+| 71 | `launch-strategy` | 4-get-found | 19.2 | 📝 D |
+| 72 | `lead-magnets` | 4-get-found | 19.2 | 📝 D |
+| 73 | `marketing-ideas` | 4-get-found | 19.2 | 📝 D |
+| 74 | `marketing-psychology` | 4-get-found | 19.2 | 📝 D |
+| 75 | `popup-cro` | 4-get-found | 19.2 | 📝 D |
+| 76 | `programmatic-seo` | 4-get-found | 19.2 | 📝 D |
+| 77 | `schema-markup` | 4-get-found | 19.2 | 📝 D |
+| 78 | `seo-audit` | 4-get-found | 19.2 | 📝 D |
+| 79 | `site-architecture` | 4-get-found | 19.2 | 📝 D |
+| 80 | `social-content` | 4-get-found | 19.2 | 📝 D |
 
 ## By Phase
 
@@ -221,4 +222,5 @@ Last updated: 2026-03-22
 | `freeze` | 21.2 | 📋 C |
 | `manage-skills` | 21.2 | 📋 C |
 | `unfreeze` | 21.2 | 📋 C |
+| `visualize` | 21.2 | 📋 C |
 

@@ -36,9 +36,9 @@
     }
   },
   "meta": {
-    "last_updated": "2026-03-22T00:49:19.257814+00:00",
-    "total_skills": 79,
-    "total_scenarios": 63,
+    "last_updated": "2026-03-22T01:58:00.202031+00:00",
+    "total_skills": 80,
+    "total_scenarios": 64,
     "version": "2.0.0",
     "generated_by": "lib/rank.py"
   },
@@ -92,7 +92,7 @@
   "tier_summary": {
     "S": 1,
     "A": 1,
-    "C": 61,
+    "C": 62,
     "D": 16
   },
   "leaderboard": [
@@ -539,111 +539,118 @@
     },
     {
       "rank": 64,
+      "name": "visualize",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 65,
       "name": "ai-seo",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 65,
+      "rank": 66,
       "name": "churn-prevention",
       "score": 19.2,
       "tier": "D",
       "phase": "7-retain"
     },
     {
-      "rank": 66,
+      "rank": 67,
       "name": "content-strategy",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 67,
+      "rank": 68,
       "name": "copy-editing",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 68,
+      "rank": 69,
       "name": "copywriting",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 69,
+      "rank": 70,
       "name": "free-tool-strategy",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 70,
+      "rank": 71,
       "name": "launch-strategy",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 71,
+      "rank": 72,
       "name": "lead-magnets",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 72,
+      "rank": 73,
       "name": "marketing-ideas",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 73,
+      "rank": 74,
       "name": "marketing-psychology",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 74,
+      "rank": 75,
       "name": "popup-cro",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 75,
+      "rank": 76,
       "name": "programmatic-seo",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 76,
+      "rank": 77,
       "name": "schema-markup",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 77,
+      "rank": 78,
       "name": "seo-audit",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 78,
+      "rank": 79,
       "name": "site-architecture",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 79,
+      "rank": 80,
       "name": "social-content",
       "score": 19.2,
       "tier": "D",
@@ -1148,6 +1155,13 @@
             "freeze",
             "unfreeze"
           ]
+        },
+        "visualize-data-or-architecture": {
+          "trigger": "I need a diagram, chart, or dashboard I can share with others",
+          "problem": "Need a shareable link to a visualization \u2014 not a local file",
+          "skills": [
+            "visualize"
+          ]
         }
       }
     }
@@ -1397,6 +1411,11 @@
       },
       {
         "name": "unfreeze",
+        "score": 21.2,
+        "tier": "C"
+      },
+      {
+        "name": "visualize",
         "score": 21.2,
         "tier": "C"
       }
@@ -1883,6 +1902,11 @@
       },
       {
         "name": "unfreeze",
+        "score": 21.2,
+        "phase": "8-power-tools"
+      },
+      {
+        "name": "visualize",
         "score": 21.2,
         "phase": "8-power-tools"
       }
@@ -3340,6 +3364,24 @@
         "repo_bonus": 2.0,
         "category_weight": 1.1,
         "raw_score": 13.6
+      }
+    },
+    "visualize": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "Generate shareable visualizations \u2014 diagrams via Kroki.io (instant URL) or interactive charts via Chart.js uploaded to...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
       }
     },
     "writing-plans": {

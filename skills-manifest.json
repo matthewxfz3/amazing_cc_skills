@@ -1,6 +1,6 @@
 {
   "version": "3.0.0",
-  "last_updated": "2026-03-21T23:58:53.168305+00:00",
+  "last_updated": "2026-03-22T01:58:00.161549+00:00",
   "repo": "https://github.com/matthewxfz3/amazing_cc_skills",
   "categories": {
     "1-validate": {
@@ -138,7 +138,8 @@
         "notebooklm",
         "valyu-best-practices",
         "freeze",
-        "unfreeze"
+        "unfreeze",
+        "visualize"
       ]
     }
   },
@@ -151,7 +152,7 @@
       "discussions",
       "contributors"
     ],
-    "last_ranked": "2026-03-22T00:49:19.261123+00:00",
+    "last_ranked": "2026-03-22T01:58:00.204902+00:00",
     "repo_signals": {
       "stars": 0,
       "forks": 0,
@@ -1301,6 +1302,21 @@
       "description": "Complete Valyu API toolkit for AI agents. Use this skill when asked to perform real-time search across web, academic,...",
       "ranking": {
         "score": 21.8,
+        "tier": "C"
+      }
+    },
+    "visualize": {
+      "category": "8-power-tools",
+      "phases": [
+        "8-power-tools"
+      ],
+      "checksum": "5b23ffd06caff2c8c248c4bb7234f347",
+      "last_updated": "2026-03-22T01:56:29.270881+00:00",
+      "file_count": 1,
+      "size_bytes": 5642,
+      "description": "Generate shareable visualizations \u2014 diagrams via Kroki.io (instant URL) or interactive charts via Chart.js uploaded to...",
+      "ranking": {
+        "score": 21.2,
         "tier": "C"
       }
     },

@@ -364,6 +364,11 @@ SCENARIOS = {
                 "problem": "Risk of accidentally changing unrelated code",
                 "skills": ["freeze", "unfreeze"],
             },
+            "visualize-data-or-architecture": {
+                "trigger": "I need a diagram, chart, or dashboard I can share with others",
+                "problem": "Need a shareable link to a visualization — not a local file",
+                "skills": ["visualize"],
+            },
         },
     },
 }

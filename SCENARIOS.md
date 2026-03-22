@@ -13,7 +13,7 @@ Start with your situation. Find the phase you're in, then the problem you're fac
 - [Get Customers](#5-acquire) (7 scenarios)
 - [Convert Visitors](#6-convert) (8 scenarios)
 - [Retain & Grow](#7-retain) (3 scenarios)
-- [Power Tools](#8-power-tools) (8 scenarios)
+- [Power Tools](#8-power-tools) (9 scenarios)
 
 ---
 
@@ -119,4 +119,5 @@ Start with your situation. Find the phase you're in, then the problem you're fac
 | I need to create, read, or edit PDF/Word/PowerPoint/Excel files | Need to process office documents programmatically | `pdf` 📋, `docx` 📋, `pptx` 📋, `xlsx` 📋 |
 | I need source-grounded answers or real-time search | Need citations from documents or live web/academic data | `notebooklm` 📋, `valyu-best-practices` 📋 |
 | I want to restrict edits to one folder while debugging | Risk of accidentally changing unrelated code | `freeze` 📋, `unfreeze` 📋 |
+| I need a diagram, chart, or dashboard I can share with others | Need a shareable link to a visualization — not a local file | `visualize` 📋 |
 

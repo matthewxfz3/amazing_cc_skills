@@ -99,6 +99,7 @@ CATEGORIES = {
             "prompt-factory", "agent-factory", "slash-command-factory",
             "hook-factory", "manage-skills", "pdf", "docx", "pptx", "xlsx",
             "notebooklm", "valyu-best-practices", "freeze", "unfreeze",
+            "visualize",
         ],
     },
 }
