@@ -392,14 +392,15 @@ def generate_scenarios_md(rankings: dict) -> None:
     lines.append("---")
     lines.append("")
 
-    # Each phase
+    # Each phase as a table
     for phase_id in sorted(scenarios_data):
         phase = scenarios_data[phase_id]
         lines.append(f"## {phase['label']}")
         lines.append("")
+        lines.append("| Situation | Problem | Skill |")
+        lines.append("|-----------|---------|-------|")
 
         for scenario_id, scenario in phase["scenarios"].items():
-            # Get tier info for recommended skills
             skill_badges = []
             for skill_name in scenario["skills"]:
                 info = skills_data.get(skill_name, {})
@@ -407,14 +408,11 @@ def generate_scenarios_md(rankings: dict) -> None:
                 _, emoji = TIER_LABELS.get(tier, ("", ""))
                 skill_badges.append(f"`{skill_name}` {emoji}")
 
-            lines.append(f"> **\"{scenario['trigger']}\"**")
-            lines.append(f">")
-            lines.append(f"> {scenario['problem']}")
-            lines.append(f">")
-            lines.append(f"> Use: {' | '.join(skill_badges)}")
-            lines.append("")
+            trigger = scenario["trigger"]
+            problem = scenario["problem"]
+            skills_col = ", ".join(skill_badges)
+            lines.append(f"| {trigger} | {problem} | {skills_col} |")
 
-        lines.append("---")
         lines.append("")
 
     with open(SCENARIOS_MD_PATH, "w") as f:
