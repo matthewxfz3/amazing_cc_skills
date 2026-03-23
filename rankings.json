@@ -36,8 +36,8 @@
     }
   },
   "meta": {
-    "last_updated": "2026-03-22T02:45:20.178017+00:00",
-    "total_skills": 81,
+    "last_updated": "2026-03-23T00:53:15.709777+00:00",
+    "total_skills": 82,
     "total_scenarios": 65,
     "version": "2.0.0",
     "generated_by": "lib/rank.py"
@@ -92,7 +92,7 @@
   "tier_summary": {
     "S": 1,
     "A": 1,
-    "C": 63,
+    "C": 64,
     "D": 16
   },
   "leaderboard": [
@@ -539,125 +539,132 @@
     },
     {
       "rank": 64,
-      "name": "unfreeze",
+      "name": "telegram",
       "score": 21.2,
       "tier": "C",
       "phase": "8-power-tools"
     },
     {
       "rank": 65,
-      "name": "visualize",
+      "name": "unfreeze",
       "score": 21.2,
       "tier": "C",
       "phase": "8-power-tools"
     },
     {
       "rank": 66,
+      "name": "visualize",
+      "score": 21.2,
+      "tier": "C",
+      "phase": "8-power-tools"
+    },
+    {
+      "rank": 67,
       "name": "ai-seo",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 67,
+      "rank": 68,
       "name": "churn-prevention",
       "score": 19.2,
       "tier": "D",
       "phase": "7-retain"
     },
     {
-      "rank": 68,
+      "rank": 69,
       "name": "content-strategy",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 69,
+      "rank": 70,
       "name": "copy-editing",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 70,
+      "rank": 71,
       "name": "copywriting",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 71,
+      "rank": 72,
       "name": "free-tool-strategy",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 72,
+      "rank": 73,
       "name": "launch-strategy",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 73,
+      "rank": 74,
       "name": "lead-magnets",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 74,
+      "rank": 75,
       "name": "marketing-ideas",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 75,
+      "rank": 76,
       "name": "marketing-psychology",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 76,
+      "rank": 77,
       "name": "popup-cro",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 77,
+      "rank": 78,
       "name": "programmatic-seo",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 78,
+      "rank": 79,
       "name": "schema-markup",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 79,
+      "rank": 80,
       "name": "seo-audit",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 80,
+      "rank": 81,
       "name": "site-architecture",
       "score": 19.2,
       "tier": "D",
       "phase": "4-get-found"
     },
     {
-      "rank": 81,
+      "rank": 82,
       "name": "social-content",
       "score": 19.2,
       "tier": "D",
@@ -1429,6 +1436,11 @@
         "tier": "C"
       },
       {
+        "name": "telegram",
+        "score": 21.2,
+        "tier": "C"
+      },
+      {
         "name": "unfreeze",
         "score": 21.2,
         "tier": "C"
@@ -1923,6 +1935,11 @@
         "name": "signup-flow-cro",
         "score": 21.2,
         "phase": "6-convert"
+      },
+      {
+        "name": "telegram",
+        "score": 21.2,
+        "phase": "8-power-tools"
       },
       {
         "name": "unfreeze",
@@ -3334,6 +3351,24 @@
         "repo_bonus": 2.0,
         "category_weight": 1.2,
         "raw_score": 14.4
+      }
+    },
+    "telegram": {
+      "score": 21.2,
+      "tier": "C",
+      "phase": "8-power-tools",
+      "all_phases": [
+        "8-power-tools"
+      ],
+      "description": "Connect Claude Code to Telegram via the official Channels plugin or third-party MCP servers. Use when the user mentions...",
+      "signals": {
+        "depth": 0.0,
+        "mentions": 0,
+        "mention_score": 0,
+        "desc_quality": 10,
+        "repo_bonus": 2.0,
+        "category_weight": 1.1,
+        "raw_score": 13.2
       }
     },
     "test-driven-development": {

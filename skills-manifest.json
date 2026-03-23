@@ -1,6 +1,6 @@
 {
   "version": "3.0.0",
-  "last_updated": "2026-03-22T02:45:20.142701+00:00",
+  "last_updated": "2026-03-23T00:53:13.850496+00:00",
   "repo": "https://github.com/matthewxfz3/amazing_cc_skills",
   "categories": {
     "1-validate": {
@@ -140,7 +140,8 @@
         "freeze",
         "unfreeze",
         "visualize",
-        "imessage"
+        "imessage",
+        "telegram"
       ]
     }
   },
@@ -153,7 +154,7 @@
       "discussions",
       "contributors"
     ],
-    "last_ranked": "2026-03-22T02:45:20.181006+00:00",
+    "last_ranked": "2026-03-23T00:53:15.713107+00:00",
     "scores_in": "rankings.json"
   },
   "skills": {
@@ -962,6 +963,17 @@
       "file_count": 4,
       "size_bytes": 19511,
       "description": "Use when executing implementation plans with independent tasks in the current session"
+    },
+    "telegram": {
+      "category": "8-power-tools",
+      "phases": [
+        "8-power-tools"
+      ],
+      "checksum": "850d92f98a6cb7a76ece8df5d13ee41c",
+      "last_updated": "2026-03-23T00:52:25.682338+00:00",
+      "file_count": 1,
+      "size_bytes": 4618,
+      "description": "Connect Claude Code to Telegram via the official Channels plugin or third-party MCP servers. Use when the user mentions..."
     },
     "test-driven-development": {
       "category": "2-build",

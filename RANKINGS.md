@@ -2,11 +2,11 @@
 
 <!-- Auto-generated from rankings.json — do not edit manually -->
 
-Last updated: 2026-03-22
+Last updated: 2026-03-23
 
 **Repo signals**: 0 stars, 0 forks, 1 contributors, 0 discussions
 
-**Tier breakdown**: 🏆 S: 1, ⭐ A: 1, 📋 C: 63, 📝 D: 16
+**Tier breakdown**: 🏆 S: 1, ⭐ A: 1, 📋 C: 64, 📝 D: 16
 
 ## Scoring
 
@@ -84,24 +84,25 @@ Last updated: 2026-03-22
 | 61 | `pricing-strategy` | 6-convert | 21.2 | 📋 C |
 | 62 | `referral-program` | 5-acquire | 21.2 | 📋 C |
 | 63 | `signup-flow-cro` | 6-convert | 21.2 | 📋 C |
-| 64 | `unfreeze` | 8-power-tools | 21.2 | 📋 C |
-| 65 | `visualize` | 8-power-tools | 21.2 | 📋 C |
-| 66 | `ai-seo` | 4-get-found | 19.2 | 📝 D |
-| 67 | `churn-prevention` | 7-retain | 19.2 | 📝 D |
-| 68 | `content-strategy` | 4-get-found | 19.2 | 📝 D |
-| 69 | `copy-editing` | 4-get-found | 19.2 | 📝 D |
-| 70 | `copywriting` | 4-get-found | 19.2 | 📝 D |
-| 71 | `free-tool-strategy` | 4-get-found | 19.2 | 📝 D |
-| 72 | `launch-strategy` | 4-get-found | 19.2 | 📝 D |
-| 73 | `lead-magnets` | 4-get-found | 19.2 | 📝 D |
-| 74 | `marketing-ideas` | 4-get-found | 19.2 | 📝 D |
-| 75 | `marketing-psychology` | 4-get-found | 19.2 | 📝 D |
-| 76 | `popup-cro` | 4-get-found | 19.2 | 📝 D |
-| 77 | `programmatic-seo` | 4-get-found | 19.2 | 📝 D |
-| 78 | `schema-markup` | 4-get-found | 19.2 | 📝 D |
-| 79 | `seo-audit` | 4-get-found | 19.2 | 📝 D |
-| 80 | `site-architecture` | 4-get-found | 19.2 | 📝 D |
-| 81 | `social-content` | 4-get-found | 19.2 | 📝 D |
+| 64 | `telegram` | 8-power-tools | 21.2 | 📋 C |
+| 65 | `unfreeze` | 8-power-tools | 21.2 | 📋 C |
+| 66 | `visualize` | 8-power-tools | 21.2 | 📋 C |
+| 67 | `ai-seo` | 4-get-found | 19.2 | 📝 D |
+| 68 | `churn-prevention` | 7-retain | 19.2 | 📝 D |
+| 69 | `content-strategy` | 4-get-found | 19.2 | 📝 D |
+| 70 | `copy-editing` | 4-get-found | 19.2 | 📝 D |
+| 71 | `copywriting` | 4-get-found | 19.2 | 📝 D |
+| 72 | `free-tool-strategy` | 4-get-found | 19.2 | 📝 D |
+| 73 | `launch-strategy` | 4-get-found | 19.2 | 📝 D |
+| 74 | `lead-magnets` | 4-get-found | 19.2 | 📝 D |
+| 75 | `marketing-ideas` | 4-get-found | 19.2 | 📝 D |
+| 76 | `marketing-psychology` | 4-get-found | 19.2 | 📝 D |
+| 77 | `popup-cro` | 4-get-found | 19.2 | 📝 D |
+| 78 | `programmatic-seo` | 4-get-found | 19.2 | 📝 D |
+| 79 | `schema-markup` | 4-get-found | 19.2 | 📝 D |
+| 80 | `seo-audit` | 4-get-found | 19.2 | 📝 D |
+| 81 | `site-architecture` | 4-get-found | 19.2 | 📝 D |
+| 82 | `social-content` | 4-get-found | 19.2 | 📝 D |
 
 ## By Phase
 
@@ -223,6 +224,7 @@ Last updated: 2026-03-22
 | `freeze` | 21.2 | 📋 C |
 | `imessage` | 21.2 | 📋 C |
 | `manage-skills` | 21.2 | 📋 C |
+| `telegram` | 21.2 | 📋 C |
 | `unfreeze` | 21.2 | 📋 C |
 | `visualize` | 21.2 | 📋 C |
 
